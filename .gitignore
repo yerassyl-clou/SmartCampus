@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+# Local credentials / datasets
+.env
+.env.*
+!.env.example
+*.db
+*.sqlite
+*.sqlite3
+# JavaScript
+node_modules/
+frontend/dist/
+# IDE and OS
+.DS_Store
+.idea/
+.vscode/
