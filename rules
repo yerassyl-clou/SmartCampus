@@ -1,0 +1,70 @@
+# General Development Instructions
+
+Follow these instructions for every task. They take priority over your own assumptions about improvements or alternative implementations.
+
+## 1. Strict Task Scope
+- Implement **only what is explicitly requested** in the current task.
+- Do not introduce additional features, functionality, improvements, or changes that are not directly required.
+- Do not expand the task scope based on your own assumptions about what might be useful.
+- If you identify an issue outside the task scope, report it separately instead of fixing it.
+- If any requirement is unclear or ambiguous, ask for clarification before making potentially significant changes.
+
+## 2. Minimal Changes — Avoid Unnecessary Refactoring
+- Make the **smallest possible set of changes** needed to complete the task.
+- Preserve the existing project architecture, design patterns, coding conventions, and implementation wherever possible.
+- Do not refactor, rewrite, reorganize, or rename existing code unless it is strictly necessary to fulfill the task.
+- Do not modify unrelated files or existing functionality.
+- Do not introduce new abstractions, layers, classes, components, utilities, or dependencies when the existing implementation can be extended.
+- Avoid changing working code just to make it cleaner, more elegant, or more consistent.
+- Prefer targeted modifications over rewriting entire files.
+
+## 3. Preserve Existing Functionality
+- Do not break or change existing functionality unless explicitly required by the task.
+- Maintain backward compatibility with existing components, API endpoints, request/response formats, and database structures.
+- Respect the existing API Contract. Do not change endpoint paths, HTTP methods, request parameters, response schemas, or data formats without explicit authorization.
+- Preserve existing frontend/backend integration and component interfaces.
+- Do not modify shared interfaces or contracts without verifying their impact on other parts of the project.
+
+## 4. Project Structure and Technology Stack
+- Work within the existing GitHub repository and its established directory structure.
+- Use the existing technology stack:
+  - Frontend: React + Vite
+  - Backend: Python + FastAPI
+  - Database: SQLite
+  - AI integration: OpenAI API
+- Do not introduce alternative frameworks, technologies, or dependencies unless explicitly requested or absolutely necessary.
+- Reuse existing libraries, utilities, and components whenever possible.
+
+## 5. Code Quality and Implementation
+- Follow the existing coding style and conventions.
+- Write code that is simple, readable, and maintainable.
+- Avoid overengineering and premature optimization.
+- Handle errors appropriately without unnecessarily changing existing error-handling behavior.
+- Do not use hardcoded credentials, API keys, passwords, or other secrets.
+- Never commit API keys or other sensitive configuration values to the repository.
+- Use the project's existing configuration and environment variable mechanisms.
+
+## 6. Testing and Verification
+- Verify that your changes work as intended.
+- Run relevant existing tests and add or update tests only when necessary to cover the requested functionality.
+- Check for regressions in the functionality directly affected by your changes.
+- Do not claim that something works unless you have actually verified it.
+- If tests cannot be executed, clearly explain why and identify what remains unverified.
+
+## 7. Execution Discipline
+- Before making changes, inspect the relevant parts of the existing project to understand the current implementation.
+- Identify which files need to be modified and why.
+- Do not make speculative changes based on assumptions about the project.
+- Do not overwrite existing work or discard unrelated modifications.
+- Do not commit or push changes unless explicitly requested.
+
+## 8. Final Report
+After completing the task, provide a concise report containing:
+
+1. **Implemented:** What was changed.
+2. **Files Modified:** Which files were added, modified, or deleted.
+3. **Verification:** Which tests or checks were executed and their results.
+4. **Remaining Issues:** Any incomplete work, limitations, or problems discovered.
+5. **Out-of-Scope Findings:** Relevant issues noticed but intentionally left unchanged.
+
+Keep the report factual and concise. Do not claim completion of work that has not been implemented or verified.

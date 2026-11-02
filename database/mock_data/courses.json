@@ -1,0 +1,100 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "name": "Database Systems",
+      "deadlines": [
+        {
+          "id": 1,
+          "title": "Assignment 2",
+          "due_date": "2026-11-06",
+          "source_title": "Mock Database Systems syllabus"
+        },
+        {
+          "id": 2,
+          "title": "Midterm project proposal",
+          "due_date": "2026-11-13",
+          "source_title": "Mock Database Systems syllabus"
+        }
+      ],
+      "documents": [
+        {
+          "id": 1,
+          "title": "Mock Database Systems syllabus",
+          "content": "Assignment 2 deadline: 2026-11-06. Submit a normalized schema and query plan.",
+          "source_title": "Mock Database Systems syllabus"
+        },
+        {
+          "id": 2,
+          "title": "Mock Database Systems course rules",
+          "content": "Late database lab work may be submitted within three calendar days with a short explanation.",
+          "source_title": "Mock Database Systems course rules"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Software Project Management",
+      "deadlines": [
+        {
+          "id": 3,
+          "title": "Risk register review",
+          "due_date": "2026-11-09",
+          "source_title": "Mock Software Project Management syllabus"
+        },
+        {
+          "id": 4,
+          "title": "Sprint review presentation",
+          "due_date": "2026-11-20",
+          "source_title": "Mock Software Project Management syllabus"
+        }
+      ],
+      "documents": [
+        {
+          "id": 3,
+          "title": "Mock Software Project Management syllabus",
+          "content": "The risk register review is due on 2026-11-09 and must include an owner for each identified risk.",
+          "source_title": "Mock Software Project Management syllabus"
+        },
+        {
+          "id": 4,
+          "title": "Mock Software Project Management assessment rules",
+          "content": "The sprint review presentation is assessed on evidence, scope control, and a clear retrospective.",
+          "source_title": "Mock Software Project Management assessment rules"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Human-Computer Interaction",
+      "deadlines": [
+        {
+          "id": 5,
+          "title": "Usability test plan",
+          "due_date": "2026-11-11",
+          "source_title": "Mock Human-Computer Interaction syllabus"
+        },
+        {
+          "id": 6,
+          "title": "Prototype critique",
+          "due_date": "2026-11-27",
+          "source_title": "Mock Human-Computer Interaction syllabus"
+        }
+      ],
+      "documents": [
+        {
+          "id": 5,
+          "title": "Mock Human-Computer Interaction syllabus",
+          "content": "The usability test plan is due on 2026-11-11 and should describe participants, tasks, and success measures.",
+          "source_title": "Mock Human-Computer Interaction syllabus"
+        },
+        {
+          "id": 6,
+          "title": "Mock Human-Computer Interaction studio rules",
+          "content": "Prototype critiques should connect observed user behavior to at least two proposed design changes.",
+          "source_title": "Mock Human-Computer Interaction studio rules"
+        }
+      ]
+    }
+  ]
+}
