@@ -1,6 +1,6 @@
 # SIS 8–9 Acceptance & test plan
 
-Status: **planning template**. Record real test runs; do not claim 'passed' until executed.
+The original plan below is retained as a template. Executed SIS89-08 results, including TC-01 through TC-12 and live versus mocked provider labels, are recorded in [SIS89_08_QA_REPORT.md](SIS89_08_QA_REPORT.md).
 
 | ID | Scenario | Expected result | Actual | Status | Evidence |
 |---|---|---|---|---|---|

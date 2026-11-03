@@ -454,3 +454,22 @@ for (const [width, height] of [
     })
   })
 }
+
+for (const [code, message] of [
+  ['configuration', 'The AI service is not configured.'],
+  ['authentication', 'The AI service could not authenticate.'],
+  ['rejection', 'The AI service rejected the request.'],
+  ['rate_limit', 'The AI service is busy.'],
+  ['timeout', 'The AI service took too long.'],
+  ['invalid_output', 'The AI service returned an invalid answer.'],
+  ['database_unavailable', 'Course data is unavailable.'],
+]) {
+  test(`safe service category ${code} is shown without provider details`, async ({ page }) => {
+    await page.route('**/api/chat', route => route.fulfill({
+      status: 503, headers: { 'X-SmartCampus-Error': code }, json: { detail: 'private-provider-body' },
+    }))
+    await ask(page)
+    await expect(page.getByRole('alert')).toContainText(message)
+    await expect(page.getByRole('alert')).not.toContainText('private-provider-body')
+  })
+}

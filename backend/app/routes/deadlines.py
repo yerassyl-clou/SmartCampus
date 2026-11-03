@@ -26,7 +26,7 @@ class DeadlinesResponse(BaseModel):
 
 @router.get("/api/deadlines", response_model=DeadlinesResponse)
 def deadlines(
-    course_id: Annotated[Optional[int], Query(description="Optional course ID")] = None,
+    course_id: Annotated[Optional[int], Query(gt=0, description="Optional positive course ID")] = None,
 ) -> DeadlinesResponse:
     items = list_deadlines(course_id)
     return DeadlinesResponse(items=items, total=len(items))

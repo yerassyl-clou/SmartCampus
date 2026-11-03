@@ -8,7 +8,7 @@ Use Node.js 20+ from the repository setup instructions:
 
 ```sh
 cd frontend
-npm install
+npm ci
 npm run dev
 ```
 
@@ -149,3 +149,9 @@ remain outside this frontend feature scope.
 Before full provider acceptance, configure the server-side provider and repeat
 live grounded-answer QA. The inherited Vite/esbuild audit findings remain; a
 major toolchain upgrade is outside this frontend implementation slice.
+
+## SIS89-08 current integration verification
+
+See [SIS89-08 QA report](../docs/SIS89_08_QA_REPORT.md) for current test counts and real Groq results. Historical SIS89-04/05 entries above remain historical evidence. Root pytest imports and the legacy local-empty-database assumption are repaired by the shared test configuration and isolated fixtures. Safe backend error categories now distinguish configuration, authentication, rejection, rate limits, timeout, invalid output, and unavailable course data without exposing provider bodies. UI layout and CSS are preserved.
+
+`playwright.integration.config.js` is an explicit live-provider suite, separate from `npm test`; enable only with `SMARTCAMPUS_LIVE_TESTS=1` and a valid server-side key. It starts actual FastAPI instances, seeded SQLite, and Vite. Its failure case redirects the browser request to a real FastAPI instance configured with an unreachable local provider, then retries against the live backend. Generated `test-results-live/` evidence stays ignored.

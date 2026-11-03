@@ -20,10 +20,12 @@ class ChatResponse(BaseModel):
 
 
 class EvidenceQuote(BaseModel):
+    model_config = ConfigDict(strict=True, extra="forbid")
     source_id: int
     quote: str
 
 
 class EvidenceSelection(BaseModel):
+    model_config = ConfigDict(strict=True, extra="forbid")
     sufficient: bool
     quotes: list[EvidenceQuote]

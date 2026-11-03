@@ -1,6 +1,6 @@
 # SIS89-06 / SIS89-07: setup and testing
 
-Chat searches SQLite, asks OpenAI to select relevant verbatim evidence, verifies
+Chat searches SQLite, asks the configured provider (Groq) to select relevant verbatim evidence, verifies
 quotes and IDs, and returns answer/sources/grounded. No retrieval results means
 the exact API contract fallback without a model call. Insufficient or conflicting
 evidence is declined by the prompt. Invalid quotes or IDs also trigger fallback.
@@ -15,7 +15,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r backend/requirements.txt
 python database/seed.py
-cp .env.example backend/.env
+cp -n .env.example backend/.env  # preserve existing credentials
 ```
 
 Edit backend/.env locally with your team's OPENAI_API_KEY and OPENAI_MODEL
@@ -30,9 +30,9 @@ curl -sS http://localhost:8000/api/chat -H 'Content-Type: application/json' \
   -d '{"question":"When is Assignment 2 due?","course_id":1}'
 ```
 
-This makes a real, potentially billable OpenAI call. Expected: grounded=true,
+This makes a real, potentially billable Groq call. Expected: grounded=true,
 2026-11-06 in the answer, Mock Database Systems syllabus source id=1.
-Record the actual response as live evidence. No live test was run in preparation.
+Record the actual response as live evidence. The current integration results are in [SIS89-08 QA](SIS89_08_QA_REPORT.md).
 Missing config, auth, timeout and rate-limit failures return safe 503 errors.
 
 ## Cases for Yerassyl
@@ -67,3 +67,11 @@ OPENAI_MODEL=openai/gpt-oss-120b in backend/.env. OPENAI_API_KEY holds
 the Groq key because this integration uses the compatible OpenAI SDK.
 Do not send reasoning_effort=none: this model supports low/medium/high.
 The integration omits that parameter and uses the provider default.
+
+## SIS89-08 troubleshooting
+
+The local 503 was reproduced with only `GROQ_API_KEY` in `backend/.env`; this adapter requires `OPENAI_API_KEY` and `OPENAI_MODEL`. Copy the existing local Groq credential into `OPENAI_API_KEY` locally and set both provider fields from `.env.example`. Never print the key. Restart FastAPI after edits; externally set environment variables take precedence over dotenv.
+
+`client.beta.chat.completions.parse(response_format=EvidenceSelection)` was tested successfully against Groq `openai/gpt-oss-120b` with OpenAI SDK 2.54.0. No compatibility workaround or hardcoded course answer was needed. Strict Pydantic fields reject coercion and extra keys. Provider diagnostics log only category/status; raw errors and prompts are excluded. Invalid parsed output is a service failure rather than a no-information fallback.
+
+General deadline listings bypass the model and use stored rows. Upcoming listings state the Asia/Almaty reference date. Specific supported course questions still use the real LLM. See [API contract](API_CONTRACT.md) for source ID namespaces and error categories, and [QA report](SIS89_08_QA_REPORT.md) for offline and live test commands.
