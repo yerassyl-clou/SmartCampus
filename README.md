@@ -30,10 +30,10 @@ npm run dev
 
 Visit http://localhost:5173 (API http://localhost:8000/docs). Frontend forwards `/api` to port 8000.
 
-The base app currently has only a **health endpoint**; chat and deadlines return **501 Not Implemented** until their owners add the features. This is intentional to avoid passing a placeholder off as a completed feature.
+Health, deadlines, and grounded chat endpoints are implemented. Chat requires a local OpenAI key when course evidence is found. See [chat setup and QA](docs/AI_CHAT.md); live model acceptance testing is still required.
 
 ## Local LLM setup
-Place `OPENAI_API_KEY=...` in **backend/.env** only. Configure `OPENAI_MODEL` there. Do not paste credentials into a task, commit, browser code or screenshots. All actual LLM calls must run on the backend. Backend dependencies include OpenAI SDK, but no model calls exist in the scaffold.
+Place `OPENAI_API_KEY=...` in **backend/.env** only. Configure `OPENAI_MODEL` there. Do not paste credentials into a task, commit, browser code or screenshots. All actual LLM calls must run on the backend. Chat calls the OpenAI SDK on the backend. Seed the mock database before testing; see docs/AI_CHAT.md.
 
 ## Branches and workstream owners
 - `main`: integrated, reviewed code only
