@@ -26,6 +26,16 @@ function readChatResponse(data) {
   return { answer: data.answer, grounded: data.grounded, sources }
 }
 
+const serviceErrors = {
+  configuration: 'The AI service is not configured. Please contact the project team.',
+  authentication: 'The AI service could not authenticate. Please contact the project team.',
+  rejection: 'The AI service rejected the request. Please contact the project team.',
+  rate_limit: 'The AI service is busy. Please try again later.',
+  timeout: 'The AI service took too long. Please try again.',
+  invalid_output: 'The AI service returned an invalid answer. Please try again.',
+  database_unavailable: 'Course data is unavailable. Please ask the project team to seed the database.',
+}
+
 const statusMessages = {
   422: 'Your question could not be accepted. Please check it and try again.',
   503: 'The AI service is temporarily unavailable. Please try again shortly.',
@@ -57,7 +67,8 @@ export async function requestChat(question, { courseId, signal } = {}) {
   }
   if (!response.ok) {
     throw new Error(
-      statusMessages[response.status] ??
+      (response.status === 503 && serviceErrors[response.headers.get('X-SmartCampus-Error')]) ||
+      statusMessages[response.status] ||
         'Something went wrong while sending your question. Please try again.'
     )
   }

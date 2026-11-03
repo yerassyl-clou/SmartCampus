@@ -8,9 +8,3 @@ def test_health():
     response = client.get("/api/health")
     assert response.status_code == 200
     assert response.json() == {"status": "ok", "app": "SmartCampus"}
-
-
-def test_deadlines_endpoint_returns_contract_shape_without_seed_data():
-    response = client.get("/api/deadlines")
-    assert response.status_code == 200
-    assert response.json() == {"items": [], "total": 0}

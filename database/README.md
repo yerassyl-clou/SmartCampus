@@ -49,7 +49,7 @@ SQLite database work and the SIS89-03 retrieval/deadlines API.
 ## 1. Open the project
 
 ```bash
-cd "/Users/gleb/KBTU/KBTU 7 sem/it project management/SmartCampus"
+cd /path/to/SmartCampus
 ```
 
 Check the Python version:
@@ -58,8 +58,7 @@ Check the Python version:
 python3 --version
 ```
 
-The project targets Python 3.11+, although the implemented database and API
-code is also compatible with Python 3.9.
+The integrated project targets Python 3.11+. Use the repository backend requirements.
 
 ## 2. Create and activate a virtual environment
 
@@ -114,7 +113,7 @@ fictional records are in
 [database/mock_data/courses.json](../database/mock_data/courses.json).
 
 The seed command is repeatable. It recreates the rows from the mock data file
-and can safely be run again.
+and replaces existing sample rows. Use a separate temporary database for experiments; do not seed over data you want to retain.
 
 ## 4. Verify database row counts
 
@@ -271,7 +270,7 @@ The documentation should list:
 
 Use **Try it out** for `GET /api/deadlines`, with and without `course_id`.
 The endpoint schema follows
-[docs/API_CONTRACT.md](API_CONTRACT.md).
+[docs/API_CONTRACT.md](../docs/API_CONTRACT.md).
 
 ## 10. Check deterministic retrieval directly
 
@@ -289,7 +288,7 @@ print(result)
 PY
 ```
 
-Expected result:
+The highest-ranked source includes (additional matching deadline evidence may follow):
 
 ```python
 [
@@ -367,14 +366,10 @@ Courses: 3
 From the repository root, with the virtual environment active:
 
 ```bash
-PYTHONPATH=backend pytest -q
+backend/.venv/bin/python -m pytest backend/tests -q
 ```
 
-Expected result:
-
-```text
-3 passed
-```
+The current executed test count is recorded in [SIS89-08 QA](../docs/SIS89_08_QA_REPORT.md). Tests use temporary databases and a mocked provider, independently of the local seed and credentials.
 
 ## 13. Start the frontend (optional)
 
@@ -382,7 +377,7 @@ In a third terminal:
 
 ```bash
 cd frontend
-npm install
+npm ci
 npm run dev
 ```
 
@@ -409,8 +404,12 @@ Implemented:
 - Structured retrieval source objects.
 - OpenAPI documentation for the deadlines endpoint.
 
-Not implemented in these tasks:
+The AI workstream has since implemented `POST /api/chat` using this retrieval interface.
+See [AI setup](../docs/AI_CHAT.md) for the server-side Groq configuration and
+[executed SIS89-08 QA](../docs/SIS89_08_QA_REPORT.md) for integration evidence.
 
-- `POST /api/chat` still returns `501 Not Implemented`.
-- The chat/LLM workflow belongs to the AI workstream and can use
-  `search_course_materials()` as its grounded retrieval interface.
+## SIS89-08 integration behavior
+
+Relative `SMARTCAMPUS_DB_PATH` values resolve from `backend/`, independent of the launch directory. Runtime reads do not create a missing database. Missing/uninitialized/corrupt data returns a controlled 503; an initialized empty database returns an empty result. The seed schema/data and original SIS89-02/03 authorship are preserved.
+
+Retrieval normalizes a small vocabulary of singular/plural terms, scores substantive keyword overlap, and considers both documents and deadline rows. Positive chat source IDs identify documents; negative source IDs identify deadlines (`-id`). The general deadline chat listing uses actual stored rows, explicitly labeled fictional and not personal enrollment. Upcoming queries use the stated inclusive Asia/Almaty reference date. No semantic search infrastructure was added.

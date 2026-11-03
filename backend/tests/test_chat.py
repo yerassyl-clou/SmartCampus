@@ -1,7 +1,5 @@
 import importlib
-from pathlib import Path
 from unittest.mock import Mock
-import sys
 import pytest
 import httpx
 import openai
@@ -12,14 +10,6 @@ from app.services import llm
 
 route = importlib.import_module('app.routes.chat')
 client = TestClient(app)
-
-@pytest.fixture(autouse=True)
-def database(tmp_path, monkeypatch):
-    sys.path.insert(0, str(Path(__file__).resolve().parents[2] / 'database'))
-    from seed import load_database
-    path = tmp_path / 'test.db'
-    load_database(path)
-    monkeypatch.setenv('SMARTCAMPUS_DB_PATH', str(path))
 
 @pytest.mark.parametrize('question', ['', '   ', None, 123])
 def test_invalid(question):

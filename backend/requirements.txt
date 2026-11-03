@@ -5,3 +5,5 @@ python-dotenv>=1,<2
 openai>=1.50,<3
 pytest>=8,<10
 httpx>=0.27,<1
+# Windows Python needs IANA timezone data for Asia/Almaty deadline filtering.
+tzdata>=2024.1; sys_platform == "win32"

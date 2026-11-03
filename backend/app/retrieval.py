@@ -6,14 +6,14 @@ Public interface for the chat workstream:
     # [{"id": 1, "title": "Mock Database Systems syllabus",
     #   "excerpt": "Assignment 2 deadline: 2026-11-06. ..."}]
 
-Each result is a source object with an SQLite record ID, source title, and
-verbatim excerpt. Results are ordered by relevance and then by record ID.
+Each result has a source title and evidence excerpt. Positive IDs identify
+documents; negative IDs identify deadline rows. Equal scores prefer documents,
+then deterministic record order.
 """
 
 from __future__ import annotations
 
 import re
-import sqlite3
 from pathlib import Path
 from typing import TypedDict
 
@@ -35,20 +35,35 @@ class Deadline(TypedDict):
     source_title: str
 
 
+# Small vocabulary normalization; no external NLP or probabilistic ranking.
+STOP_WORDS = set("a an the is are was were be do does did i my me we our have has what when where how should must can for of to in on with and or all show list please information available mock".split())
+NORMAL_FORMS = {"deadlines": "deadline", "assignments": "assignment",
+                "requirements": "requirement", "rules": "rule",
+                "critiques": "critique", "courses": "course"}
+GENERIC_WORDS = {"deadline", "due", "requirement", "course"}
+
+
 def _tokens(value: str) -> set[str]:
-    return set(re.findall(r"[a-z0-9]+", value.lower()))
+    return {NORMAL_FORMS.get(word, word) for word in re.findall(r"[a-z0-9]+", value.lower())} - STOP_WORDS
 
 
-def _database_is_uninitialized(error: sqlite3.OperationalError) -> bool:
-    return "no such table" in str(error).lower()
-
-
-def _score(query: str, *fields: str) -> int:
+def _score(query: str, title: str, content: str) -> int:
     query_tokens = _tokens(query)
-    if not query_tokens:
+    field_tokens = _tokens(title + " " + content)
+    anchors = query_tokens - GENERIC_WORDS
+    # Function words and generic deadline vocabulary cannot establish relevance.
+    if not anchors or not anchors & field_tokens:
         return 0
-    field_tokens = _tokens(" ".join(fields))
-    return len(query_tokens & field_tokens)
+    numbers = {word for word in anchors if word.isdigit()}
+    if not numbers <= field_tokens:
+        return 0
+    return 3 * len(query_tokens & _tokens(title)) + len(query_tokens & field_tokens)
+
+
+def deadline_source(item: Deadline) -> Source:
+    # Negative IDs identify deadline rows; positive IDs identify document rows.
+    return {"id": -item["id"], "title": item["source_title"],
+            "excerpt": f"{item['course_name']} — {item['title']} deadline: {item['due_date']}"}
 
 
 def search_course_materials(
@@ -58,95 +73,25 @@ def search_course_materials(
     limit: int = 10,
     database_path: Path | str | None = None,
 ) -> list[Source]:
-    """Return relevant document/deadline evidence for a course question.
+    """Rank substantive normalized keywords in documents and deadline rows.
 
-    The search is intentionally small and deterministic: it tokenizes the
-    query and scores exact keyword matches in titles, source titles, content,
-    and deadline dates. Unknown or blank queries return an empty list.
+    Course filters apply to both tables. Deadline-only facts are considered even
+    when a weaker document matches; source IDs cannot collide across tables.
     """
     if not query.strip() or limit <= 0:
         return []
-
-    course_filter = ""
-    parameters: list[object] = []
-    if course_id is not None:
-        course_filter = "AND d.course_id = ?"
-        parameters.append(course_id)
-
-    try:
-        rows = fetch_all(
-            f"""
-            SELECT d.id, d.title, d.content, d.source_title
-            FROM documents AS d
-            WHERE 1 = 1 {course_filter}
-            """,
-            tuple(parameters),
-            database_path,
-        )
-    except sqlite3.OperationalError as error:
-        if _database_is_uninitialized(error):
-            return []
-        raise
-
-    scored = [
-        (
-            _score(query, row["title"], row["source_title"], row["content"]),
-            row,
-        )
-        for row in rows
-    ]
-    matching_documents = [
-        row for score, row in sorted(scored, key=lambda item: (-item[0], item[1]["id"]))
-        if score > 0
-    ]
-    if matching_documents:
-        return [
-            {
-                "id": row["id"],
-                "title": row["source_title"],
-                "excerpt": row["content"],
-            }
-            for row in matching_documents[:limit]
-        ]
-
-    deadline_filter = ""
-    deadline_parameters: list[object] = []
-    if course_id is not None:
-        deadline_filter = "AND dl.course_id = ?"
-        deadline_parameters.append(course_id)
-    try:
-        deadlines = fetch_all(
-            f"""
-            SELECT dl.id, dl.title, dl.due_date, dl.source_title
-            FROM deadlines AS dl
-            WHERE 1 = 1 {deadline_filter}
-            """,
-            tuple(deadline_parameters),
-            database_path,
-        )
-    except sqlite3.OperationalError as error:
-        if _database_is_uninitialized(error):
-            return []
-        raise
-
-    scored_deadlines = [
-        (
-            _score(query, row["title"], row["source_title"], row["due_date"]),
-            row,
-        )
-        for row in deadlines
-    ]
-    return [
-        {
-            "id": row["id"],
-            "title": row["source_title"],
-            "excerpt": f"{row['title']} deadline: {row['due_date']}",
-        }
-        for score, row in sorted(
-            scored_deadlines, key=lambda item: (-item[0], item[1]["id"])
-        )
-        if score > 0
-    ][:limit]
+    rows = fetch_all(
+        "SELECT id, content, source_title FROM documents" +
+        (" WHERE course_id = ?" if course_id is not None else "") + " ORDER BY id",
+        (course_id,) if course_id is not None else (), database_path,
+    )
+    sources = [{"id": row["id"], "title": row["source_title"], "excerpt": row["content"]}
+               for row in rows]
+    sources += [deadline_source(item) for item in list_deadlines(course_id, database_path=database_path)]
+    scored = [(_score(query, source["title"], source["excerpt"]), index, source)
+              for index, source in enumerate(sources)]
+    return [source for score, _, source in sorted(scored, key=lambda item: (-item[0], item[1]))
+            if score > 0][:limit]
 
 
 def list_deadlines(
@@ -161,21 +106,16 @@ def list_deadlines(
         course_filter = "WHERE d.course_id = ?"
         parameters = (course_id,)
 
-    try:
-        rows = fetch_all(
-            f"""
-            SELECT d.id, d.course_id, c.name AS course_name, d.title,
-                   d.due_date, d.source_title
-            FROM deadlines AS d
-            JOIN courses AS c ON c.id = d.course_id
-            {course_filter}
-            ORDER BY d.due_date ASC, d.id ASC
-            """,
-            parameters,
-            database_path,
-        )
-    except sqlite3.OperationalError as error:
-        if _database_is_uninitialized(error):
-            return []
-        raise
+    rows = fetch_all(
+        f"""
+        SELECT d.id, d.course_id, c.name AS course_name, d.title,
+               d.due_date, d.source_title
+        FROM deadlines AS d
+        JOIN courses AS c ON c.id = d.course_id
+        {course_filter}
+        ORDER BY d.due_date ASC, d.id ASC
+        """,
+        parameters,
+        database_path,
+    )
     return [dict(row) for row in rows]  # type: ignore[return-value]
