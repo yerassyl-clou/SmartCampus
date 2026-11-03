@@ -11,7 +11,11 @@ test('production ignores the demo flag and displays API failures without invente
       json: { detail: 'Provider unavailable' },
     })
   })
+  await page.route('**/api/deadlines', (route) =>
+    route.fulfill({ json: { items: [], total: 0 } })
+  )
   await page.goto('/')
+  await expect(page.getByRole('heading', { name: 'No deadlines to show' })).toBeVisible()
   await expect(page.getByText('Demo data · Mock mode')).toHaveCount(0)
   await page.getByRole('textbox').fill('Assignment deadline?')
   await page.getByRole('textbox').press('Enter')

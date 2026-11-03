@@ -7,7 +7,11 @@ test('explicit demo mode is labeled, returns fictional sources, and never calls 
   page.on('request', (request) => {
     if (request.url().endsWith('/api/chat')) requests++
   })
+  await page.route('**/api/deadlines', (route) =>
+    route.fulfill({ json: { items: [], total: 0 } })
+  )
   await page.goto('/')
+  await expect(page.getByRole('heading', { name: 'No deadlines to show' })).toBeVisible()
   await expect(page.getByText('Demo data · Mock mode')).toBeVisible()
   await page.getByRole('button', { name: /Stay ahead of deadlines/ }).click()
   await page.getByRole('textbox').press('Enter')

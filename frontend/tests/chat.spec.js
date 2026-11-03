@@ -23,7 +23,12 @@ async function ask(page, question = 'When is Assignment 2 due?') {
 }
 
 test.beforeEach(async ({ page }) => {
+  // Chat regressions do not depend on a running deadline backend.
+  await page.route('**/api/deadlines', (route) =>
+    route.fulfill({ json: { items: [], total: 0 } })
+  )
   await page.goto('/')
+  await expect(page.getByRole('heading', { name: 'No deadlines to show' })).toBeVisible()
 })
 
 test('welcome suggestions populate and focus the input without requesting an answer', async ({

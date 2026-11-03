@@ -17,6 +17,14 @@ export default defineConfig({
       use: { baseURL: 'http://127.0.0.1:5173' },
     },
     {
+      name: 'deadlines',
+      testMatch: 'deadlines.spec.js',
+      use: {
+        baseURL: 'http://127.0.0.1:5173',
+        timezoneId: 'America/Los_Angeles',
+      },
+    },
+    {
       name: 'demo',
       testMatch: 'demo.spec.js',
       use: { baseURL: 'http://127.0.0.1:5174' },

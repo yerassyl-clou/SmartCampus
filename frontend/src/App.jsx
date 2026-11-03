@@ -1,5 +1,6 @@
 import React from 'react'
 import ChatPanel from './components/ChatPanel.jsx'
+import DeadlinesPanel from './components/DeadlinesPanel.jsx'
 import Icon from './components/Icon.jsx'
 import { isMockChat } from './lib/chat.js'
 
@@ -32,6 +33,9 @@ export default function App() {
               <Icon name="chat" size={19} /> Academic assistant{' '}
               <span className="nav-dot" />
             </a>
+            <a className="nav-item deadlines-nav" href="#upcoming-deadlines">
+              <Icon name="clock" size={19} /> Upcoming deadlines
+            </a>
           </nav>
         </div>
         <div className="sidebar-guide">
@@ -62,33 +66,36 @@ export default function App() {
       </aside>
 
       <main className="workspace" id="main-content">
-        <header className="workspace-header">
-          <div className="breadcrumb">
-            <span>Workspace</span>
-            <span aria-hidden="true">/</span>
-            <strong>Academic assistant</strong>
-          </div>
-          <span className="workspace-label">
-            <Icon name="book" size={15} /> Student edition
-          </span>
-        </header>
-        <div className="page-heading">
-          <div>
-            <p className="eyebrow">A clearer campus day</p>
-            <h1>Academic assistant</h1>
-            <p>Your questions, connected to your course materials.</p>
-          </div>
-          {isMockChat && (
-            <span className="demo-badge">
-              <span /> Demo data · Mock mode
+        <div className="chat-view">
+          <header className="workspace-header">
+            <div className="breadcrumb">
+              <span>Workspace</span>
+              <span aria-hidden="true">/</span>
+              <strong>Academic assistant</strong>
+            </div>
+            <span className="workspace-label">
+              <Icon name="book" size={15} /> Student edition
             </span>
-          )}
+          </header>
+          <div className="page-heading">
+            <div>
+              <p className="eyebrow">A clearer campus day</p>
+              <h1>Academic assistant</h1>
+              <p>Your questions, connected to your course materials.</p>
+            </div>
+            {isMockChat && (
+              <span className="demo-badge">
+                <span /> Demo data · Mock mode
+              </span>
+            )}
+          </div>
+          <ChatPanel />
+          <footer className="workspace-footer">
+            SmartCampus helps you find information. Always check the original
+            course materials.
+          </footer>
         </div>
-        <ChatPanel />
-        <footer className="workspace-footer">
-          SmartCampus helps you find information. Always check the original
-          course materials.
-        </footer>
+        <DeadlinesPanel />
       </main>
     </div>
   )

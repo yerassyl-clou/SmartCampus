@@ -202,3 +202,53 @@ kbd { font: inherit; }
   .source-card h4, .source-card p { font-size: 12px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+
+/* Keep the chat's viewport-sized workspace; deadlines follow in page flow. */
+.workspace { height: auto; min-height: 0; }
+.chat-view { height: 100dvh; min-height: 740px; display: flex; flex-direction: column; flex-shrink: 0; }
+.sidebar { position: sticky; top: 0; height: 100dvh; }
+.sidebar-section nav { display: grid; gap: 8px; }
+.deadlines-nav { background: transparent; color: #70647d; }
+.deadlines-nav:hover { background: #f7f4fc; color: #5a45ac; }
+.deadlines-panel { margin: 12px 0 36px; padding: 25px; background: #fff; border: 1px solid #e4e1ec; border-radius: 15px; box-shadow: 0 5px 22px #32254f05; scroll-margin-top: 20px; }
+.deadlines-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.deadlines-heading { display: flex; gap: 12px; align-items: center; min-width: 0; }
+.deadlines-heading .eyebrow { font-size: 9px; margin-bottom: 3px; }
+.deadlines-heading h2 { font-size: 21px; line-height: 1.35; letter-spacing: -.5px; margin: 0; font-weight: 650; }
+.deadlines-description { color: var(--muted); font-size: 12px; margin: 15px 0 0; line-height: 1.7; }
+.refresh-button { display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; gap: 7px; min-height: 40px; padding: 8px 12px; border: 1px solid #ded6ee; border-radius: 7px; background: #fcfbfe; color: #5b4796; font-size: 12px; font-weight: 600; }
+.refresh-button:hover:enabled { background: #f1edfb; border-color: #c7b8e8; }
+.refresh-button:disabled { opacity: .65; }
+.deadlines-status { margin: 20px 0 0; padding: 16px; border-radius: 9px; background: #f8f6fc; color: #655779; font-size: 13px; }
+.deadlines-count { margin: 22px 0 12px; font-size: 11px; color: var(--muted); }
+.deadlines-count span { margin: 0 5px; }
+.deadline-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px; list-style: none; padding: 0; margin: 0; }
+.deadline-card { display: flex; flex-direction: column; min-width: 0; padding: 18px; border: 1px solid #e9e4f0; border-radius: 11px; background: #fdfcfe; overflow-wrap: anywhere; }
+.deadline-course { margin: 0 0 9px; color: #6d598c; font-size: 11px; font-weight: 600; line-height: 1.6; }
+.deadline-card h3 { margin: 0 0 13px; font-size: 15px; line-height: 1.6; font-weight: 600; color: #42354f; }
+.deadline-date { display: flex; align-items: center; gap: 7px; color: #5a4697; font-weight: 600; font-size: 12px; margin: auto 0 16px; }
+.deadline-source { display: flex; align-items: flex-start; gap: 7px; padding-top: 12px; margin: 0; border-top: 1px solid #ebe5f3; color: #70647d; font-size: 11px; line-height: 1.7; }
+.deadline-source svg { margin-top: 2px; }
+.deadline-error { margin-top: 20px; }
+.deadline-error .retry-button { min-height: 40px; }
+.deadlines-empty { text-align: center; padding: 35px 18px 20px; color: var(--muted); }
+.deadlines-empty .assistant-mark { margin: 0 auto 12px; }
+.deadlines-empty h3 { color: #51445f; font-size: 17px; margin: 0 0 7px; font-weight: 600; }
+.deadlines-empty p { max-width: 400px; margin: 0 auto; font-size: 12px; line-height: 1.8; }
+@media (max-width: 1100px) { .deadline-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 900px) { .chat-view { min-height: 800px; } .deadlines-panel { padding: 20px; } }
+@media (max-width: 600px) {
+  .sidebar { position: static; height: 66px; }
+  .sidebar-section nav { display: flex; gap: 7px; }
+  .chat-view { height: calc(100dvh - 66px); min-height: 700px; }
+  .deadlines-panel { padding: 18px 13px; border-radius: 12px; margin-top: 8px; margin-bottom: 24px; }
+  .deadlines-header { gap: 10px; }
+  .deadlines-heading { gap: 8px; }
+  .deadlines-heading h2 { font-size: 16px; }
+  .deadlines-heading .eyebrow { font-size: 8px; letter-spacing: 1px; }
+  .deadlines-heading .assistant-mark { display: none; }
+  .refresh-button { min-height: 44px; padding: 8px 10px; font-size: 11px; }
+  .deadlines-description { font-size: 11px; }
+  .deadline-list { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .deadline-card { padding: 16px; }
+}
