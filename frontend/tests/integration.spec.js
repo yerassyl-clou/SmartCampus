@@ -44,6 +44,7 @@ test('TC-08/09/10/12 real SQLite, deadline navigation/refresh, fallback, respons
   expect((await (await request.get('http://localhost:8000/api/deadlines?course_id=999')).json()).total).toBe(0)
   const general = await request.post('http://localhost:8000/api/chat', { data: { question: 'Show all deadlines' } })
   expect((await general.json()).sources).toHaveLength(6)
+  await page.clock.setFixedTime(new Date('2026-11-10T12:00:00+05:00'))
   await page.goto('/')
   await expect(page.locator('.deadline-card')).toHaveCount(6)
   for (const [question, fact] of [
@@ -61,11 +62,16 @@ test('TC-08/09/10/12 real SQLite, deadline navigation/refresh, fallback, respons
     expect(data.grounded).toBe(question.startsWith('What deadlines'))
     await expect(page.getByRole('article', { name: 'SmartCampus response' }).last()).toContainText(fact)
   }
-  await page.getByRole('link', { name: 'Upcoming deadlines', exact: true }).click()
-  await expect(page.getByRole('heading', { name: 'Upcoming deadlines', exact: true })).toBeInViewport()
+  await page.getByRole('link', { name: 'Course deadlines', exact: true }).click()
+  await expect(page.getByRole('heading', { name: 'Course deadlines', exact: true })).toBeInViewport()
   await page.getByRole('button', { name: 'Refresh deadlines' }).click()
   await expect(page.locator('.deadline-card')).toHaveCount(6)
-  await expect(page.locator('.deadline-card time')).toHaveText(['Nov 6, 2026','Nov 9, 2026','Nov 11, 2026','Nov 13, 2026','Nov 20, 2026','Nov 27, 2026'])
+  await expect(page.getByRole('list', { name: 'Upcoming deadlines' }).locator('time')).toHaveText([
+    'Nov 11, 2026', 'Nov 13, 2026', 'Nov 20, 2026', 'Nov 27, 2026',
+  ])
+  await expect(page.getByRole('list', { name: 'Past deadlines' }).locator('time')).toHaveText([
+    'Nov 6, 2026', 'Nov 9, 2026',
+  ])
   for (const width of [1440, 768, 375]) {
     await page.setViewportSize({ width, height: 1000 })
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)

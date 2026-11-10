@@ -1,0 +1,12 @@
+$ backend/.venv/bin/python -m pytest backend/tests -q
+........................................................................ [ 87%]
+..........                                                               [100%]
+82 passed in 0.87s
+
+$ git ls-files workflow/lock candidates
+
+$ seed repeatability and feedback preservation
+Seeded /var/folders/zy/2k2k2wxj0w78m0dz3fx8yzxr0000gn/T/tmp.LGQpmSsTRn/smartcampus.db: courses=3, deadlines=6, documents=6
+{'id': 1, 'response_id': '00000000-0000-4000-8000-000000000099', 'rating': 'helpful', 'issue_type': None, 'comment': None, 'source_ids': [1, -2], 'created_at': '2026-11-10T14:32:34.260396+00:00'}
+Seeded /var/folders/zy/2k2k2wxj0w78m0dz3fx8yzxr0000gn/T/tmp.LGQpmSsTRn/smartcampus.db: courses=3, deadlines=6, documents=6
+{'id': 1, 'response_id': '00000000-0000-4000-8000-000000000099', 'rating': 'helpful', 'issue_type': None, 'comment': None, 'source_ids': [1, -2], 'created_at': '2026-11-10T14:32:34.260396+00:00'}

@@ -1,0 +1,31 @@
+Seeded isolated SQLite: courses=3, deadlines=6, documents=6
+{"status":"ok","app":"SmartCampus"}
+Dashboard live GET: baseline placed 6 dates in Upcoming. Integrated app shows 4 Upcoming and 2 Past in chronological order.
+Chat HTTP 200: List upcoming deadlines {"grounded":true,"sourceIds":[-5,-2,-4,-6]}
+Chat HTTP 200: When is the Human-Computer Interaction Assignment 2 due? {"grounded":false,"sourceIds":[]}
+Feedback real HTTP 503: {"detail":"Feedback storage is temporarily unavailable. Please try again later."}
+Feedback real HTTP 201: {"id":1,"status":"saved"} {"id":2,"status":"saved"}
+Keyboard opened the category selector and submitted the form. A forced network interruption preserved the draft and UUID, with no false success. The next submission reached FastAPI and saved.
+No fatal JS errors. No horizontal overflow at 1440, 768 or 375 CSS px. Chromium 156.0.8078.4.
+{"status":"ok","app":"SmartCampus"}
+After API restart duplicate: 409 {"detail": "Feedback has already been submitted for this response."}
+Invalid UUID, rating, 501-character comment, and category: HTTP 422 each
+SQLite after restart: 2 original feedback rows and 6 deadlines. UUIDs, ratings, category, comment, signed source IDs and UTC timestamps verified.
+[
+  [
+    "7a7cf4fa-c970-44b6-b51b-e073dd0b188d",
+    "helpful",
+    null,
+    null,
+    "[-5,-2,-4,-6]",
+    "2026-11-10T18:06:31.809316+00:00"
+  ],
+  [
+    "41c63b1f-8f97-4da5-93fb-9ff83703ded0",
+    "not_helpful",
+    "missing_information",
+    "Please check the fictional assignment reference.",
+    "[]",
+    "2026-11-10T18:06:32.394719+00:00"
+  ]
+]

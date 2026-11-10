@@ -1,0 +1,6 @@
+Fresh seed: courses=3, deadlines=6, documents=6
+Chromium 156.0.8078.4: two real POSTs returned 201; saved state shown; distinct UUIDs and signed source IDs.
+Chat used a fictional fixture. GET deadlines and both POST feedback calls were live.
+Repeat seed: courses=3, deadlines=6, documents=6
+After backend restart and reseed: original two feedback rows and all six deadlines retained.
+Duplicate UUID returned 409 and invalid UUID returned 422 with no additional rows.

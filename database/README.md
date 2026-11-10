@@ -413,3 +413,19 @@ See [AI setup](../docs/AI_CHAT.md) for the server-side Groq configuration and
 Relative `SMARTCAMPUS_DB_PATH` values resolve from `backend/`, independent of the launch directory. Runtime reads do not create a missing database. Missing/uninitialized/corrupt data returns a controlled 503; an initialized empty database returns an empty result. The seed schema/data and original SIS89-02/03 authorship are preserved.
 
 Retrieval normalizes a small vocabulary of singular/plural terms, scores substantive keyword overlap, and considers both documents and deadline rows. Positive chat source IDs identify documents; negative source IDs identify deadlines (`-id`). The general deadline chat listing uses actual stored rows, explicitly labeled fictional and not personal enrollment. Upcoming queries use the stated inclusive Asia/Almaty reference date. No semantic search infrastructure was added.
+
+## SIS 10–11 feedback upgrade
+
+A fresh fictional seed creates the `feedback` table alongside the course data.
+Apply the additive schema directly to an existing SmartCampus database to keep
+its course records:
+
+```bash
+sqlite3 "$SMARTCAMPUS_DB_PATH" < database/schema.sql
+```
+
+This command is repeatable. Use an explicit absolute database path, and use
+`seed.py` only for the fictional fixture database. The app's
+`POST /api/feedback` route commits one row per response UUID. See the
+[implemented contract](../docs/sis1011/FEEDBACK_API_CONTRACT.md) and
+[upgrade and persistence results](../docs/sis1011/evidence/final-demo/SQLITE_INTEGRATION_RESULTS.md).

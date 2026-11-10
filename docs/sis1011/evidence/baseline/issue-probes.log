@@ -1,0 +1,18 @@
+Seeded <temporary-directory>/baseline.db: courses=3, deadlines=6, documents=6
+42dcac91995f5cd930af907716962d6e0f99154c
+2026-11-10 09:37:04 +05 (+0500)
+SC-ISS-002 Query: When is the Human-Computer Interaction Assignment 2 due?
+course_id = None : [(1, 'Mock Database Systems syllabus', 'Assignment 2 deadline: 2026-11-06. Submit a normalized schema and query plan.'), (-1, 'Mock Database Systems syllabus', 'Database Systems — Assignment 2 deadline: 2026-11-06')]
+course_id = 3 : []
+course_id = 1 : [(1, 'Mock Database Systems syllabus', 'Assignment 2 deadline: 2026-11-06. Submit a normalized schema and query plan.'), (-1, 'Mock Database Systems syllabus', 'Database Systems — Assignment 2 deadline: 2026-11-06')]
+SC-ISS-001 Browser heading: Upcoming deadlines
+Dashboard dates: [
+  '2026-11-06',
+  '2026-11-09',
+  '2026-11-11',
+  '2026-11-13',
+  '2026-11-20',
+  '2026-11-27'
+]
+SC-ISS-003 Suggested question: Where can I find information about course deadlines?
+Chat status: 200 body: {"answer":"I couldn't find this information in the available course materials.","sources":[],"grounded":false}
