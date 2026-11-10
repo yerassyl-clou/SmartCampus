@@ -1,18 +1,10 @@
 # CR-001 Change Impact Analysis
 
-**Status:** educational analysis for review; not an approved production
-change and not a signed client agreement.
+**Status** · CR-001-A approved the scope for the coursework implementation on 10 November 2026. The approval represents a simulated client decision.
 
-## Assumption and decision context
+## Decision context
 
-The repository does not contain a finalized CR-001 document. This analysis
-uses the pinned task scope as the working assumption: add anonymous, source-
-aware chat feedback persistence without storing identity or transcript data,
-while preserving the existing SQLite course/deadline/chat contract.
-
-Proposed decision: **approve for academic review, pending explicit approval
-from the simulated client/product owner and QA acceptance**. No production
-deployment or ClickUp status change is implied by this draft.
+The [change request](CHANGE_REQUEST_DOCUMENT.md) and backlog item PB-103 define the approved scope. The feature adds anonymous, source-aware chat feedback and preserves the existing SQLite course, deadline and chat interfaces. The academic approval covers implementation. The [final acceptance report](FINAL_ACCEPTANCE_REPORT.md) records the subsequent technical verification.
 
 ## Before and after
 
