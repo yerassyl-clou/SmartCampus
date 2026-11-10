@@ -53,4 +53,4 @@ Estimates are task-directory planning targets for related work. The issue follow
 ## Traceability
 
 - [Baseline case matrix](https://github.com/yerassyl-clou/SmartCampus/pull/6) and [issue log with repro evidence](https://github.com/yerassyl-clou/SmartCampus/pull/7).
-- [ClickUp SmartCampus task board](https://app.clickup.com/1100310000007240/v/l/li/1100310000045293) and [SIS1011-11 impact and backlog review](https://app.clickup.com/t/z8q7hbuc88). Board synchronization for this update is pending because the ClickUp MCP daily limit was reached.
+- [ClickUp SmartCampus task board](https://app.clickup.com/1100310000007240/v/l/li/1100310000045293) and [SIS1011-11 impact and backlog review](https://app.clickup.com/t/z8q7hbuc88). The PB-101–103 mapping was posted to SIS1011-09 after ClickUp access was restored. Card-level reconciliation remains open under SIS1011-11.
