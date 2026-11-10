@@ -1,40 +1,24 @@
 # New feature testing and acceptance
 
-[SIS1011-16 — New Feature Testing Report & Acceptance](https://app.clickup.com/t/z8q7hbuc8g) · [CR-001 and simulated approval](https://github.com/yerassyl-clou/SmartCampus/pull/8)
+[SIS1011-16 — New Feature Testing Report & Acceptance](https://app.clickup.com/t/z8q7hbuc8g) · [CR-001](CHANGE_REQUEST_DOCUMENT.md) · [Implemented API contract](FEEDBACK_API_CONTRACT.md)
 
-**State: integration blocked.** No reviewable heads for [SQLite / Gleb](https://app.clickup.com/t/z8q7hbuc8b), [FastAPI / Ratislav](https://app.clickup.com/t/z8q7hbuc8d) or [React / Danaya](https://app.clickup.com/t/z8q7hbuc8e) were present during the repository check. Reconcile with the [API contract task](https://app.clickup.com/t/z8q7hbuc89) before running integrated tests.
+**Technical acceptance PASS · 10 November 2026.** Real Chromium, FastAPI and the production SQLite helper. The baseline returned HTTP 404 for feedback and had no feedback table. [Baseline proof](evidence/feedback-feature/baseline-availability.log).
 
-## Executed precheck
+| ID | Expected | Executed result |
+| --- | --- | --- |
+| NFT-01 | Helpful saves one row without category. | PASS. Real browser POST returned 201, id 1, visible saved state and stored helpful rating. |
+| NFT-02 | Not helpful requires an allowed category. | PASS. Real browser stored missing_information. Route tests accepted all four supported values and rejected missing or invalid values. |
+| NFT-03 | Optional plain-text comment. Accept 500 code points and reject 501. | PASS. The browser retained and stored the submitted sample comment. Route and UI tests exercised blank, 500/501, markup and normalization cases. |
+| NFT-04 | Reject malformed UUID, non-v4 UUID, invalid types and rating. | PASS. Backend validation tests and live HTTP 422 probes produced zero invalid writes. |
+| NFT-05 | One record per UUID, even on retry or concurrent requests. | PASS. Browser kept one UUID per answer. API replay after restart returned 409. Canonicalization and concurrent duplicate tests preserved the first row. |
+| NFT-06 | Failure produces an accessible error and retry without a false save. | PASS. Aborted request and real SQLite unavailability both preserved the negative form. The real 503 included `feedback_unavailable`. Restoring the test file and retrying saved once. |
+| NFT-07 | Upgrade, restart and fictional reseed preserve feedback. | PASS. Two browser-created rows survived actual Uvicorn restart. Separate baseline upgrade preserved all course rows and repeat fixture seed preserved existing feedback. |
+| NFT-08 | Real UI → API → SQLite, with feedback associated with the correct answer. | PASS. Distinct UUIDs and matching signed source IDs were verified against each request and each row. The listing's source IDs were `[-5,-2,-4,-6]`. The fallback submitted `[]`. |
+| NFT-09 | Existing deadlines and chat remain compatible. | PASS. Existing OpenAPI chat properties, real deadline routes, deterministic chat and separate real Groq checks passed. |
+| NFT-10 | Keyboard, responsive layout, announcements and retry. | PASS. The real browser opened and submitted the form with Enter, focused the category and retried at 375×812. State, accessibility labels and in-flight guard passed the default suite. |
 
-On baseline `42dcac91995f5cd930af907716962d6e0f99154c` with a freshly seeded temporary SQLite DB, FastAPI TestClient returned 404 for a valid-looking Helpful POST, and the SQLite schema contained the original course tables with no feedback table. This confirms the baseline state before CR-001. [Precheck log](evidence/feedback-feature/baseline-availability.log)
+The assistant responses used real deterministic backend paths backed by the seeded database. A separate test run used live Groq for grounded questions and recovery. The feature stores anonymous feedback for review by the fictional client. It does not expose a public feedback reader. A client-generated UUID identifies the displayed answer within the session and supports deduplication. It does not authenticate the user or prove answer ownership.
 
-## Dependency check on 10 November
+The integration fix removed duplicate test DDL and routed validation tests through the production helper. Its SQLite connection now closes after each operation. The integrated browser suite also corrected a test that expected one global deadline order after the UI introduced two ordered groups.
 
-SIS1011-12–15 were To Do in ClickUp, with no linked implementation evidence in their comments or attachments. The repository had no matching implementation PR or branch. The existing 404 log still applies to current `main` at `42dcac9`.
-
-## Integration setup and evidence
-
-1. Pin the finalized contract and the three implementation heads. Inspect endpoint registration, request validation, persistence helper and uniqueness constraint, and the UI request builder before combining them.
-2. Use a newly seeded temporary database and a separate copy of an original-schema seed for the upgrade case. Start FastAPI with an explicit DB path and use deterministic chat or a local provider stub. Keep the production DB and external provider outside the run.
-3. Record the real browser request's response UUID and the HTTP status. Verify the matching row through a read-only SQLite query based on the implementation schema. Check the count before and after replay, restart and reseed. Use signed source IDs from the answer, including a negative deadline source ID and an empty list for fallback.
-4. For NFT-06, load an answer with the DB available, then make only the isolated DB unavailable for the next request. Verify the real 503 and absence of a phantom save. Restore availability and retry using the same response UUID. Record the row count before and after recovery.
-5. Capture the actual browser, HTTP and SQL results with fictional data, exact head SHAs and test IDs.
-
-## Integration scenarios
-
-Run on exact combined PR heads and a fresh fictional DB using real Chromium, local FastAPI and SQLite. Record OS, runtime, browser version, head SHAs, DB setup and command outcomes. Use a deterministic provider for source-backed chat or the deterministic chat listing and fallback. Keep separate logs and screenshots named by test ID under `evidence/feedback-feature/`.
-
-| ID | Input and steps | Expected result | Actual / status |
-| --- | --- | --- | --- |
-| NFT-01 | Rate a received answer Helpful with no category. | HTTP 201 and visible saved status. One row has rating helpful. | Awaiting integration / Not run |
-| NFT-02 | Choose Not helpful and Incorrect information. Repeat on separate answers for the other three categories. | Accepted category value is stored on each answer UUID. | Awaiting integration / Not run |
-| NFT-03 | Submit negative feedback with a blank comment and another with 500 plain-text characters. Repeat with 501 via API. | Blank and 500 accepted, submitted text persists, 501 rejected with 422. | Awaiting integration / Not run |
-| NFT-04 | POST invalid rating, malformed UUID and a non-v4 UUID, independently. | 422 per invalid payload and no row. | Awaiting integration / Not run |
-| NFT-05 | Attempt a second UI submission after save and replay the exact UUID via API. | UI prevents resend. Replay returns 409. SQLite still contains one row for the UUID. | Awaiting integration / Not run |
-| NFT-06 | Run against a DB path made unavailable after loading the page. Attempt submit, restore DB and retry. | Safe 503, visible recovery, no phantom success, one record after retry. | Awaiting integration / Not run |
-| NFT-07 | Save feedback, restart FastAPI using the same DB and repeat seed. Inspect the row after each step. Also test upgrade of a copy of the baseline seeded DB. | Feedback and course rows survive, and migration supports the original schema. | Awaiting integration / Not run |
-| NFT-08 | From the real browser submit feedback on an answer, record HTTP request/response and query SQLite by response UUID. | UI shows saved after 201. Stored rating, category, comment, source IDs and creation timestamp match. | Awaiting integration / Not run |
-| NFT-09 | Ask a supported question and an unsupported question, browse and refresh seeded deadlines, and run both suites. | Existing verified sources, fallback, deadline results and regression suites remain healthy. | Awaiting integration / Not run |
-| NFT-10 | At 375px, use Tab/Enter to open the form, select a category and submit. Repeat with recoverable failure. | Visible focus, labels and announced outcome, with usable retry and no overflow. | Awaiting integration / Not run |
-
-**Acceptance pending.** Record failures and exact retests before recommending acceptance. An intercepted browser test can verify state handling, while proof of storage requires a real response and a SQLite row. Client-generated UUIDs and unauthenticated submissions remain MVP limitations.
+[HTTP and SQLite log](evidence/final-demo/browser-feedback-http-sqlite.log) · [Actual storage 503](evidence/final-demo/screenshots/feedback-storage-unavailable.png) · [Mobile form](evidence/final-demo/screenshots/feedback-form-375.png) · [Saved state](evidence/final-demo/screenshots/feedback-saved.png) · [SQLite results](evidence/final-demo/SQLITE_INTEGRATION_RESULTS.md)

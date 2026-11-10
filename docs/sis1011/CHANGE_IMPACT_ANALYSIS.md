@@ -72,7 +72,7 @@ database/browser tests. Acceptance requires persistence after restart and
 repeat seed, no identity/transcript data, duplicate protection, and passing
 API/UI checks.
 
-The backlog entry for CR-001 is documented here because ClickUp cannot be
-updated from this environment. A project owner must copy this scope,
-assumptions, and pending-approval status to the shared board before treating
-the change as approved.
+The [versioned backlog](UPDATED_USER_STORIES_AND_BACKLOG.md) links PB-103 to the
+[simulated implementation approval](CHANGE_REQUEST_DOCUMENT.md). The ClickUp
+acceptance review and board closure remain pending. See the
+[acceptance handoff](CLICKUP_ACCEPTANCE_HANDOFF.md).

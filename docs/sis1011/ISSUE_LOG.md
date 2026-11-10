@@ -6,9 +6,9 @@ All three issues were reproduced on `42dcac91995f5cd930af907716962d6e0f99154c` w
 
 | Priority | Issue | Type / severity | User impact | Owner / task | Status |
 | --- | --- | --- | --- | --- | --- |
-| P1 | SC-ISS-002 | Retrieval defect / high | An unrelated course becomes eligible evidence for a deadline question | [Ratislav, SIS1011-07](https://app.clickup.com/t/z8q7hbuc7t) | Confirmed, selected. Fix PR and retest pending. |
-| P1 | SC-ISS-001 | Dashboard usability defect / medium | Past dates appear under “Upcoming deadlines”, misleading a student planning upcoming work | [Danaya, SIS1011-06](https://app.clickup.com/t/z8q7hbuc7r) | Confirmed, selected. Fix PR and retest pending. |
-| P2 | SC-ISS-003 | Chat onboarding usability defect / low | The built-in deadline prompt leads to a dead end although seeded deadline data is available | [Yerassyl, SIS1011-09 backlog](https://app.clickup.com/t/z8q7hbuc7v), proposed UI follow-up | Confirmed, deferred. Fix PR and retest pending. |
+| P1 | SC-ISS-002 | Retrieval defect / high | An unrelated course becomes eligible evidence for a deadline question | [Ratislav, SIS1011-07](https://app.clickup.com/t/z8q7hbuc7t) | Fixed in [PR #14](https://github.com/yerassyl-clou/SmartCampus/pull/14). Integrated retest passed. |
+| P1 | SC-ISS-001 | Dashboard usability defect / medium | Past dates appear under “Upcoming deadlines”, misleading a student planning upcoming work | [Danaya, SIS1011-06](https://app.clickup.com/t/z8q7hbuc7r) | Fixed in [PR #18](https://github.com/yerassyl-clou/SmartCampus/pull/18). Integrated retest passed. |
+| P2 | SC-ISS-003 | Chat onboarding usability defect / low | The built-in deadline prompt leads to a dead end although seeded deadline data is available | [Yerassyl, SIS1011-09 backlog](https://app.clickup.com/t/z8q7hbuc7v), proposed UI follow-up | Confirmed, deferred in PB-104. |
 
 P1 items affect the correctness of deadlines or the evidence used to answer coursework questions. P2 is recoverable through the dashboard or a supported question.
 
@@ -34,3 +34,5 @@ P1 items affect the correctness of deadlines or the evidence used to answer cour
 - **Proposed follow-up** Prefill a supported listing intent or link to the dashboard. Retest the actual built-in interaction on a seeded DB. Keep safe fallback for unsupported questions.
 
 [Baseline test matrix and case IDs](https://github.com/yerassyl-clou/SmartCampus/blob/5b4c39627f5f08b367681fa2500fc81c63102762/docs/sis1011/TEST_CASES_AND_RESULTS.md) · [Independent improvement verification, SIS1011-08](https://app.clickup.com/t/z8q7hbuc7u)
+
+[Integrated Before/After and regression results](IMPROVEMENT_QA_REPORT.md).

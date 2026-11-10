@@ -2,13 +2,13 @@
 
 [SIS1011-12](https://app.clickup.com/t/z8q7hbuc89) · Owner: Ratislav · 10 November 2026
 
-Aligned with page 01 of the shared ClickUp playbook. This document defines the draft integration interface for SIS1011-13/14/15; merge requires Yerassyl's review and the documented academic CR-001 approval. It does not record client approval.
+Aligned with page 01 of the shared ClickUp playbook. This document records the implemented interface for SIS1011-13/14/15 and traces to the simulated academic CR-001 approval.
 
 ## Existing interfaces and ownership
 
 Inspected main `42dcac91995f5cd930af907716962d6e0f99154c`: `backend/app/main.py`, `schemas.py`, `routes/chat.py`, `db.py`, `database/schema.sql`, `seed.py`, `frontend/src/components/ChatPanel.jsx` and `frontend/src/lib/chat.js`.
 
-POST `/api/chat` continues to return exactly `answer`, `sources`, `grounded`. Feedback adds no server response ID to that API. Positive source IDs are documents; negative IDs are deadline rows. **The existing frontend response parser drops source IDs:** Danaya must preserve each validated signed integer `source.id` when mapping sources. Keep the existing title/excerpt behavior. Missing/invalid IDs must be omitted from feedback metadata rather than fabricated.
+POST `/api/chat` continues to return exactly `answer`, `sources`, `grounded`. Feedback adds no server response ID to that API. Positive source IDs are documents; negative IDs are deadline rows. The integrated frontend preserves valid signed `source.id` values separately from display titles and excerpts. It omits absent or invalid IDs.
 
 Ratislav owns feedback request/response models and FastAPI route registration; Gleb owns DDL, migration and persistence helper; Danaya owns UI and fetch helper. Current main has no feedback table/helper/UI. The helper interface below is proposed for parallel development and was posted to Gleb's task; production persistence requires his reviewed implementation.
 
@@ -57,11 +57,11 @@ Other network/unreadable-response failures enter an error state with retry using
 
 At assistant answer receipt: create stable `response_id`, copy valid source IDs, state **idle**. Helpful submits immediately. Not helpful enters **editing** with an accessible category selector and optional 500-character comment. Submit requires a category; Enter/button duplicate activation must share a synchronous in-flight guard.
 
-`idle/editing → pending → saved` on 201; `pending → already_submitted` on 409; `pending → error` on network/503/422. Disable controls during pending. On error preserve selection/comment/UUID, allow correction or retry; on success/duplicate show an announced status. Keep feedback state per message, source cards and chat history intact, and labels/error controls usable at 375px. Browser accessibility and real UI→API→DB acceptance are SIS1011-15/16 responsibilities, not established by this document.
+`idle/editing → pending → saved` on 201; `pending → already_submitted` on 409; `pending → error` on network/503/422. Disable controls during pending. On error preserve selection/comment/UUID, allow correction or retry; on success/duplicate show an announced status. Keep feedback state per message, source cards and chat history intact, and labels/error controls usable at 375px. See the [executed acceptance report](NEW_FEATURE_TESTING_REPORT.md) for keyboard, responsive and browser-to-database checks.
 
 ## Persistence interface for Gleb
 
-Proposed module: `backend/app/feedback_store.py`:
+Implemented module: `backend/app/feedback_store.py`:
 
 ```python
 class DuplicateFeedback(Exception): ...
@@ -73,9 +73,9 @@ def save_feedback(*, response_id: str, rating: str,
 
 Input is already validated/canonicalized plain data. The helper uses `SMARTCAMPUS_DB_PATH` consistently with `app.db`, parameterized atomic insert and a transaction. It serializes source IDs as a JSON array, creates a UTC `created_at` timestamp, commits before returning the row ID, raises `DuplicateFeedback` **only** for duplicate response_id, and translates other database/migration/permission/lock failures into `app.db.DatabaseUnavailable` without raw exception text. Route maps these to 409/503 with the safe messages above.
 
-Table fields: integer primary key `id`, unique/non-null canonical `response_id`, `rating`, nullable `issue_type`/`comment`, JSON text `source_ids`, UTC `created_at`. Defensive DB constraints should mirror ratings/category/length rules. Additive, idempotent migration must work for fresh and existing seeded DBs. Do not delete feedback in `seed.py` or add foreign keys to course rows that seeding replaces. Do not silently create empty databases on requests. Verify re-seeding/restart retention in Gleb's tests.
+Table fields: integer primary key `id`, unique/non-null canonical `response_id`, `rating`, nullable `issue_type`/`comment`, JSON text `source_ids`, UTC `created_at`. FastAPI enforces ratings, category and comment length. SQLite enforces the canonical response UUID uniqueness constraint. Additive, idempotent migration must work for fresh and existing seeded DBs. Do not delete feedback in `seed.py` or add foreign keys to course rows that seeding replaces. Do not silently create empty databases on requests. Verify re-seeding/restart retention in Gleb's tests.
 
-If the helper is absent, the route must remain importable and return controlled 503 for valid submissions. Route tests may inject an interface-compatible SQLite test helper, but must explicitly label that harness and must not claim the production helper or migration is implemented. Integration must reconcile the module/function names with Gleb before merge. Do not rewrite Gleb's files.
+If the helper is absent, the route must remain importable and return controlled 503 for valid submissions. The integrated route tests run against the production store and the database created from the shared schema.
 
 ## Acceptance scenarios
 

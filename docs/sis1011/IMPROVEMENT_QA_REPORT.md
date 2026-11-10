@@ -2,28 +2,17 @@
 
 [SIS1011-08 — Improvement Regression QA & Before/After](https://app.clickup.com/t/z8q7hbuc7u)
 
-**State: baseline verified, fixed revisions pending.** The precheck found no reviewable UI or backend fix PR. Baseline is `42dcac91995f5cd930af907716962d6e0f99154c`. All data is fictional. [Baseline matrix and suites](https://github.com/yerassyl-clou/SmartCampus/pull/6) · [Issue log and actual Before evidence](https://github.com/yerassyl-clou/SmartCampus/pull/7)
+**Technical acceptance PASS · 10 November 2026.** Baseline `42dcac91995f5cd930af907716962d6e0f99154c`. Both changes ran together through real Chromium, FastAPI and SQLite with fictional course data. Board acceptance is tracked separately.
 
-| Retest | Issue and owner | Observed Before | Fixed revision and observed After |
+| Retest | Expected | Baseline observation | Integrated observation |
 | --- | --- | --- | --- |
-| IMP-DASH-01 | SC-ISS-001, [Danaya / SIS1011-06](https://app.clickup.com/t/z8q7hbuc7r) | Chromium at 1440×1000 and Asia/Almaty on 10 Nov 2026 rendered 6 and 9 Nov under Upcoming with four future dates. | Pending UI PR and commit. Retest blocked. |
-| IMP-RET-01 | SC-ISS-002, [Ratislav / SIS1011-07](https://app.clickup.com/t/z8q7hbuc7t) | On the fictional DB, “When is the Human-Computer Interaction Assignment 2 due?” returned Database Systems sources 1 and -1 with no course ID. Explicit course 3 returned none. | Pending backend PR and commit. Retest blocked. |
+| IMP-DASH-01 / SC-ISS-001 / [PR #18](https://github.com/yerassyl-clou/SmartCampus/pull/18) | Campus dates before today belong in Past. Today remains Upcoming. Keep course, date and source labels. | Both expired dates appeared in the same Upcoming list as four future dates. | 6 and 9 November appeared under Past. 11, 13, 20 and 27 November appeared under Upcoming. Both groups were ordered and all six records remained available. |
+| IMP-RET-01 / SC-ISS-002 / [PR #14](https://github.com/yerassyl-clou/SmartCampus/pull/14) | The named HCI course cannot use Database Systems material. A matching Database Systems control still gets evidence. | HCI query admitted Database Systems IDs `[1,-1]`. | Same query returned no candidates. Real POST returned 200 with grounded=false and zero sources. Database Systems control still returned `[1,-1]`. |
 
-## 10 November continuation check
+## Coverage
 
-Both implementation tasks still showed To Do in ClickUp, with no attached artifacts or comments. The repository had no SIS1011-06 or SIS1011-07 branch or PR. The After gate remains open.
+- Dashboard Before/After used the same dataset and fixed browser time, 10 November at 12:00 Asia/Almaty, at 1440×900. The timezone boundary regression used Los Angeles browser time and the Asia/Almaty calendar. Loading, empty, invalid and failed data states, refresh, retry, stable date sorting and responsive layout passed. Real keyboard refresh returned 200.
+- Retrieval tests covered explicit course filtering, named-course scope, verified excerpts, wrong source rejection and safe fallback. The seven real Groq question checks confirmed expected exact phrases and source references. The unmatched HCI case took the backend fallback path without a provider request.
+- Complete integrated regression passed 126 backend tests, 70 default browser tests and nine live browser tests. SC-ISS-003 remains deferred in the backlog.
 
-The [baseline replay](evidence/improvements-before-after/baseline-replay.log) used application source matching `42dcac9` and a fresh fictional DB:
-
-- IMP-DASH-01 used real Chromium at 1440×1000 with the clock fixed to 10 November in Asia/Almaty. The live local API returned six deadlines, and the browser rendered both past dates under Upcoming.
-- IMP-RET-01 returned candidates `1` and `-1` for the HCI question with no course filter. With a stub that selected the highest-ranked exact excerpt, the chat API returned HTTP 200 and grounded source `1` from Database Systems. Explicit HCI course ID 3 returned the fallback with zero sources, and the Database Systems positive control kept source `1`. The stub demonstrates the API consequence if an eligible wrong-course source is selected.
-
-## Retest procedure
-
-1. Fetch both PRs by their head SHAs. Read their diff and test changes, then combine the heads on an isolated checkout. Record individual and integrated SHAs, any file conflicts and any interface issues. Keep `main` unchanged during the review.
-2. For IMP-DASH-01, seed the same data. Fix the reference date to 10 November 2026 in Asia/Almaty. Compare the dashboard heading, date labels and ordering. Exercise yesterday, today and tomorrow. Confirm all six rows remain available with sources and that 375px, 768px and desktop views, refresh and retry work. Capture the same viewport before and after.
-3. For IMP-RET-01, repeat the mismatched course question and the matching Database Systems control. Verify explicit course filters, absence of unrelated IDs in the mismatched case, no provider invocation for a zero-match fallback, and preservation of safe error and exact-quote validation. Compare retrieval IDs and HTTP responses using a deterministic provider.
-4. Run `python -m pytest backend/tests -vv`, `npm ci`, `npm run build` and `npm test`. Inspect app compatibility via real seeded FastAPI/SQLite and capture logs or screenshots in `evidence/improvements-before-after/`.
-5. Record actual result, outcome, PR, commit and evidence per issue. Update the Issue Log once its source branch is available for a coordinated edit. Leave both issues open until their retests pass.
-
-**Acceptance pending.** The baseline evidence can be reviewed now. Both fix PRs and their matching After evidence are required for acceptance.
+[Before](evidence/final-demo/screenshots/dashboard-before.png) · [After](evidence/final-demo/screenshots/dashboard-after.png) · [Candidate ID replay](evidence/improvements-before-after/SC-ISS-002-final-replay.log) · [Commands and full results](evidence/final-demo/FINAL_E2E_RESULTS.md)

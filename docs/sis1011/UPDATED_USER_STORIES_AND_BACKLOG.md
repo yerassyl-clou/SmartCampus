@@ -44,9 +44,9 @@ Estimates are task-directory planning targets for related work. The issue follow
 
 | ID | Story / priority | Owner and ClickUp card | Value and acceptance | Planning estimate | Delivery state |
 | --- | --- | --- | --- | --- | --- |
-| PB-101 | US-DASH-01 / Must Have | [Danaya, SIS1011-06](https://app.clickup.com/t/z8q7hbuc7r) | Trustworthy dashboard dates. SC-ISS-001, IMP-DASH-01 | 105 min | Board last seen To Do. QA [SIS1011-08](https://app.clickup.com/t/z8q7hbuc7u) pending. |
-| PB-102 | US-RET-01 / Must Have | [Ratislav, SIS1011-07](https://app.clickup.com/t/z8q7hbuc7t) | Prevent unrelated course evidence. SC-ISS-002, IMP-RET-01 | 105 min | Board last seen To Do. Independent QA pending. |
-| PB-103 | US-FB-01 / Must Have for SIS 10–11 | [Gleb, storage](https://app.clickup.com/t/z8q7hbuc8b), [Ratislav, API](https://app.clickup.com/t/z8q7hbuc8d), [Danaya, UI](https://app.clickup.com/t/z8q7hbuc8e), [Yerassyl, QA](https://app.clickup.com/t/z8q7hbuc8g) | Collect reliability signals. CR-001, NFT-01–10 | 145/130/145/105 min respectively | [CR-001-A approved for academic implementation](https://github.com/yerassyl-clou/SmartCampus/pull/8). Acceptance pending. Board last seen To Do. |
+| PB-101 | US-DASH-01 / Must Have | [Danaya, SIS1011-06](https://app.clickup.com/t/z8q7hbuc7r) | Trustworthy dashboard dates. SC-ISS-001, IMP-DASH-01 | 105 min | Implemented and verified. See [IMP-DASH-01](IMPROVEMENT_QA_REPORT.md). |
+| PB-102 | US-RET-01 / Must Have | [Ratislav, SIS1011-07](https://app.clickup.com/t/z8q7hbuc7t) | Prevent unrelated course evidence. SC-ISS-002, IMP-RET-01 | 105 min | Implemented and verified. See [IMP-RET-01](IMPROVEMENT_QA_REPORT.md). |
+| PB-103 | US-FB-01 / Must Have for SIS 10–11 | [Gleb, storage](https://app.clickup.com/t/z8q7hbuc8b), [Ratislav, API](https://app.clickup.com/t/z8q7hbuc8d), [Danaya, UI](https://app.clickup.com/t/z8q7hbuc8e), [Yerassyl, QA](https://app.clickup.com/t/z8q7hbuc8g) | Collect reliability signals. CR-001, NFT-01–10 | 145/130/145/105 min respectively | [CR-001-A approved for academic implementation](https://github.com/yerassyl-clou/SmartCampus/pull/8). Implemented and verified. See [NFT-01–10](NEW_FEATURE_TESTING_REPORT.md). |
 | PB-104 | US-CHAT-01 follow-up / Should Have | [Yerassyl, SIS1011-09 triage](https://app.clickup.com/t/z8q7hbuc7v) | Improve first-use success. SC-ISS-003, EXP-CHAT-01 | 30 min rough estimate | Deferred from the two selected improvements. No fix task assigned. |
 | PB-105 | US-DASH-01 optional course filter / Could Have | [Yerassyl, SIS1011-09 triage](https://app.clickup.com/t/z8q7hbuc7v) | Reduce scanning when more fictional courses exist. If scheduled, selected course shows only its rows, clear restores all rows. | Unestimated | Deferred. No implementation task assigned. |
 
@@ -54,3 +54,5 @@ Estimates are task-directory planning targets for related work. The issue follow
 
 - [Baseline case matrix](https://github.com/yerassyl-clou/SmartCampus/pull/6) and [issue log with repro evidence](https://github.com/yerassyl-clou/SmartCampus/pull/7).
 - [ClickUp SmartCampus task board](https://app.clickup.com/1100310000007240/v/l/li/1100310000045293) and [SIS1011-11 impact and backlog review](https://app.clickup.com/t/z8q7hbuc88). The PB-101–103 mapping was posted to SIS1011-09 after ClickUp access was restored. Card-level reconciliation remains open under SIS1011-11.
+
+ClickUp task closures remain pending because of the daily connector limit. See the [acceptance handoff](CLICKUP_ACCEPTANCE_HANDOFF.md).
