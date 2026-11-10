@@ -65,6 +65,4 @@ repeat seed, no identity/transcript data, duplicate protection, and passing
 API/UI checks.
 
 The [versioned backlog](UPDATED_USER_STORIES_AND_BACKLOG.md) links PB-103 to the
-[simulated implementation approval](CHANGE_REQUEST_DOCUMENT.md). The ClickUp
-acceptance review and board closure remain pending. See the
-[acceptance handoff](CLICKUP_ACCEPTANCE_HANDOFF.md).
+[simulated implementation approval](CHANGE_REQUEST_DOCUMENT.md). The [ClickUp closure record](CLICKUP_ACCEPTANCE_HANDOFF.md) confirms acceptance.
