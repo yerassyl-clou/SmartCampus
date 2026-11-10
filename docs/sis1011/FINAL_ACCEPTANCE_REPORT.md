@@ -2,7 +2,7 @@
 
 10 November 2026 · Reviewer account `yerassyl-clou` · [Integration PR #22](https://github.com/yerassyl-clou/SmartCampus/pull/22)
 
-**Technical acceptance PASS. Administrative acceptance remains open.** The review integrated all contributor heads as parents, reconciled overlapping test and persistence changes, and preserved original authorship. The product and defense package merged into `main` at [`47a562a4d9eceec7d42f0637de1fd65154b27b19`](https://github.com/yerassyl-clou/SmartCampus/commit/47a562a4d9eceec7d42f0637de1fd65154b27b19). The full backend, default browser and live browser suites, build and isolated feedback E2E passed again on that revision. [PR review](FINAL_PR_REVIEW.md) · [Submission checklist](FINAL_SUBMISSION_CHECKLIST.md).
+**Technical and administrative acceptance PASS.** The review integrated all contributor heads as parents, reconciled overlapping test and persistence changes, and preserved original authorship. The product and defense package merged into `main` at [`47a562a4d9eceec7d42f0637de1fd65154b27b19`](https://github.com/yerassyl-clou/SmartCampus/commit/47a562a4d9eceec7d42f0637de1fd65154b27b19). The full backend, default browser and live browser suites, build and isolated feedback E2E passed again on that revision. [PR review](FINAL_PR_REVIEW.md) · [Submission checklist](FINAL_SUBMISSION_CHECKLIST.md).
 
 | Gate | Result | Evidence |
 | --- | --- | --- |
@@ -16,7 +16,7 @@
 | Full regression and real app | PASS | 126 backend, 70 browser regression and nine live browser tests. [Runtime proof](evidence/final-demo/FINAL_E2E_RESULTS.md). |
 | Commercial consistency | PASS | $1,070 illustrative labor plus $107 contingency. $1,177 one-off total, five working days, installments $470.80/$470.80/$235.40 and 14-day warranty. Recurring service is separate. [Offer](COMMERCIAL_OFFER.md) · [Contract](FIXED_PRICE_CONTRACT.md). |
 | English editable deck, evidence, notes and animations | PASS | Ten slides, genuine images and native effects verified in PowerPoint. [QA](PRESENTATION_QA.md). |
-| Board acceptance and synchronized task status | FAIL · pending | Yerassyl2 ClickUp MCP rejected task retrieval and writes with `RATE_LIMIT_EXCEEDED`. Review notes and next steps are in the [handoff](CLICKUP_ACCEPTANCE_HANDOFF.md). |
+| Board acceptance and synchronized task status | PASS | Verified Done for all 20 tagged tasks after posting acceptance comments through Babayev Yerassyl’s primary ClickUp account. [Closure record](CLICKUP_ACCEPTANCE_HANDOFF.md). |
 | Four-person timed rehearsal | PASS · owner confirmed | The project owner confirmed that all four presenters took part in the ten-minute rehearsal. [Script](FINAL_PRESENTATION_SCRIPT.md). |
 
 The deadline chat suggestion (SC-ISS-003) remains deferred. The provider-free fallback, local educational data and client-generated UUID boundary are documented. No production deployment or real university data was used.

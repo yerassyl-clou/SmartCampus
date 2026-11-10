@@ -1,4 +1,33 @@
-# ClickUp final acceptance handoff
+# ClickUp final acceptance record
+
+Babayev Yerassyl (ClickUp Primary, user ID `308552668`) posted an acceptance comment on each of the 20 tagged tasks and moved them to Done. A fresh list read confirmed all 20 in Done. The project owner confirmed the four-person rehearsal. The work was accepted against [the verified product](https://github.com/yerassyl-clou/SmartCampus/pull/22), [the final rerun](https://github.com/yerassyl-clou/SmartCampus/pull/23), and [the CR-001 reconciliation](https://github.com/yerassyl-clou/SmartCampus/pull/24).
+
+| Task | Verified status | Acceptance comment ID |
+| --- | --- | --- |
+| [SIS1011-01](https://app.clickup.com/t/z8q7hbuc7k) | Done | `1100310000175887` |
+| [SIS1011-02](https://app.clickup.com/t/z8q7hbuc7m) | Done | `1100310000175889` |
+| [SIS1011-03](https://app.clickup.com/t/z8q7hbuc7n) | Done | `1100310000175888` |
+| [SIS1011-04](https://app.clickup.com/t/z8q7hbuc7p) | Done | `1100310000175890` |
+| [SIS1011-05](https://app.clickup.com/t/z8q7hbuc7q) | Done | `1100310000175891` |
+| [SIS1011-06](https://app.clickup.com/t/z8q7hbuc7r) | Done | `1100310000175892` |
+| [SIS1011-07](https://app.clickup.com/t/z8q7hbuc7t) | Done | `1100310000175893` |
+| [SIS1011-08](https://app.clickup.com/t/z8q7hbuc7u) | Done | `1100310000175894` |
+| [SIS1011-09](https://app.clickup.com/t/z8q7hbuc7v) | Done | `1100310000175895` |
+| [SIS1011-10](https://app.clickup.com/t/z8q7hbuc7w) | Done | `1100310000175896` |
+| [SIS1011-11](https://app.clickup.com/t/z8q7hbuc88) | Done | `1100310000175897` |
+| [SIS1011-12](https://app.clickup.com/t/z8q7hbuc89) | Done | `1100310000175898` |
+| [SIS1011-13](https://app.clickup.com/t/z8q7hbuc8b) | Done | `1100310000175899` |
+| [SIS1011-14](https://app.clickup.com/t/z8q7hbuc8d) | Done | `1100310000175900` |
+| [SIS1011-15](https://app.clickup.com/t/z8q7hbuc8e) | Done | `1100310000175901` |
+| [SIS1011-16](https://app.clickup.com/t/z8q7hbuc8g) | Done | `1100310000175902` |
+| [SIS1011-17](https://app.clickup.com/t/z8q7hbuc8j) | Done | `1100310000175903` |
+| [SIS1011-18](https://app.clickup.com/t/z8q7hbuc8m) | Done | `1100310000175905` |
+| [SIS1011-19](https://app.clickup.com/t/z8q7hbuc8p) | Done | `1100310000175904` |
+| [SIS1011-20](https://app.clickup.com/t/z8q7hbuc8r) | Done | `1100310000175906` |
+
+The original `Yerassyl2` daily quota delayed the board update. Danaya’s connection supplied the task criteria, dependencies and comments for review. The project owner’s primary account recorded the delayed start comment on SIS1011-20 (`1100310000175886`) and performed all acceptance writes.
+
+## Earlier handoff snapshot
 
 Verified connector account `Yerassyl2`, ID `252180871`. The last successful tagged-list read returned 20 tasks. The daily MCP quota reached 100/100 before full task reads could complete. The initial SIS1011-20 start comment failed, and the start status write was held. A 23:05 Asia/Almaty recheck returned `RATE_LIMIT_EXCEEDED` with an approximately 12-hour retry interval, beyond the submission deadline. No comments or status transitions were confirmed. These are last-observed statuses and proposed review notes.
 
