@@ -252,3 +252,28 @@ kbd { font: inherit; }
   .deadline-list { grid-template-columns: minmax(0, 1fr); gap: 10px; }
   .deadline-card { padding: 16px; }
 }
+
+.answer-feedback {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.answer-feedback p { margin: 6px 0; }
+.answer-feedback form { display: grid; gap: 6px; margin-top: 8px; }
+.answer-feedback label { font-weight: 600; }
+.feedback-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.answer-feedback button, .answer-feedback select, .answer-feedback textarea {
+  border: 1px solid #b7acc9;
+  border-radius: 8px;
+  background: white;
+  color: #42354f;
+  font: inherit;
+  padding: 7px 10px;
+  min-width: 0;
+  max-width: 100%;
+}
+.answer-feedback button { cursor: pointer; }
+.answer-feedback button:disabled { cursor: default; opacity: .65; }
+.answer-feedback :focus-visible { outline: 2px solid #7052a3; outline-offset: 2px; }
+.answer-feedback [role="alert"] { color: #9a2440; }

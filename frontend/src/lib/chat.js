@@ -15,15 +15,17 @@ function readChatResponse(data) {
     )
   }
 
+  const sourceIds = []
   const sources = (data.sources ?? []).flatMap((source) => {
     if (!source || typeof source !== 'object') return []
+    if (Number.isSafeInteger(source.id) && source.id !== 0) sourceIds.push(source.id)
     const title = typeof source.title === 'string' ? source.title.trim() : ''
     const excerpt =
       typeof source.excerpt === 'string' ? source.excerpt.trim() : ''
     // Preserve any usable details without inventing missing titles or links.
     return title || excerpt ? [{ title, excerpt }] : []
   })
-  return { answer: data.answer, grounded: data.grounded, sources }
+  return { answer: data.answer, grounded: data.grounded, sources, sourceIds }
 }
 
 const serviceErrors = {

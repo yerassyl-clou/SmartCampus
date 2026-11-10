@@ -1,0 +1,3 @@
+Chromium 156.0.8078.4 2026-11-10T14:33:26.092Z
+PASS: real POST through Vite proxy to FastAPI PR #16 returned 503 feedback_unavailable twice, preserved UUID and signed IDs, showed Retry without a saved state.
+Chat response was a browser fixture. The feedback POST was not intercepted. Production SQLite persistence was unavailable and was not tested.
