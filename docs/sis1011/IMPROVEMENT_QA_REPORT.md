@@ -9,6 +9,15 @@
 | IMP-DASH-01 | SC-ISS-001, [Danaya / SIS1011-06](https://app.clickup.com/t/z8q7hbuc7r) | Chromium at 1440×1000 and Asia/Almaty on 10 Nov 2026 rendered 6 and 9 Nov under Upcoming with four future dates. | Pending UI PR and commit. Retest blocked. |
 | IMP-RET-01 | SC-ISS-002, [Ratislav / SIS1011-07](https://app.clickup.com/t/z8q7hbuc7t) | On the fictional DB, “When is the Human-Computer Interaction Assignment 2 due?” returned Database Systems sources 1 and -1 with no course ID. Explicit course 3 returned none. | Pending backend PR and commit. Retest blocked. |
 
+## 10 November continuation check
+
+Both implementation tasks still showed To Do in ClickUp, with no attached artifacts or comments. The repository had no SIS1011-06 or SIS1011-07 branch or PR. The After gate remains open.
+
+The [baseline replay](evidence/improvements-before-after/baseline-replay.log) used application source matching `42dcac9` and a fresh fictional DB:
+
+- IMP-DASH-01 used real Chromium at 1440×1000 with the clock fixed to 10 November in Asia/Almaty. The live local API returned six deadlines, and the browser rendered both past dates under Upcoming.
+- IMP-RET-01 returned candidates `1` and `-1` for the HCI question with no course filter. With a stub that selected the highest-ranked exact excerpt, the chat API returned HTTP 200 and grounded source `1` from Database Systems. Explicit HCI course ID 3 returned the fallback with zero sources, and the Database Systems positive control kept source `1`. The stub demonstrates the API consequence if an eligible wrong-course source is selected.
+
 ## Retest procedure
 
 1. Fetch both PRs by their head SHAs. Read their diff and test changes, then combine the heads on an isolated checkout. Record individual and integrated SHAs, any file conflicts and any interface issues. Keep `main` unchanged during the review.
