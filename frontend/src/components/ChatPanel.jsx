@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { isMockChat, requestChat } from '../lib/chat.js'
 import Icon from './Icon.jsx'
+import AnswerFeedback from './AnswerFeedback.jsx'
 
 const suggestions = [
   {
@@ -115,6 +116,9 @@ function Message({ message }) {
             </section>
           )}
         </div>
+        {assistant && !isMockChat && message.responseId && (
+          <AnswerFeedback responseId={message.responseId} sourceIds={message.sourceIds} />
+        )}
       </div>
     </article>
   )
@@ -169,7 +173,12 @@ export default function ChatPanel({ courseId }) {
         signal: controller.signal,
       })
       if (!controller.signal.aborted) {
-        const message = { ...answer, id: nextId.current++, role: 'assistant' }
+        const message = {
+          ...answer,
+          id: nextId.current++,
+          role: 'assistant',
+          responseId: globalThis.crypto?.randomUUID?.(),
+        }
         setMessages((previous) => [...previous, message])
       }
     } catch (failure) {

@@ -17,6 +17,11 @@ export default defineConfig({
       use: { baseURL: 'http://127.0.0.1:5173' },
     },
     {
+      name: 'feedback',
+      testMatch: 'feedback.spec.js',
+      use: { baseURL: 'http://127.0.0.1:5173' },
+    },
+    {
       name: 'deadlines',
       testMatch: 'deadlines.spec.js',
       use: {

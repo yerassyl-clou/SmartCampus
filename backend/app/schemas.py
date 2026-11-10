@@ -1,10 +1,12 @@
+from typing import Optional
+
 from pydantic import BaseModel, ConfigDict, Field
 
 
 class ChatRequest(BaseModel):
     model_config = ConfigDict(str_strip_whitespace=True)
     question: str = Field(min_length=1, max_length=4000)
-    course_id: int | None = Field(default=None, gt=0)
+    course_id: Optional[int] = Field(default=None, gt=0)
 
 
 class Source(BaseModel):

@@ -1,0 +1,149 @@
+{
+  "base_revision": "42dcac91995f5cd930af907716962d6e0f99154c",
+  "revision_note": "Feedback route patch applied to base; final source revision is PR head.",
+  "storage": "test-only SQLite harness; production SIS1011-13 integration pending",
+  "results": [
+    {
+      "case": "helpful",
+      "request": {
+        "response_id": "a2b64e7c-0c29-4d18-8f80-9cd688a9e950",
+        "rating": "helpful",
+        "source_ids": [
+          1,
+          -1
+        ]
+      },
+      "status": 201,
+      "body": {
+        "id": 1,
+        "status": "saved"
+      }
+    },
+    {
+      "case": "duplicate",
+      "request": {
+        "response_id": "a2b64e7c-0c29-4d18-8f80-9cd688a9e950",
+        "rating": "helpful",
+        "source_ids": [
+          1,
+          -1
+        ]
+      },
+      "status": 409,
+      "body": {
+        "detail": "Feedback has already been submitted for this response."
+      }
+    },
+    {
+      "case": "negative",
+      "request": {
+        "response_id": "c37ef168-172c-4225-bacf-f66dbe626540",
+        "rating": "not_helpful",
+        "issue_type": "other",
+        "comment": "  Review sample information.  "
+      },
+      "status": 201,
+      "body": {
+        "id": 2,
+        "status": "saved"
+      }
+    },
+    {
+      "case": "invalid_uuid",
+      "request": {
+        "response_id": "invalid",
+        "rating": "helpful",
+        "source_ids": [
+          1,
+          -1
+        ]
+      },
+      "status": 422,
+      "body": {
+        "detail": [
+          {
+            "type": "uuid_parsing",
+            "loc": [
+              "body",
+              "response_id"
+            ],
+            "msg": "Input should be a valid UUID, invalid character: found `i` at 0",
+            "input": "invalid",
+            "ctx": {
+              "error": "invalid character: found `i` at 0"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "missing_category",
+      "request": {
+        "response_id": "a2b64e7c-0c29-4d18-8f80-9cd688a9e950",
+        "rating": "not_helpful",
+        "source_ids": [
+          1,
+          -1
+        ]
+      },
+      "status": 422,
+      "body": {
+        "detail": [
+          {
+            "type": "value_error",
+            "loc": [
+              "body"
+            ],
+            "msg": "Value error, Not helpful feedback requires an issue category.",
+            "input": {
+              "response_id": "a2b64e7c-0c29-4d18-8f80-9cd688a9e950",
+              "rating": "not_helpful",
+              "source_ids": [
+                1,
+                -1
+              ]
+            },
+            "ctx": {
+              "error": {}
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "missing_database",
+      "status": 503,
+      "body": {
+        "detail": "Feedback storage is temporarily unavailable. Please try again later."
+      },
+      "category": "feedback_unavailable"
+    },
+    {
+      "case": "missing_production_helper",
+      "status": 503,
+      "body": {
+        "detail": "Feedback storage is temporarily unavailable. Please try again later."
+      }
+    }
+  ],
+  "persisted_rows": [
+    {
+      "id": 1,
+      "response_id": "a2b64e7c-0c29-4d18-8f80-9cd688a9e950",
+      "rating": "helpful",
+      "issue_type": null,
+      "comment": null,
+      "source_ids": "[1, -1]",
+      "created_at": "2026-11-10 13:42:13"
+    },
+    {
+      "id": 2,
+      "response_id": "c37ef168-172c-4225-bacf-f66dbe626540",
+      "rating": "not_helpful",
+      "issue_type": "other",
+      "comment": "Review sample information.",
+      "source_ids": "[]",
+      "created_at": "2026-11-10 13:42:13"
+    }
+  ]
+}

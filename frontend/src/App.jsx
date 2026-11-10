@@ -34,7 +34,7 @@ export default function App() {
               <span className="nav-dot" />
             </a>
             <a className="nav-item deadlines-nav" href="#upcoming-deadlines">
-              <Icon name="clock" size={19} /> Upcoming deadlines
+              <Icon name="clock" size={19} /> Course deadlines
             </a>
           </nav>
         </div>

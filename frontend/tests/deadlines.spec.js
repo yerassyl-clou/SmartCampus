@@ -11,13 +11,39 @@ const records = [
 ]
 const shuffled = [records[5], records[3], records[1], records[4], records[2], records[0]]
 const response = { items: shuffled, total: 6 }
-const panel = (page) => page.getByRole('region', { name: 'Upcoming deadlines', exact: true })
+const panel = (page) => page.getByRole('region', { name: 'Course deadlines', exact: true })
 const cards = (page) => panel(page).getByRole('listitem')
 
 async function serve(page, data = response) {
   await page.route('**/api/deadlines', (route) => route.fulfill({ json: data }))
   await page.goto('/')
 }
+
+// Keep baseline fixtures upcoming unless a case explicitly checks the campus-day boundary.
+test.beforeEach(async ({ page }) => {
+  await page.clock.setFixedTime(new Date('2026-11-05T12:00:00Z'))
+})
+
+test('SC-ISS-001 groups yesterday, today and tomorrow by the Asia/Almaty day', async ({ page }) => {
+  // The browser is in Los Angeles, where it is still Nov 9.
+  await page.clock.setFixedTime(new Date('2026-11-09T20:00:00Z'))
+  const dates = ['2026-11-09', '2026-11-10', '2026-11-11']
+  await serve(page, { items: records.slice(0, 3).map((record, index) => ({
+    ...record, due_date: dates[index],
+  })), total: 3 })
+  const upcoming = panel(page).getByRole('list', { name: 'Upcoming deadlines' })
+  const past = panel(page).getByRole('list', { name: 'Past deadlines' })
+  await expect(upcoming.locator('time')).toHaveText(['Nov 10, 2026', 'Nov 11, 2026'])
+  await expect(past.locator('time')).toHaveText(['Nov 9, 2026'])
+  await expect(past).toContainText(records[0].source_title)
+})
+
+test('all-past datasets keep their records and show an empty upcoming group', async ({ page }) => {
+  await page.clock.setFixedTime(new Date('2026-11-28T07:00:00Z'))
+  await serve(page)
+  await expect(panel(page).getByText('No upcoming deadlines.')).toBeVisible()
+  await expect(panel(page).getByRole('list', { name: 'Past deadlines' }).getByRole('listitem')).toHaveCount(6)
+})
 
 test('GET renders all six server records, sorts dates and breaks equal-date ties by ID', async ({ page }) => {
   const methods = []
@@ -29,7 +55,7 @@ test('GET renders all six server records, sorts dates and breaks equal-date ties
   await expect(cards(page)).toHaveCount(6)
   expect(methods.length).toBeGreaterThan(0)
   expect(methods.every((method) => method === 'GET')).toBe(true)
-  await expect(cards(page).getByRole('heading', { level: 3 })).toHaveText([
+  await expect(cards(page).getByRole('heading', { level: 4 })).toHaveText([
     'Assignment 2', 'Midterm project proposal', 'Risk register review',
     'Usability test plan', 'Sprint review presentation', 'Prototype critique',
   ])

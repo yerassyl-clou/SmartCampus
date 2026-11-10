@@ -61,8 +61,8 @@ test('TC-08/09/10/12 real SQLite, deadline navigation/refresh, fallback, respons
     expect(data.grounded).toBe(question.startsWith('What deadlines'))
     await expect(page.getByRole('article', { name: 'SmartCampus response' }).last()).toContainText(fact)
   }
-  await page.getByRole('link', { name: 'Upcoming deadlines', exact: true }).click()
-  await expect(page.getByRole('heading', { name: 'Upcoming deadlines', exact: true })).toBeInViewport()
+  await page.getByRole('link', { name: 'Course deadlines', exact: true }).click()
+  await expect(page.getByRole('heading', { name: 'Course deadlines', exact: true })).toBeInViewport()
   await page.getByRole('button', { name: 'Refresh deadlines' }).click()
   await expect(page.locator('.deadline-card')).toHaveCount(6)
   await expect(page.locator('.deadline-card time')).toHaveText(['Nov 6, 2026','Nov 9, 2026','Nov 11, 2026','Nov 13, 2026','Nov 20, 2026','Nov 27, 2026'])

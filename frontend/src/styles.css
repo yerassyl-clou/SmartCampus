@@ -220,12 +220,15 @@ kbd { font: inherit; }
 .refresh-button:hover:enabled { background: #f1edfb; border-color: #c7b8e8; }
 .refresh-button:disabled { opacity: .65; }
 .deadlines-status { margin: 20px 0 0; padding: 16px; border-radius: 9px; background: #f8f6fc; color: #655779; font-size: 13px; }
+.deadline-group { margin-top: 22px; }
+.deadline-group > h3 { margin: 0; font-size: 15px; }
+.deadline-group > .deadlines-count { margin-top: 6px; }
 .deadlines-count { margin: 22px 0 12px; font-size: 11px; color: var(--muted); }
 .deadlines-count span { margin: 0 5px; }
 .deadline-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px; list-style: none; padding: 0; margin: 0; }
 .deadline-card { display: flex; flex-direction: column; min-width: 0; padding: 18px; border: 1px solid #e9e4f0; border-radius: 11px; background: #fdfcfe; overflow-wrap: anywhere; }
 .deadline-course { margin: 0 0 9px; color: #6d598c; font-size: 11px; font-weight: 600; line-height: 1.6; }
-.deadline-card h3 { margin: 0 0 13px; font-size: 15px; line-height: 1.6; font-weight: 600; color: #42354f; }
+.deadline-card h4 { margin: 0 0 13px; font-size: 15px; line-height: 1.6; font-weight: 600; color: #42354f; }
 .deadline-date { display: flex; align-items: center; gap: 7px; color: #5a4697; font-weight: 600; font-size: 12px; margin: auto 0 16px; }
 .deadline-source { display: flex; align-items: flex-start; gap: 7px; padding-top: 12px; margin: 0; border-top: 1px solid #ebe5f3; color: #70647d; font-size: 11px; line-height: 1.7; }
 .deadline-source svg { margin-top: 2px; }
@@ -252,3 +255,28 @@ kbd { font: inherit; }
   .deadline-list { grid-template-columns: minmax(0, 1fr); gap: 10px; }
   .deadline-card { padding: 16px; }
 }
+
+.answer-feedback {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.answer-feedback p { margin: 6px 0; }
+.answer-feedback form { display: grid; gap: 6px; margin-top: 8px; }
+.answer-feedback label { font-weight: 600; }
+.feedback-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.answer-feedback button, .answer-feedback select, .answer-feedback textarea {
+  border: 1px solid #b7acc9;
+  border-radius: 8px;
+  background: white;
+  color: #42354f;
+  font: inherit;
+  padding: 7px 10px;
+  min-width: 0;
+  max-width: 100%;
+}
+.answer-feedback button { cursor: pointer; }
+.answer-feedback button:disabled { cursor: default; opacity: .65; }
+.answer-feedback :focus-visible { outline: 2px solid #7052a3; outline-offset: 2px; }
+.answer-feedback [role="alert"] { color: #9a2440; }

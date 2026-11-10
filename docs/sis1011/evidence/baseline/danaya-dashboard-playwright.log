@@ -1,0 +1,29 @@
+
+> smartcampus-frontend@0.1.0 test
+> playwright test --project=deadlines
+
+
+Running 20 tests using 3 workers
+
+  ✓   1 [deadlines] › tests/deadlines.spec.js:62:1 › empty API response shows useful state and can be refreshed (464ms)
+  ✓   2 [deadlines] › tests/deadlines.spec.js:46:1 › pending request announces loading and prevents concurrent refresh (466ms)
+  ✓   3 [deadlines] › tests/deadlines.spec.js:22:1 › GET renders all six server records, sorts dates and breaks equal-date ties by ID (586ms)
+  ✓   5 [deadlines] › tests/deadlines.spec.js:74:3 › network failure has a readable error and a working Retry (424ms)
+  ✓   4 [deadlines] › tests/deadlines.spec.js:74:3 › http failure has a readable error and a working Retry (437ms)
+  ✓   6 [deadlines] › tests/deadlines.spec.js:74:3 › json failure has a readable error and a working Retry (350ms)
+  ✓   7 [deadlines] › tests/deadlines.spec.js:102:3 › rejects malformed contract: missing items (277ms)
+  ✓   8 [deadlines] › tests/deadlines.spec.js:102:3 › rejects malformed contract: mismatched total (292ms)
+  ✓   9 [deadlines] › tests/deadlines.spec.js:102:3 › rejects malformed contract: invalid calendar date (267ms)
+  ✓  10 [deadlines] › tests/deadlines.spec.js:102:3 › rejects malformed contract: empty required field (301ms)
+  ✓  12 [deadlines] › tests/deadlines.spec.js:102:3 › rejects malformed contract: invalid record ID (288ms)
+  ✓  11 [deadlines] › tests/deadlines.spec.js:102:3 › rejects malformed contract: duplicate IDs (291ms)
+  ✓  13 [deadlines] › tests/deadlines.spec.js:102:3 › rejects malformed contract: invalid course ID (288ms)
+  ✓  15 [deadlines] › tests/deadlines.spec.js:131:1 › failed refresh keeps prior records with an explicit stale-data notice, then Retry recovers (490ms)
+  ✓  14 [deadlines] › tests/deadlines.spec.js:110:1 › Refresh and page reload fetch updated server data (537ms)
+  ✓  16 [deadlines] › tests/deadlines.spec.js:149:1 › timeout is recoverable and Retry starts a fresh request (407ms)
+  ✓  17 [deadlines] › tests/deadlines.spec.js:162:1 › API markup is rendered as text rather than executable content (242ms)
+  ✓  18 [deadlines] › tests/deadlines.spec.js:172:3 › deadline layout at 1440px wraps long records without horizontal overflow (418ms)
+  ✓  19 [deadlines] › tests/deadlines.spec.js:172:3 › deadline layout at 768px wraps long records without horizontal overflow (372ms)
+  ✓  20 [deadlines] › tests/deadlines.spec.js:172:3 › deadline layout at 375px wraps long records without horizontal overflow (370ms)
+
+  20 passed (6.6s)
