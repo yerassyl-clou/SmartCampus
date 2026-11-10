@@ -1,0 +1,5 @@
+Chromium 156.0.8078.4 2026-11-10T14:25:23.177Z Asia/Almaty; app clock 2026-11-10 12:00 local
+1440 GET 200; 6 source-labeled dates: 2026-11-06, 2026-11-09, 2026-11-11, 2026-11-13, 2026-11-20, 2026-11-27 ; no overflow; Tab/Enter refresh PASS
+768 GET 200; 6 source-labeled dates: 2026-11-06, 2026-11-09, 2026-11-11, 2026-11-13, 2026-11-20, 2026-11-27 ; no overflow; Tab/Enter refresh PASS
+375 GET 200; 6 source-labeled dates: 2026-11-06, 2026-11-09, 2026-11-11, 2026-11-13, 2026-11-20, 2026-11-27 ; no overflow; Tab/Enter refresh PASS
+SC-ISS-001 FAIL (reproduced): 2 past dates appear under Upcoming deadlines
