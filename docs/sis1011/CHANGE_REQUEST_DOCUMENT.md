@@ -9,7 +9,7 @@
 | Fictional requester | Academic Services team, Example Campus University |
 | Change owner | Yerassyl Babayev, SmartCampus PM and QA |
 | Decision | Approved for MVP implementation in the coursework simulation. Integrated delivery acceptance is pending. |
-| Related work | US-FB-01 / PB-103 in [SIS1011-09](https://app.clickup.com/t/z8q7hbuc7v). |
+| Related work | [US-FB-01 / PB-103 in the updated backlog](https://github.com/yerassyl-clou/SmartCampus/blob/feature/sis1011-09-product-backlog/docs/sis1011/UPDATED_USER_STORIES_AND_BACKLOG.md#prioritized-product-backlog) · [SIS1011-09](https://app.clickup.com/t/z8q7hbuc7v). |
 
 Example Campus University is a fictional coursework stakeholder. The approval below is an academic simulation with no client signature or commercial commitment.
 
