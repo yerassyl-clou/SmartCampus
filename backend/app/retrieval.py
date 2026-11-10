@@ -80,6 +80,23 @@ def search_course_materials(
     """
     if not query.strip() or limit <= 0:
         return []
+    # A recognized course name is a scope constraint, not evidence that an
+    # assignment exists. Remove it before ranking the remaining question.
+    # Multiple named courses or a conflicting explicit filter are ambiguous.
+    normalized = " ".join(re.findall(r"[a-z0-9]+", query.lower()))
+    mentions = []
+    for course in fetch_all("SELECT id, name FROM courses ORDER BY id", (), database_path):
+        name = " ".join(re.findall(r"[a-z0-9]+", course["name"].lower()))
+        if name and re.search(r"(?<!\w)" + re.escape(name) + r"(?!\w)", normalized):
+            mentions.append((course["id"], name))
+    if len(mentions) > 1:
+        return []
+    if mentions:
+        named_id, name = mentions[0]
+        if course_id is not None and course_id != named_id:
+            return []
+        course_id = named_id
+        query = re.sub(r"(?<!\w)" + re.escape(name) + r"(?!\w)", " ", normalized)
     rows = fetch_all(
         "SELECT id, content, source_title FROM documents" +
         (" WHERE course_id = ?" if course_id is not None else "") + " ORDER BY id",

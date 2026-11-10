@@ -1,0 +1,213 @@
+{
+  "revision": "42dcac91995f5cd930af907716962d6e0f99154c",
+  "environment": "macOS-15.8.1-x86_64-i386-64bit-Mach-O Python 3.13.5",
+  "cases": [
+    {
+      "id": "AI-01",
+      "feature": "Chat",
+      "input": "Assignment 2 deadline; course_id=1",
+      "expected": "200, verified verbatim source 1",
+      "actual": {
+        "status": 200,
+        "body": {
+          "answer": "Assignment 2 deadline: 2026-11-06. Submit a normalized schema and query plan. (Source: Mock Database Systems syllabus)",
+          "sources": [
+            {
+              "id": 1,
+              "title": "Mock Database Systems syllabus",
+              "excerpt": "Assignment 2 deadline: 2026-11-06. Submit a normalized schema and query plan."
+            }
+          ],
+          "grounded": true
+        }
+      },
+      "result": "PASS",
+      "provider": "mocked deterministic quote selector"
+    },
+    {
+      "id": "AI-02",
+      "feature": "Chat",
+      "input": "What is the rule for late database lab work?; course_id=1",
+      "expected": "200, verified verbatim source 2",
+      "actual": {
+        "status": 200,
+        "body": {
+          "answer": "Late database lab work may be submitted within three calendar days with a short explanation. (Source: Mock Database Systems course rules)",
+          "sources": [
+            {
+              "id": 2,
+              "title": "Mock Database Systems course rules",
+              "excerpt": "Late database lab work may be submitted within three calendar days with a short explanation."
+            }
+          ],
+          "grounded": true
+        }
+      },
+      "result": "PASS",
+      "provider": "mocked deterministic quote selector"
+    },
+    {
+      "id": "AI-03",
+      "feature": "Chat",
+      "input": "When is the Physics exam?; course_id=None",
+      "expected": "200 fallback, no sources or provider call",
+      "actual": {
+        "status": 200,
+        "body": {
+          "answer": "I couldn't find this information in the available course materials.",
+          "sources": [],
+          "grounded": false
+        },
+        "provider_calls": 0
+      },
+      "result": "PASS",
+      "provider": "provider forbidden"
+    },
+    {
+      "id": "AI-04",
+      "feature": "Chat",
+      "input": "Assignment 2; course_id=999",
+      "expected": "200 fallback, no sources or provider call",
+      "actual": {
+        "status": 200,
+        "body": {
+          "answer": "I couldn't find this information in the available course materials.",
+          "sources": [],
+          "grounded": false
+        },
+        "provider_calls": 0
+      },
+      "result": "PASS",
+      "provider": "provider forbidden"
+    },
+    {
+      "id": "AI-05",
+      "feature": "Chat",
+      "input": "Assignment 2; selector raises ProviderUnavailable",
+      "expected": "503 safe unavailable category",
+      "actual": {
+        "status": 503,
+        "body": {
+          "detail": "The AI service is temporarily unavailable."
+        },
+        "category": "unavailable"
+      },
+      "result": "PASS",
+      "provider": "mocked failure"
+    },
+    {
+      "id": "AI-06",
+      "feature": "Chat",
+      "input": "Assignment 2; selector returns invented quote",
+      "expected": "200 safe fallback",
+      "actual": {
+        "answer": "I couldn't find this information in the available course materials.",
+        "sources": [],
+        "grounded": false
+      },
+      "result": "PASS",
+      "provider": "mocked invalid quote"
+    },
+    {
+      "id": "AI-07",
+      "feature": "Knowledge Retrieval",
+      "input": "assignments 2 requirements; course_id=None",
+      "expected": "First source 1",
+      "actual": [
+        {
+          "id": 1,
+          "title": "Mock Database Systems syllabus",
+          "excerpt": "Assignment 2 deadline: 2026-11-06. Submit a normalized schema and query plan."
+        },
+        {
+          "id": -1,
+          "title": "Mock Database Systems syllabus",
+          "excerpt": "Database Systems \u2014 Assignment 2 deadline: 2026-11-06"
+        }
+      ],
+      "result": "PASS",
+      "provider": "no provider"
+    },
+    {
+      "id": "AI-08",
+      "feature": "Knowledge Retrieval",
+      "input": "What is the rule for late database lab work?; course_id=None",
+      "expected": "First source 2",
+      "actual": [
+        {
+          "id": 2,
+          "title": "Mock Database Systems course rules",
+          "excerpt": "Late database lab work may be submitted within three calendar days with a short explanation."
+        },
+        {
+          "id": 1,
+          "title": "Mock Database Systems syllabus",
+          "excerpt": "Assignment 2 deadline: 2026-11-06. Submit a normalized schema and query plan."
+        },
+        {
+          "id": 4,
+          "title": "Mock Software Project Management assessment rules",
+          "excerpt": "The sprint review presentation is assessed on evidence, scope control, and a clear retrospective."
+        },
+        {
+          "id": 6,
+          "title": "Mock Human-Computer Interaction studio rules",
+          "excerpt": "Prototype critiques should connect observed user behavior to at least two proposed design changes."
+        },
+        {
+          "id": -1,
+          "title": "Mock Database Systems syllabus",
+          "excerpt": "Database Systems \u2014 Assignment 2 deadline: 2026-11-06"
+        },
+        {
+          "id": -2,
+          "title": "Mock Database Systems syllabus",
+          "excerpt": "Database Systems \u2014 Midterm project proposal deadline: 2026-11-13"
+        }
+      ],
+      "result": "PASS",
+      "provider": "no provider"
+    },
+    {
+      "id": "AI-09",
+      "feature": "Knowledge Retrieval",
+      "input": "Assignment 999; course_id=None",
+      "expected": "No candidates",
+      "actual": [],
+      "result": "PASS",
+      "provider": "no provider"
+    },
+    {
+      "id": "AI-10",
+      "feature": "Knowledge Retrieval",
+      "input": "When is the Human-Computer Interaction Assignment 2 due?; course_id=None",
+      "expected": "No candidates",
+      "actual": [],
+      "result": "PASS",
+      "provider": "no provider"
+    },
+    {
+      "id": "AI-11",
+      "feature": "Knowledge Retrieval",
+      "input": "When is the Human-Computer Interaction Assignment 2 due?; course_id=3",
+      "expected": "No candidates",
+      "actual": [],
+      "result": "PASS",
+      "provider": "no provider"
+    },
+    {
+      "id": "AI-12",
+      "feature": "Chat",
+      "input": "When is the Human-Computer Interaction Assignment 2 due?",
+      "expected": "Fallback; no unrelated course evidence",
+      "actual": {
+        "answer": "I couldn't find this information in the available course materials.",
+        "sources": [],
+        "grounded": false
+      },
+      "result": "PASS",
+      "provider": "mocked deterministic quote selector; not live model behavior"
+    }
+  ],
+  "revision_note": "Working tree with SC-ISS-002 patch applied to recorded base revision; final implementation commit is the PR head."
+}
