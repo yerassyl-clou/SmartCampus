@@ -1,0 +1,106 @@
+npm ci exit=0
+$ npm run build
+
+> smartcampus-frontend@0.1.0 build
+> vite build
+
+vite v5.4.21 building for production...
+transforming...
+✓ 33 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.36 kB │ gzip:  0.26 kB
+dist/assets/index-ZnJD6sWn.css   18.12 kB │ gzip:  4.67 kB
+dist/assets/index-BUBP409J.js   160.41 kB │ gzip: 51.22 kB
+✓ built in 329ms
+build exit=0
+$ npm test
+
+> smartcampus-frontend@0.1.0 test
+> playwright test
+
+[WebServer] (node:40024) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:40070) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:40106) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:40145) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 55 tests using 3 workers
+
+(node:40147) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:40148) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:40149) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 [chat] › tests/chat.spec.js:100:1 › optional course ID is passed only when supplied by the caller (536ms)
+  ✓   3 [chat] › tests/chat.spec.js:34:1 › welcome suggestions populate and focus the input without requesting an answer (672ms)
+  ✓   1 [chat] › tests/chat.spec.js:63:1 › sends the contract, trims questions, renders multiple sources and preserves history (778ms)
+  ✓   4 [chat] › tests/chat.spec.js:115:1 › pending state blocks button, Enter and direct form resubmission while preserving drafts (412ms)
+  ✓   5 [chat] › tests/chat.spec.js:153:1 › Enter sends, Shift+Enter adds a newline, and IME Enter does not submit (332ms)
+  ✓   6 [chat] › tests/chat.spec.js:175:1 › no-evidence answer has a clear warning and no attribution, even with inconsistent sources (317ms)
+  ✓   8 [chat] › tests/chat.spec.js:220:1 › partial source details are displayed safely without fabricating missing information (340ms)
+  ✓   7 [chat] › tests/chat.spec.js:201:1 › empty or omitted source arrays do not imply verified evidence (411ms)
+  ✓   9 [chat] › tests/chat.spec.js:249:3 › HTTP 422 preserves history, hides backend details and supports retry (513ms)
+  ✓  10 [chat] › tests/chat.spec.js:249:3 › HTTP 503 preserves history, hides backend details and supports retry (472ms)
+  ✓  11 [chat] › tests/chat.spec.js:249:3 › HTTP 501 preserves history, hides backend details and supports retry (499ms)
+  ✓  12 [chat] › tests/chat.spec.js:249:3 › HTTP 500 preserves history, hides backend details and supports retry (477ms)
+  ✓  13 [chat] › tests/chat.spec.js:284:1 › network failure allows a new question without losing the failed one (388ms)
+  ✓  14 [chat] › tests/chat.spec.js:313:3 › rejects malformed payload null (331ms)
+  ✓  15 [chat] › tests/chat.spec.js:313:3 › rejects malformed payload {} (345ms)
+  ✓  17 [chat] › tests/chat.spec.js:313:3 › rejects malformed payload {"answer":42,"grounded":true} (353ms)
+  ✓  16 [chat] › tests/chat.spec.js:313:3 › rejects malformed payload {"answer":" ","grounded":true} (402ms)
+  ✓  18 [chat] › tests/chat.spec.js:313:3 › rejects malformed payload {"answer":"Missing grounding"} (325ms)
+  ✓  19 [chat] › tests/chat.spec.js:313:3 › rejects malformed payload {"answer":"Wrong type","grounded":"true"} (290ms)
+  ✓  20 [chat] › tests/chat.spec.js:313:3 › rejects malformed payload {"answer":"Assignment 2 is due on 2026-11-06.","grounded":true,"sources":{}} (315ms)
+  ✓  21 [chat] › tests/chat.spec.js:330:1 › unreadable JSON and timed-out requests have recoverable errors (367ms)
+  ✓  22 [chat] › tests/chat.spec.js:355:1 › API-provided markup renders as text (306ms)
+  ✓  23 [chat] › tests/chat.spec.js:374:1 › keyboard access, live announcements and focus indicators are available (267ms)
+  ✓  24 [chat] › tests/chat.spec.js:401:3 › layout at 1440px wraps long content and scrolls to the newest answer (569ms)
+  ✓  26 [chat] › tests/chat.spec.js:401:3 › layout at 375px wraps long content and scrolls to the newest answer (566ms)
+  ✓  25 [chat] › tests/chat.spec.js:401:3 › layout at 768px wraps long content and scrolls to the newest answer (597ms)
+  ✓  27 [chat] › tests/chat.spec.js:467:3 › safe service category configuration is shown without provider details (296ms)
+  ✓  28 [chat] › tests/chat.spec.js:467:3 › safe service category authentication is shown without provider details (301ms)
+  ✓  29 [chat] › tests/chat.spec.js:467:3 › safe service category rejection is shown without provider details (336ms)
+  ✓  30 [chat] › tests/chat.spec.js:467:3 › safe service category rate_limit is shown without provider details (311ms)
+  ✓  31 [chat] › tests/chat.spec.js:467:3 › safe service category timeout is shown without provider details (289ms)
+  ✓  32 [chat] › tests/chat.spec.js:467:3 › safe service category invalid_output is shown without provider details (328ms)
+  ✓  33 [chat] › tests/chat.spec.js:467:3 › safe service category database_unavailable is shown without provider details (320ms)
+(node:40227) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:40229) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:40230) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  35 [deadlines] › tests/deadlines.spec.js:46:1 › pending request announces loading and prevents concurrent refresh (250ms)
+  ✓  34 [deadlines] › tests/deadlines.spec.js:22:1 › GET renders all six server records, sorts dates and breaks equal-date ties by ID (355ms)
+  ✓  37 [deadlines] › tests/deadlines.spec.js:74:3 › http failure has a readable error and a working Retry (308ms)
+  ✓  36 [deadlines] › tests/deadlines.spec.js:62:1 › empty API response shows useful state and can be refreshed (269ms)
+  ✓  38 [deadlines] › tests/deadlines.spec.js:74:3 › network failure has a readable error and a working Retry (309ms)
+  ✓  40 [deadlines] › tests/deadlines.spec.js:102:3 › rejects malformed contract: missing items (209ms)
+  ✓  41 [deadlines] › tests/deadlines.spec.js:102:3 › rejects malformed contract: mismatched total (238ms)
+  ✓  39 [deadlines] › tests/deadlines.spec.js:74:3 › json failure has a readable error and a working Retry (343ms)
+  ✓  42 [deadlines] › tests/deadlines.spec.js:102:3 › rejects malformed contract: invalid calendar date (215ms)
+  ✓  43 [deadlines] › tests/deadlines.spec.js:102:3 › rejects malformed contract: empty required field (198ms)
+  ✓  44 [deadlines] › tests/deadlines.spec.js:102:3 › rejects malformed contract: duplicate IDs (221ms)
+  ✓  45 [deadlines] › tests/deadlines.spec.js:102:3 › rejects malformed contract: invalid record ID (216ms)
+  ✓  46 [deadlines] › tests/deadlines.spec.js:102:3 › rejects malformed contract: invalid course ID (206ms)
+  ✓  47 [deadlines] › tests/deadlines.spec.js:110:1 › Refresh and page reload fetch updated server data (434ms)
+  ✓  48 [deadlines] › tests/deadlines.spec.js:131:1 › failed refresh keeps prior records with an explicit stale-data notice, then Retry recovers (337ms)
+  ✓  49 [deadlines] › tests/deadlines.spec.js:149:1 › timeout is recoverable and Retry starts a fresh request (344ms)
+  ✓  50 [deadlines] › tests/deadlines.spec.js:162:1 › API markup is rendered as text rather than executable content (223ms)
+  ✓  51 [deadlines] › tests/deadlines.spec.js:172:3 › deadline layout at 1440px wraps long records without horizontal overflow (346ms)
+  ✓  52 [deadlines] › tests/deadlines.spec.js:172:3 › deadline layout at 768px wraps long records without horizontal overflow (320ms)
+  ✓  53 [deadlines] › tests/deadlines.spec.js:172:3 › deadline layout at 375px wraps long records without horizontal overflow (295ms)
+(node:40272) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:40273) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  55 [production] › tests/production.spec.js:3:1 › production ignores the demo flag and displays API failures without invented answers (257ms)
+  ✓  54 [demo] › tests/demo.spec.js:3:1 › explicit demo mode is labeled, returns fictional sources, and never calls the backend (3.0s)
+
+  55 passed (12.7s)
+playwright exit=0
