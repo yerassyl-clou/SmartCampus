@@ -8,6 +8,18 @@
 
 On baseline `42dcac91995f5cd930af907716962d6e0f99154c` with a freshly seeded temporary SQLite DB, FastAPI TestClient returned 404 for a valid-looking Helpful POST, and the SQLite schema contained the original course tables with no feedback table. This confirms the baseline state before CR-001. [Precheck log](evidence/feedback-feature/baseline-availability.log)
 
+## Dependency check on 10 November
+
+SIS1011-12–15 were To Do in ClickUp, with no linked implementation evidence in their comments or attachments. The repository had no matching implementation PR or branch. The existing 404 log still applies to current `main` at `42dcac9`.
+
+## Integration setup and evidence
+
+1. Pin the finalized contract and the three implementation heads. Inspect endpoint registration, request validation, persistence helper and uniqueness constraint, and the UI request builder before combining them.
+2. Use a newly seeded temporary database and a separate copy of an original-schema seed for the upgrade case. Start FastAPI with an explicit DB path and use deterministic chat or a local provider stub. Keep the production DB and external provider outside the run.
+3. Record the real browser request's response UUID and the HTTP status. Verify the matching row through a read-only SQLite query based on the implementation schema. Check the count before and after replay, restart and reseed. Use signed source IDs from the answer, including a negative deadline source ID and an empty list for fallback.
+4. For NFT-06, load an answer with the DB available, then make only the isolated DB unavailable for the next request. Verify the real 503 and absence of a phantom save. Restore availability and retry using the same response UUID. Record the row count before and after recovery.
+5. Capture the actual browser, HTTP and SQL results with fictional data, exact head SHAs and test IDs.
+
 ## Integration scenarios
 
 Run on exact combined PR heads and a fresh fictional DB using real Chromium, local FastAPI and SQLite. Record OS, runtime, browser version, head SHAs, DB setup and command outcomes. Use a deterministic provider for source-backed chat or the deterministic chat listing and fallback. Keep separate logs and screenshots named by test ID under `evidence/feedback-feature/`.
