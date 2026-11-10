@@ -33,4 +33,4 @@ P1 items affect the correctness of deadlines or the evidence used to answer cour
 - **Actual** The API returns HTTP 200 with `grounded=false`, `sources=[]` and the missing-evidence fallback. The UI shows the no-evidence warning while the adjacent dashboard displays six deadlines. [Baseline screenshot](evidence/baseline/SC-ISS-003-chat-shortcut-before.png)
 - **Proposed follow-up** Prefill a supported listing intent or link to the dashboard. Retest the actual built-in interaction on a seeded DB. Keep safe fallback for unsupported questions.
 
-[Baseline test matrix and case IDs](https://github.com/yerassyl-clou/SmartCampus/blob/feature/sis1011-01-baseline/docs/sis1011/TEST_CASES_AND_RESULTS.md) · [Independent improvement verification, SIS1011-08](https://app.clickup.com/t/z8q7hbuc7u)
+[Baseline test matrix and case IDs](https://github.com/yerassyl-clou/SmartCampus/blob/5b4c39627f5f08b367681fa2500fc81c63102762/docs/sis1011/TEST_CASES_AND_RESULTS.md) · [Independent improvement verification, SIS1011-08](https://app.clickup.com/t/z8q7hbuc7u)
