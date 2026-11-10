@@ -28,3 +28,13 @@ CREATE INDEX IF NOT EXISTS idx_deadlines_course_due_date
     ON deadlines(course_id, due_date);
 CREATE INDEX IF NOT EXISTS idx_documents_course
     ON documents(course_id);
+
+CREATE TABLE IF NOT EXISTS feedback (
+    id INTEGER PRIMARY KEY,
+    response_id TEXT NOT NULL UNIQUE,
+    rating TEXT NOT NULL,
+    issue_type TEXT,
+    comment TEXT,
+    source_ids TEXT NOT NULL,
+    created_at TEXT NOT NULL
+);
