@@ -11,6 +11,6 @@
 | Notes | All ten note parts contain the English delivery text, speaker allocation and source links. [Speaker script](FINAL_PRESENTATION_SCRIPT.md). |
 | Morph | Applied in Microsoft PowerPoint on slide 5 for the 4→5 comparison-to-feedback transition. The two image pairs share `!!ComparisonLeft` and `!!ComparisonRight` names. The PowerPoint ribbon showed Morph selected, the transition preview ran, and the saved slide contains the native Morph element. |
 | Entrance | Applied Fade to the HTTP result line on slide 7, On Click. PowerPoint showed the animation and ran the preview. The saved slide contains the native fade animation. |
-| Timing | The scripted slots total ten minutes across all four speakers. The team rehearsal is pending. |
+| Timing | The scripted slots total ten minutes across all four speakers. The project owner confirmed that all four presenters rehearsed. |
 
 In Slide Show, advance from slide 4 to 5 to preview Morph. On slide 7, describe the React → FastAPI → SQLite flow, then click once to reveal the HTTP results. The deck has no automatic advance.
