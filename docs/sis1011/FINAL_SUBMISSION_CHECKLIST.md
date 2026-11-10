@@ -15,6 +15,6 @@
 | 9 | New Feature Testing Report | PASS. [Ten acceptance cases](NEW_FEATURE_TESTING_REPORT.md), [restart and upgrade proof](evidence/final-demo/SQLITE_INTEGRATION_RESULTS.md). |
 | 10 | Commercial Offer | PASS. [Fictional offer](COMMERCIAL_OFFER.md) at $1,177, five working days and 14-day warranty. |
 | 11 | Simplified Fixed-Price Contract | PASS. [Unsigned academic contract](FIXED_PRICE_CONTRACT.md) reconciles scope, timing, payment, changes and acceptance. |
-| 12 | Presentation with genuine evidence | PASS for [editable deck](SmartCampus_SIS1011_Final_Presentation.pptx), [speaker notes](FINAL_PRESENTATION_SCRIPT.md) and [visual QA](PRESENTATION_QA.md). Actual four-person rehearsal remains pending. |
+| 12 | Presentation with genuine evidence | PASS for [editable deck](SmartCampus_SIS1011_Final_Presentation.pptx), [speaker notes](FINAL_PRESENTATION_SCRIPT.md) and [visual QA](PRESENTATION_QA.md). The project owner confirmed the four-person rehearsal. |
 
-The 12 academic artifacts are present. Final administrative acceptance requires ClickUp task verification/closure and the four-person rehearsal. [Acceptance report](FINAL_ACCEPTANCE_REPORT.md) · [ClickUp handoff](CLICKUP_ACCEPTANCE_HANDOFF.md).
+The 12 academic artifacts are present. Final administrative acceptance requires ClickUp task verification and closure. [Acceptance report](FINAL_ACCEPTANCE_REPORT.md) · [ClickUp handoff](CLICKUP_ACCEPTANCE_HANDOFF.md).

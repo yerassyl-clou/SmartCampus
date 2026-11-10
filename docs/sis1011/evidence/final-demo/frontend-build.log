@@ -1,0 +1,13 @@
+
+> smartcampus-frontend@0.1.0 build
+> vite build
+
+vite v5.4.21 building for production...
+transforming...
+✓ 35 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.36 kB │ gzip:  0.26 kB
+dist/assets/index-DBAFri1w.css   18.94 kB │ gzip:  4.85 kB
+dist/assets/index-D-SdbkKH.js   165.40 kB │ gzip: 52.62 kB
+✓ built in 358ms

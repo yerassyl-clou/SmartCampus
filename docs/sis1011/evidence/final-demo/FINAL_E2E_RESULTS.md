@@ -2,6 +2,8 @@
 
 **PASS · 10 November 2026 · Chromium 156.0.8078.4 · FastAPI · SQLite · Vite/React**
 
+The complete build, regression and live smoke checks passed again on the published product merge [`47a562a4d9eceec7d42f0637de1fd65154b27b19`](https://github.com/yerassyl-clou/SmartCampus/commit/47a562a4d9eceec7d42f0637de1fd65154b27b19). The screenshots are from the pre-merge tree, which has the same application and artifact files as the merge.
+
 The application ran against a fresh isolated database populated by the repository seed. The browser received responses from the real FastAPI service through Vite. The feedback flow used deterministic deadline listing and no-evidence chat paths. A separate bounded run used the configured Groq provider for seven grounded course questions and one recovery request.
 
 | Check | Observed |
@@ -32,7 +34,7 @@ In a second terminal, run `cd frontend && npm ci && npm run dev -- --host 127.0.
 Regression commands and results:
 
 - `python -m pytest backend/tests -q` — 126 passed, one Starlette dependency warning. [Log](pytest-regression.log).
-- `npm ci && npm run build` — installed the lockfile dependencies and built production assets. The default browser suite also builds the production target.
+- `npm ci && npm run build` — installed the lockfile dependencies and built production assets. The default browser suite also builds the production target. [Build log](frontend-build.log).
 - `npm test` — 70 Playwright tests passed. [Log](playwright-regression.log).
 - `SMARTCAMPUS_LIVE_TESTS=1 npx playwright test -c playwright.integration.config.js` — 9 passed with the configured server-side Groq credentials. Isolated run used temporary copies of the config/spec with equivalent endpoints on 8010/8011 and Vite on 5197. [Log](playwright-live-provider.log).
 - [Actual HTTP and SQLite output](browser-feedback-http-sqlite.log) · [Persistence and schema results](SQLITE_INTEGRATION_RESULTS.md).
