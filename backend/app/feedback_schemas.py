@@ -1,5 +1,5 @@
 """CR-001 request contract; independent of the existing chat models."""
-from typing import Annotated, Literal
+from typing import Annotated, Literal, Optional
 import unicodedata
 
 from pydantic import BaseModel, ConfigDict, Field, UUID4, field_validator, model_validator
@@ -13,8 +13,8 @@ class FeedbackRequest(BaseModel):
 
     response_id: UUID4
     rating: Literal['helpful', 'not_helpful']
-    issue_type: IssueType | None = None
-    comment: str | None = Field(default=None, strict=True, max_length=500)
+    issue_type: Optional[IssueType] = None
+    comment: Optional[str] = Field(default=None, strict=True, max_length=500)
     source_ids: list[SourceId] = Field(default_factory=list)
 
     @field_validator('source_ids')
@@ -26,7 +26,7 @@ class FeedbackRequest(BaseModel):
 
     @field_validator('comment')
     @classmethod
-    def clean_comment(cls, value: str | None) -> str | None:
+    def clean_comment(cls, value: Optional[str]) -> Optional[str]:
         if value is None:
             return None
         # Store plain text only. Never interpret markup; future viewers must

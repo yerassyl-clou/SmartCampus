@@ -1,0 +1,28 @@
+# SIS12-05 local build/test measurements (rerun after Python 3.9 compatibility fix)
+measurement_time_local=2026-11-17T21:12:54+0500
+
+## backend tests
+........................................................................ [ 57%]
+......................................................                   [100%]
+126 passed in 0.95s
+real 1.22
+user 0.71
+sys 0.32
+
+## frontend build
+
+> smartcampus-frontend@0.1.0 build
+> vite build
+
+vite v5.4.21 building for production...
+transforming...
+✓ 35 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.36 kB │ gzip:  0.26 kB
+dist/assets/index-DBAFri1w.css   18.94 kB │ gzip:  4.86 kB
+dist/assets/index-D-SdbkKH.js   165.40 kB │ gzip: 52.58 kB
+✓ built in 240ms
+real 0.59
+user 0.66
+sys 0.10
