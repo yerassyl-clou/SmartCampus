@@ -1,5 +1,26 @@
 import pytest
+import socket
+import ipaddress
 from seed import load_database
+
+
+@pytest.fixture(autouse=True)
+def block_external_network(monkeypatch):
+    """Keep backend regression tests offline even if provider mocking regresses."""
+    original_connect = socket.socket.connect
+
+    def guarded_connect(sock, address):
+        if isinstance(address, tuple):
+            host = address[0]
+            try:
+                local = ipaddress.ip_address(host).is_loopback
+            except ValueError:
+                local = host.lower() == 'localhost'
+            if not local:
+                raise RuntimeError('External network disabled in backend tests')
+        return original_connect(sock, address)
+
+    monkeypatch.setattr(socket.socket, 'connect', guarded_connect)
 
 
 @pytest.fixture(autouse=True)
