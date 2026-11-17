@@ -1,0 +1,41 @@
+# SIS12-05 infrastructure measurements
+measurement_time_local=2026-11-17T21:12:37+0500
+
+## tool versions
+Python 3.9.6
+Python 3.9.6
+v25.9.0
+11.12.1
+3.51.0 2025-06-12 13:14:41 f0ca7bba1c5e232e5d279fad6338121ab55af0c8c68c84cdfb18ba5114dcaapl (64-bit)
+
+## local runtime and disk
+Darwin 25.4.0 arm64
+Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on
+/dev/disk3s5   460Gi   139Gi   287Gi    33%    1.4M  3.0G    0%   /System/Volumes/Data
+ 80M	.
+ 60K	database
+ 26M	frontend
+ 46M	backend
+
+## seeded SQLite fixture
+Seeded /var/folders/zy/2k2k2wxj0w78m0dz3fx8yzxr0000gn/T/tmp.0N0FX6lnWh/smartcampus.db: courses=3, deadlines=6, documents=6
+Seeded /var/folders/zy/2k2k2wxj0w78m0dz3fx8yzxr0000gn/T/tmp.0N0FX6lnWh/smartcampus.db: courses=3, deadlines=6, documents=6
+database_path=/var/folders/zy/2k2k2wxj0w78m0dz3fx8yzxr0000gn/T/tmp.0N0FX6lnWh/smartcampus.db size_bytes=36864
+row_counts={'courses': 3, 'deadlines': 6, 'documents': 6}
+foreign_key_errors=[]
+page_count=9
+page_size=4096
+
+## GitHub repository metadata
+{'full_name': 'yerassyl-clou/SmartCampus', 'visibility': 'public', 'private': False, 'size': 3289, 'default_branch': 'main', 'updated_at': '2026-11-10T21:28:22Z'}
+github_actions_workflows=0 (GitHub MCP actions_list, 2026-11-17)
+
+## repository git objects
+count: 13
+size: 56.00 KiB
+in-pack: 671
+packs: 2
+size-pack: 3.14 MiB
+prune-packable: 0
+garbage: 0
+size-garbage: 0 bytes
