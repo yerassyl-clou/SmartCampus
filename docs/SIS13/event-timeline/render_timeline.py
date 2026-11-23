@@ -18,7 +18,7 @@ EFFECT_CAPTIONS = {
     "E-03": "Deadline, retrieval and feedback changes landed on main.",
     "E-04": "Merged-revision QA recorded 126 / 70 / 9 test passes.",
     "E-05": "The connector limit delayed board updates.",
-    "E-06": "Reviewer records confirmed all 20 tasks in Done.",
+    "E-06": "The closure handoff recorded all 20 tasks in Done.",
     "E-07": "165 planned minutes moved from the PM to two owners.",
     "E-08": "The team gained a common time-logging procedure.",
     "E-09": "Local resource baselines and evidence gaps were recorded.",
