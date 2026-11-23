@@ -1,6 +1,6 @@
 # SIS13-08 UX capture protocol
 
-**Status:** Partial · baseline originals verified · paired comparison pending the approved SIS13-07 implementation.
+**Status:** Baseline and candidate originals verified. The formal action decision is pending.
 
 ## Baseline environment
 
@@ -20,9 +20,16 @@
 
 This is a scenario-level Chromium check. Assistive technology behavior, full-page contrast coverage and other browsers remain unverified.
 
-## Matched after capture
+## Matched after capture procedure
 
-1. Confirm the signed-off scenario, approved A-ID and implementation SHA with SIS13-07.
+1. Record the scenario and implementation SHA from SIS13-07. Attach the action ID once approved.
 2. Seed from the same source and use the same app clock, viewport, browser and input intent. Keep local requests provider-free. Replay using the regression or capture command appropriate to the approved after interaction.
 3. Verify keyboard activation, visible focus, intended data or navigation outcome, warning discoverability for an unsupported question and no page-level horizontal overflow. Compare the agreed metric over the same denominator.
 4. Save unmodified after originals and add their commit, fixture, commands, timestamp and observed result to the [asset index](../../presentation/UX_ASSET_INDEX.md). Use separate presentation crops if needed and keep the original PNGs.
+
+## Observed after run
+
+- App SHA `748f6951a870ee0c7bb4a29179bd54e754d25cb2`, captured 23 November 2026 at 11:05:14 Asia/Almaty. Same fictional database hash, browser version, browser clock and viewport dimensions as the baseline.
+- From the clean implementation checkout with FastAPI and Vite running, execute `SIS13_CAPTURE_DIR=/absolute/output node docs/SIS13/evidence/ux/check-deadline-shortcut.mjs`. The script captures Tab focus on the new link and the focused panel immediately after Enter. Then it sends a separate unsupported question to verify the safe fallback remains visible.
+- Both after runs loaded six records, showed a 3 px solid focus outline on both the initial link and the destination, and made zero chat POSTs during navigation. The page had no horizontal overflow. Mobile content below the fold remains scrollable.
+- Failed journeys: desktop 1/1 → 0/1, mobile 1/1 → 0/1, total 2/2 → 0/2. All eight indexed originals decoded. The original four baseline files are preserved. These are two Chromium cases, with no screen-reader or cross-browser claim.
