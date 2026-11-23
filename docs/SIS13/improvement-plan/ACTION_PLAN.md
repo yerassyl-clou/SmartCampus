@@ -30,15 +30,42 @@ Select at least three approved actions. Identify two that can be delivered indep
 
 ## Candidate measurement for the deadline shortcut
 
-SIS13-07 reproduced SC-ISS-003 on 23 November against app SHA `6645b5ef95e2cb4d00aa4bb6756705ac84475654`. Both runs reached the fallback while the fictional dashboard exposed six deadlines. SIS13-08 supplies the original before captures. This is a same-day candidate baseline and has no approved I-ID or A-ID yet. [Replay and result](https://github.com/yerassyl-clou/SmartCampus/blob/d052ccfafbec58e762e98bbb7c6786b587c32dc9/docs/SIS13/evidence/ux/UX_IMPLEMENTATION.md) · [Capture protocol and originals](https://github.com/yerassyl-clou/SmartCampus/blob/42b93507a09ab39bf146ef628411308ef5ec94b2/docs/SIS13/presentation/UX_ASSET_INDEX.md)
+SIS13-07 reproduced SC-ISS-003 on 23 November against app SHA `6645b5ef95e2cb4d00aa4bb6756705ac84475654`. Both runs reached the fallback while the fictional dashboard exposed six deadlines. SIS13-08 supplies the original before captures. This is a same-day candidate baseline and has no approved I-ID or A-ID yet. The proposed change is a direct link from the welcome suggestion to the existing Course deadlines panel. [Replay and result](https://github.com/yerassyl-clou/SmartCampus/blob/e53a2bef690f3a5dc577435e901f7c42211c3a3d/docs/SIS13/evidence/ux/UX_IMPLEMENTATION.md) · [Capture protocol and originals](https://github.com/yerassyl-clou/SmartCampus/blob/42b93507a09ab39bf146ef628411308ef5ec94b2/docs/SIS13/presentation/UX_ASSET_INDEX.md)
 
 | Measure | Observed baseline | Proposed success threshold | Measured after |
 | --- | --- | --- | --- |
 | Failed deadline-discovery journeys divided by two valid keyboard attempts | 2/2 (100%). Desktop 1440 × 1000 and mobile 375 × 812 each recorded HTTP 200, `grounded=false`, zero sources and six available deadline records. | 0/2 (0%) if this scope and outcome are approved. Each attempt must surface available deadlines or reach the populated deadlines view as specified by the approved solution. | Not yet measured. |
 
 - Use one fresh Chromium session per viewport with the same fixture, fixed browser clock, provider-free configuration and deadline-discovery intent. Record both commit SHAs and replay commands. Match the keyboard entry point and user intent when the solution changes the interaction.
+- Run SIS13-07’s `check-deadline-shortcut.mjs` in welcome mode at the approved after SHA. Require keyboard activation, focus on the deadline panel, all six fixture records and no chat POST during navigation. The sidebar reference passed both baseline layouts. The welcome-mode check failed both baseline layouts as expected. The sidebar result demonstrates feasibility. The welcome-mode result on the implementation SHA supplies the after measure. [Recorded acceptance checks](https://github.com/yerassyl-clou/SmartCampus/blob/e53a2bef690f3a5dc577435e901f7c42211c3a3d/docs/SIS13/evidence/ux/UX_IMPLEMENTATION.md#23-november-continuation-proposed-acceptance-check)
 - Record success or failure for each run and retain the observation that supports it. Confirm visible focus and the absence of horizontal overflow as separate checks. If the fixture, local service or setup is invalid, log the invalid run and fix the setup before replacing it. A valid product failure stays in the denominator.
 - Publish the two original after captures with their scenario outcomes and calculate the percentage from the observed numerator and denominator. The sample measures this specific journey on two layouts. It does not estimate a population-wide success rate.
+
+## Candidate measurement for board handoff quality
+
+The historical records show a delay in writing acceptance updates (E-05), documented final closure (E-06), a two-task reassignment (E-07) and a gap in positive tracked-time entries (E-08). The 0/20 tracked-time figure belongs to the historical SIS 10-11 cohort. The SIS13-09 process audit and selected SIS13-11 change have no source available in the fetched branch and PR inventory. The following measurement can be used if Gleb’s handoff identifies acceptance traceability as the process scope.
+
+- Snapshot the SIS13 tasks already in Review that have GitHub deliverables before the process change. Record each task ID, scope filter and timestamp. Keep the same cohort at the after checkpoint. When the snapshot has no eligible tasks, mark the paired rate unavailable and name the later eligible sample.
+- Count tasks with all four items: named reviewer, linked PR or artifact, reviewed revision, and dated review decision. Divide by the number of eligible tasks, and retain the numerator and denominator. A proposed threshold of 100% coverage requires owner agreement. The SIS13 baseline and actual remain unmeasured.
+- Use authenticated board records and source links to score each row. Compare the same time-boxed cohort and fields after the change. A short-window result can show traceability coverage. Measuring review turnaround requires a comparable completed cohort and a longer observation window.
+
+## Candidate measurement for PR verification
+
+E-09 records absent shared CI at the SIS12 audit, and current `main` has no tracked workflow files. E-11 documents an already delivered offline pytest guard. The SIS13-13 technical audit and selected SIS13-14 change have no source available in the fetched branch and PR inventory. Use the procedure below if the technical handoff selects PR automation under SIS13-14/15.
+
+- Record the baseline count of tracked workflow definitions on the fixed `main` SHA: zero. Use this as configuration evidence. For execution coverage, use one representative PR head and score the expected backend pytest and frontend build checks individually. Record how many of the two checks executed and their conclusions. Without a recorded run, report zero observed checks and no pass rate.
+- A proposed short-window target is 2/2 required checks executed and passed on the representative after head. Pin the input PR and SHA, workflow/run URL, job conclusions, tool versions and fixture. Run the backend guard with deterministic data and provider access disabled. Compare later runs using the same checks and repo-supported runtime.
+- If SIS13-14 selects a different product change, measure its own behavioral outcome on matched before and after revisions. Keep CI as regression evidence. Work already reported in SIS12 requires a new result to count toward SIS13.
+
+## Approval and traceability record
+
+| Candidate scope | Historical evidence | Ranked insight | Action | Work owner to confirm | Before → proposed target → actual | Required handoff |
+| --- | --- | --- | --- | --- | --- | --- |
+| Deadline shortcut | SC-ISS-003 issue record and SIS13-07 replay. E-ID mapping pending. | Pending SIS13-10 | Pending | Danaya Aliyeva | 2/2 failed → 0/2 if approved → unmeasured | SIS13-07 implementation SHA and SIS13-08 paired captures |
+| Board handoff quality | E-05 to E-08 | Pending SIS13-10 and process audit | Pending | Gleb Yurtayev | SIS13 baseline pending → 100% fixed-cohort coverage if approved → unmeasured | SIS13-09/11 scope, dated snapshots and SIS13-12 results |
+| PR verification | E-09 and E-11 | Pending SIS13-10 and technical audit | Pending | Ratislav Ovchinnikov | Zero tracked workflows → 2/2 checks passing at the after head if approved → unmeasured | SIS13-13/14 scope, SIS13-15 run and SIS13-16 result |
+
+The named work owners follow the task index. Action owners, exact deadlines, final metrics and stable IDs require approval. Candidate measurements do not authorize changes or meet the requirement for two demonstrated improvements.
 
 ## Approval and validation
 
