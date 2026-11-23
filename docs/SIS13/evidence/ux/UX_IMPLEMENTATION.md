@@ -37,3 +37,20 @@ React 18 and Vite render the chat, feedback and deadline components. The browser
 | `node docs/SIS13/evidence/ux/capture-sc-iss-003.mjs /absolute/path/to/captures` | Passed both baseline assertions against real local FastAPI/SQLite. Two reproductions, each with six dashboard records and zero chat sources. |
 
 [Original captures and asset index](https://github.com/yerassyl-clou/SmartCampus/tree/codex/sis13-08-ux-evidence/docs/SIS13) are owned by SIS13-08. This checkpoint used fictional records and measured the local journey. Product changes and an after SHA are pending the approved scope.
+
+## 23 November continuation: proposed acceptance check
+
+The product trees under `frontend/`, `backend/` and `database/` match the re-fetched `origin/main` (`9dff9c289289eda7bb2402fb2ef2075f1b7d6571`). [SIS13-03's candidate measurement](https://github.com/yerassyl-clou/SmartCampus/blob/d0bf0bfef0ca8e1cd02917a87a00f1debcf0f216/docs/SIS13/improvement-plan/ACTION_PLAN.md#candidate-measurement-for-the-deadline-shortcut) records 2/2 baseline failures and proposes a 0/2 target conditional on approval.
+
+The recommended change is to use the existing Course deadlines fragment as a direct welcome shortcut. The current sidebar link proves the panel can receive keyboard focus and expose the six seeded records without a chat POST. A second option is a supported question starter. The actual API returned `grounded=true` with six sources for “Show deadlines” on the same seed. A direct link better matches the existing question's “where” intent and uses the dashboard's refresh and error states.
+
+Use the existing launch procedure, then run:
+
+```sh
+node docs/SIS13/evidence/ux/check-deadline-shortcut.mjs --reference
+node docs/SIS13/evidence/ux/check-deadline-shortcut.mjs
+```
+
+The reference check passed on both 1440 × 1000 and 375 × 812. It verifies Tab/Enter activation, dashboard focus, visible heading, all six records, no chat POST during navigation and no page-level horizontal overflow. A subsequent unsupported chat question retained the fallback on both widths. Welcome mode failed on both widths as expected on the baseline, because the welcome shortcut is still a button. The reference results describe the existing sidebar and cannot serve as the implementation's after measurement. Run the welcome-mode check on the approved implementation revision before capturing the after evidence.
+
+The repeated baseline build passed. `npm test` passed 70 tests and `python -m pytest backend/tests -q` passed 127 tests with one existing Starlette deprecation warning.
