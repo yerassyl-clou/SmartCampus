@@ -8,8 +8,8 @@ The release combined deadline grouping, course-aware retrieval and answer feedba
 
 ## Evidence at this checkpoint
 - The frozen event register and the independently approved timeline are available. Release integration waits on the designated register review.
-- The deadline shortcut failed in both tested layouts while six deadline records were available. A direct route to the deadline dashboard has a reproducible acceptance check.
-- Four publication-approved rating sets, the ranked insights and measured outcomes from two completed SIS13 improvements are still required.
+- The deadline shortcut failed in both tested layouts while six deadline records were available. The direct dashboard candidate passed both matched local journeys, with 0/2 failures. Formal action approval is pending.
+- Four publication-approved rating sets, the ranked insights and two approved and measured SIS13 improvements are still required.
 
 This draft is for team review and assembly. The 23-24 November follow-up cycle is reported separately from the historical observation window.
 
@@ -92,7 +92,7 @@ These observations supply investigation inputs. Gleb’s reviewed SIS13-10 backl
 
 The SC-ISS-003 shortcut was separately reproduced on 23 November. Its confirmed E-ID and ranked I-ID mapping are pending. The replay shows why the built-in phrase can fall outside the supported deadline grammar, but it does not establish the upstream project decision that produced the wording.
 
-See [SIS13-10 Insight Backlog](https://app.clickup.com/t/z8q7hbx7w5) and [the shortcut investigation](https://github.com/yerassyl-clou/SmartCampus/blob/e53a2bef690f3a5dc577435e901f7c42211c3a3d/docs/SIS13/evidence/ux/UX_IMPLEMENTATION.md).
+See [SIS13-10 Insight Backlog](https://app.clickup.com/t/z8q7hbx7w5) and [the shortcut investigation](https://github.com/yerassyl-clou/SmartCampus/blob/a42d335d92d396f1cfefc7b464f560b88d87e9df/docs/SIS13/evidence/ux/UX_IMPLEMENTATION.md).
 
 ---
 # Improvement action plan
@@ -100,7 +100,7 @@ The action-plan draft contains three candidate measurement areas. Ranked I-IDs, 
 
 | Area | Observed baseline | Candidate target | Result |
 | --- | --- | --- | --- |
-| Deadline shortcut | 2/2 failed journeys, one on each tested layout | 0/2, if scope is approved | Unmeasured |
+| Deadline shortcut | 2/2 failed journeys, one on each tested layout | 0/2 proposed | 0/2 observed on candidate |
 | Board acceptance evidence | SIS13 cohort and fields to be captured before change | 100% of a fixed eligible cohort if selected | Unmeasured |
 | PR verification | Zero tracked workflow definitions on the inspected main | 2/2 required checks execute and pass at the same after head, if selected | Unmeasured |
 
@@ -113,20 +113,20 @@ See [SIS13-03 Action Plan](https://github.com/yerassyl-clou/SmartCampus/pull/34)
 ---
 # Implementation evidence
 ## Current outcome
-Zero SIS13 improvements meet the criteria for counted implementation evidence at this checkpoint. SIS12 reassignments and the offline pytest guard are historical. A follow-up action that overlaps them qualifies only with a new measured result.
+One implemented candidate has matched measurements. Its SIS13-10 linkage and action approval remain open, so zero approved improvements meet the final count. SIS12 reassignments and the offline pytest guard are historical. A follow-up action that overlaps them qualifies only with a new measured result.
 
 ## UX evidence available
-On 23 November, two keyboard attempts reached an ungrounded fallback with zero chat sources while the fictional deadlines view held six records. Four before captures cover the desktop and mobile baseline and focus states. The existing sidebar reference reached the deadline view on both layouts, but the welcome-mode acceptance check failed on the baseline as expected. The matching after evidence requires an approved product change.
+On 23 November, two keyboard attempts reached an ungrounded fallback with zero chat sources while the fictional deadlines view held six records. Four before captures cover the desktop and mobile baseline and focus states. On candidate commit 748f695, keyboard activation of the welcome link opened and focused the deadline view on both layouts. The replay verified six records and no chat POST during navigation. Failed journeys changed from 2/2 to 0/2 on the same local fixture.
 
-![Desktop baseline showing keyboard focus before shortcut activation](42b93507a09ab39bf146ef628411308ef5ec94b2:docs/SIS13/evidence/ux/sis13-08-sc-iss-003-baseline-focus-1440.png)
-Desktop baseline capture. Focus is visible before shortcut activation.
+![Desktop candidate result](668a230d7610c493efa1cf73729ea26b84cae915:docs/SIS13/evidence/ux/sis13-08-sc-iss-003-after-dashboard-1440.png)
+Desktop after capture at 11:05 Almaty. See the [indexed before and after originals](https://github.com/yerassyl-clou/SmartCampus/pull/39).
 
 ## Process and technical evidence still needed
 - Process: record approved A-ID, cohort, live board before-state, applied change, after-state and comparable observed counts.
 - Technical: record approved A-ID, before and after revisions, matched test case and measured result. Link the actual GitHub Actions job when available.
-- UX: record approved implementation SHA, run the welcome-mode replay, capture original after images and report the two observed outcomes.
+- UX: record formal approval and the accepted action and insight identifiers. The candidate evidence already includes the tested SHA, replay and captures.
 
-See [UX acceptance preparation](https://github.com/yerassyl-clou/SmartCampus/pull/38), [before captures](https://github.com/yerassyl-clou/SmartCampus/pull/39) and [the implementation evidence summary](https://github.com/yerassyl-clou/SmartCampus/pull/35).
+See [UX acceptance results](https://github.com/yerassyl-clou/SmartCampus/pull/38), [before and after captures](https://github.com/yerassyl-clou/SmartCampus/pull/39) and [the implementation evidence summary](https://github.com/yerassyl-clou/SmartCampus/pull/35).
 
 ---
 # Measured results and next sprint
@@ -135,7 +135,7 @@ See [UX acceptance preparation](https://github.com/yerassyl-clou/SmartCampus/pul
 | --- | --- | --- |
 | Historical release verification | 126 backend, 70 standard browser and 9 live browser tests passed | Historical local runs from 10 November |
 | SIS12 offline guard comparison | 126 tests before, 127 after, including the rejection test | Existing improvement, with no provider savings measured |
-| SIS13 deadline shortcut baseline | 2/2 fallback journeys, with six dashboard records available | Two layouts on the same local seed. After result unmeasured |
+| SIS13 deadline shortcut candidate | 2/2 failed before, 0/2 failed after | Same local seed and two Chromium layouts. Action approval pending |
 | SIS13 GitHub Actions | No tracked workflow on inspected main | No claim of successful CI |
 
 ## Next checkpoint
@@ -152,7 +152,7 @@ The table records visible SIS13 artifacts and assigned responsibilities. Confirm
 | Member | Evidence available for this draft | Outstanding handoff |
 | --- | --- | --- |
 | Yerassyl Babayev | Frozen register, timeline, draft action plan, audit and report coordination | Integrate accepted PRs and assemble final report |
-| Danaya Aliyeva | Timeline review, rating material, seismograph validator and UX baseline | Approved scores, matched UX result and defense coordination |
+| Danaya Aliyeva | Timeline review, rating material, seismograph validator and UX baseline | Approved scores, UX approval and defense coordination |
 | Gleb Yurtayev | Assigned process and insight lead | Reviewed insight backlog, process evidence and contribution confirmation |
 | Ratislav Ovchinnikov | Assigned technical and regression lead | Technical change, test evidence and contribution confirmation |
 
@@ -161,5 +161,5 @@ The table records visible SIS13 artifacts and assigned responsibilities. Confirm
 - [Frozen event register](https://github.com/yerassyl-clou/SmartCampus/pull/32) and [approved visual timeline](https://github.com/yerassyl-clou/SmartCampus/pull/33)
 - [Action plan](https://github.com/yerassyl-clou/SmartCampus/pull/34) and [rubric audit](https://github.com/yerassyl-clou/SmartCampus/pull/35)
 - [Independent ratings](https://github.com/yerassyl-clou/SmartCampus/pull/36) and [Seismograph preparation](https://github.com/yerassyl-clou/SmartCampus/pull/37)
-- [UX investigation](https://github.com/yerassyl-clou/SmartCampus/pull/38) and [original UX captures](https://github.com/yerassyl-clou/SmartCampus/pull/39)
+- [UX candidate tests](https://github.com/yerassyl-clou/SmartCampus/pull/38) and [original UX captures](https://github.com/yerassyl-clou/SmartCampus/pull/39)
 - Course handout: SIS 13. Sprint Retrospective & Continuous Improvement Challenge, IT Project Management.

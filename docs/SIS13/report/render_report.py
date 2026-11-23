@@ -124,7 +124,7 @@ def draw_page(pdf, content, page, total):
         if asset:
             image = figure(asset[2])
             width, height = image.getSize()
-            max_height = 285 if width / height >= 1.6 else 245
+            max_height = 285 if width / height >= 1.6 else 207
             scale = min(BODY_WIDTH / width, max_height / height)
             width, height = width * scale, height * scale
             y -= height
