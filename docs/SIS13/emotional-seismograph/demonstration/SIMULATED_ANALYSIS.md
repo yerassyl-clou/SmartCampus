@@ -24,4 +24,4 @@ python3 docs/SIS13/emotional-seismograph/demonstration/check_simulated_workflow.
   --official-csv /path/to/SIS13-05/ratings.csv
 ```
 
-In the second command, point `--official-csv` to the existing blank SIS13-05 CSV from PR #36 when repeating this checkpoint. The checks compare all 11 exact means, extrema, adjacent changes and inclusive spread flags. They verify five chart entries through the renderer, reproduce the committed 2160 × 1215 PNG pixel for pixel in the recorded environment, and exercise rejection of malformed input and official output names for the simulated source.
+In the second command, point `--official-csv` to the blank SIS13-05 CSV at the original PR #36 checkpoint `fc78e27391a9cbfb7dfbba549a9d242d7c7e18b1`. The checks compare all 11 exact means, extrema, adjacent changes and inclusive spread flags. They verify five chart entries through the renderer, reproduce the committed 2160 × 1215 PNG pixel for pixel in the recorded environment, and exercise rejection of malformed input and official output names for the simulated source.
