@@ -40,3 +40,13 @@ Copy these rows into a private message to Danaya Aliyeva. Score each event once 
 | Ratislav Ovchinnikov | Pending | — | Pending |
 
 [Ratings CSV](ratings.csv) contains 11 event rows and 44 blank member cells at this checkpoint. The 11 team means are also blank.
+
+## Production handoff
+
+1. Confirm the latest accepted roster against frozen SIS13-01 v1.0. If that roster changes, reconcile IDs and titles with SIS13-02 and obtain any required participant reconfirmation before transcribing answers.
+2. For each private reply, register the timestamp, 11 original integer scores and the publication decision in the private collection log. Verify identity and independence in that channel. Resolve missing values or duplicate event IDs with the participant.
+3. In this branch's `ratings.csv`, enter only personally supplied, publication-approved scores under stable private codes. Leave pending or restricted inputs blank. For complete rows, enter the exact sum divided by four.
+4. Run the SIS13-06 validator against the pinned register and this CSV. Confirm all four coded columns are complete, review commit contents for private material, and publish the verified dataset in [PR #36](https://github.com/yerassyl-clou/SmartCampus/pull/36).
+5. Hand the accepted CSV revision to [PR #37](https://github.com/yerassyl-clou/SmartCampus/pull/37). The workflow demonstration in that PR uses a separate AI-simulated fixture. Keep demonstration files separate from the canonical data and from retrospective evidence.
+
+On the 23 November continuation check, the canonical CSV still contained zero recorded vectors. The ClickUp daily connector limit prevented a new private-inbox check. Live submission and permission statuses therefore require authorized confirmation before any entry or review transition.
