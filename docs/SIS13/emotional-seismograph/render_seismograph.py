@@ -1,4 +1,4 @@
-"""Validate consented SIS13 ratings and render the five-series figure."""
+"""Validate SIS13 ratings and render the official or simulated figure."""
 
 import argparse
 import csv
@@ -52,7 +52,7 @@ def summarize(event_ids, ratings, means):
     }
 
 
-def render(event_ids, ratings, means, output):
+def render(event_ids, ratings, means, output, *, simulated=False):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -60,19 +60,22 @@ def render(event_ids, ratings, means, output):
 
     palette = ["#185D86", "#AB491C", "#694599", "#14755A", "#202A36"]
     styles = [("-", "o"), ("--", "s"), ("-.", "^"), (":", "D"), ("-", "P")]
-    labels = ["Member 1", "Member 2", "Member 3", "Member 4", "Team mean"]
+    labels = ["Member 1", "Member 2", "Member 3", "Member 4", "Team Average"]
     series = [*zip(*ratings), means]
     figure, axes = plt.subplots(figsize=(12, 6.75), layout="constrained")
+    if simulated:
+        figure.suptitle("AI-SIMULATED TEST DATA  /  WORKFLOW DEMONSTRATION",
+                        color="#8D3044", fontsize=14, fontweight="bold")
     for index, (values, label, color, (line, marker)) in enumerate(zip(series, labels, palette, styles)):
         axes.plot(event_ids, values, color=color, linestyle=line, marker=marker,
-                  linewidth=3 if index == 4 else 1.6, markersize=6, label=label)
+                  linewidth=3 if index == 4 else 1.6, markersize=6, label=label, clip_on=False)
     axes.set(title="SmartCampus Emotional Seismograph", xlabel="Retrospective events in chronological order",
              ylabel="Emotional experience score", ylim=(-5, 5), yticks=range(-5, 6))
     axes.margins(x=0.04)
     axes.grid(axis="y", color="#DFE3E8")
     axes.axhline(0, color="#666F7A", linewidth=0.8, zorder=1)
     axes.spines[["right", "top"]].set_visible(False)
-    axes.legend(ncols=5, loc="upper center", bbox_to_anchor=(0.5, -0.18), frameon=False)
+    axes.legend(ncols=5, loc="upper center", bbox_to_anchor=(0.5, -0.14), frameon=False)
     if axes.get_legend_handles_labels()[1] != labels:
         raise ValueError("The figure must contain four member series and one team mean.")
     figure.savefig(output, dpi=180, facecolor="white")
@@ -90,17 +93,21 @@ def main():
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
 
+    simulated = args.csv.name.endswith(".simulated.csv")
     try:
+        if simulated and args.output and not args.output.name.endswith(".simulated.png"):
+            raise ValueError("Simulated input requires a separate .simulated.png output name.")
         event_ids, ratings, means = read_ratings(args.roster, args.csv)
         completed = sum(all(row[column] is not None for row in ratings) for column in range(4))
-        print(f"{len(event_ids)} ordered events, {completed}/4 complete member vectors.")
+        kind = "simulated" if simulated else "member"
+        print(f"{len(event_ids)} ordered events, {completed}/4 complete {kind} vectors.")
         if completed < 4:
             if args.output:
                 raise ValueError("Four complete approved vectors are required before rendering.")
             return
         print(json.dumps(summarize(event_ids, ratings, means), indent=2, ensure_ascii=False))
         if args.output:
-            render(event_ids, ratings, means, args.output)
+            render(event_ids, ratings, means, args.output, simulated=simulated)
     except ValueError as error:
         parser.exit(1, f"{error}\n")
 
