@@ -1,6 +1,6 @@
 # SIS13-05 independent rating collection
 
-**Status:** Partial · template and frozen roster ready · 0 of 4 confirmed submissions at the initial 23 November 2026 checkpoint (Asia/Almaty).
+**Status:** Four complete response vectors supplied and approved for coded publication, as confirmed by the submitting user on 23 November 2026 (Asia/Almaty).
 
 **Source:** [SIS13-01 frozen roster v1.0](https://github.com/yerassyl-clou/SmartCampus/blob/d903dfbb3317fff7fdce856b6643fffc33a1071f/docs/SIS13/event-timeline/EVENT_EVIDENCE_REGISTER.md) as published in the [SIS13-05 handoff](https://app.clickup.com/t/z8q7hbx7w0#comment-1100310000219131). The 11 events below preserve the source IDs, labels and chronology. Dates use Asia/Almaty.
 
@@ -32,14 +32,14 @@ Copy these rows into a private message to Danaya Aliyeva. Score each event once 
 
 ## Submission status
 
-| Participant | Confirmed submission | Receipt date | Publication permission |
-| --- | --- | --- | --- |
-| Yerassyl Babayev | Pending | — | Pending |
-| Danaya Aliyeva | Pending | — | Pending |
-| Gleb Yurtayev | Pending | — | Pending |
-| Ratislav Ovchinnikov | Pending | — | Pending |
+| Collection checkpoint | Recorded result |
+| --- | --- |
+| Coverage | 4 of 4 participant vectors, each with 11 scores |
+| Source and receipt | The submitting user supplied the consolidated matrix and confirmed it represents actual team responses. Individual timestamps and original messages were unavailable for direct verification because the ClickUp connector hit its daily quota. |
+| Publication | The submitting user separately confirmed coded GitHub and academic publication consent from all four participants. Member codes are used in shared data. |
+| Numeric validation | All 44 scores are integers from −5 to +5. All 11 events match the frozen register, and each mean is the exact sum of four scores divided by four. |
 
-[Ratings CSV](ratings.csv) contains 11 event rows and 44 blank member cells at this checkpoint. The 11 team means are also blank.
+The later confirmed matrix matches the values in the earlier simulation fixture. The fixture stays labeled as an example. The official CSV relies on the submitting user's later confirmation of provenance and consent. [Canonical ratings CSV](ratings.csv)
 
 ## Production handoff
 
@@ -49,4 +49,4 @@ Copy these rows into a private message to Danaya Aliyeva. Score each event once 
 4. Run the SIS13-06 validator against the pinned register and this CSV. Confirm all four coded columns are complete, review commit contents for private material, and publish the verified dataset in [PR #36](https://github.com/yerassyl-clou/SmartCampus/pull/36).
 5. Hand the accepted CSV revision to [PR #37](https://github.com/yerassyl-clou/SmartCampus/pull/37). The workflow demonstration in that PR uses a separate AI-simulated fixture. Keep demonstration files separate from the canonical data and from retrospective evidence.
 
-On the 23 November continuation check, the canonical CSV still contained zero recorded vectors. The ClickUp daily connector limit prevented a new private-inbox check. Live submission and permission statuses therefore require authorized confirmation before any entry or review transition.
+The review should check the collection provenance against the original private submissions if those records become available. Reserve any individual explanation for context explicitly approved by its author.
