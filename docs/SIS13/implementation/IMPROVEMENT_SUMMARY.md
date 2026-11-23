@@ -1,0 +1,15 @@
+# SmartCampus SIS 13 improvement evidence summary
+
+**Preliminary checkpoint · 23 November 2026 · Asia/Almaty (UTC+05:00)**
+
+**Count supported by available SIS13 evidence: 0 of the required 2 implementations.** The follow-up cycle is 23–24 November. The action-plan branch contains the measurement method. Approved actions and demonstrated paired results are pending. [Draft action plan PR #34](https://github.com/yerassyl-clou/SmartCampus/pull/34)
+
+| Evidence stream | Implementation handoff | Result handoff | Current evidence disposition |
+| --- | --- | --- | --- |
+| Product UX | [SIS13-07](https://app.clickup.com/t/z8q7hbx7w1) · Danaya Aliyeva | [SIS13-08](https://app.clickup.com/t/z8q7hbx7w3) · UX capture and accessibility evidence | Pending approved A-ID, implementation PR, matching captures and actual measurement. |
+| Board and process | [SIS13-11](https://app.clickup.com/t/z8q7hbx7w4) · Gleb Yurtayev | [SIS13-12](https://app.clickup.com/t/z8q7hbx7w6) · process measurement | Native dependency on SIS13-03. Pending approved A-ID, baseline snapshot, live applied change and matched after snapshot. |
+| Technical | [SIS13-14](https://app.clickup.com/t/z8q7hbx7w8) · Ratislav Ovchinnikov | [SIS13-15](https://app.clickup.com/t/z8q7hbx7w9) and [SIS13-16](https://app.clickup.com/t/z8q7hbx7wa) · regression and actual results | Pending approved A-ID, implementation SHA, paired result and CI or explicit run limitation. |
+
+For each result, capture the action ID and related I-IDs and E-IDs, responsible member, implementation link, baseline and after evidence IDs, dates and comparable numeric values. Keep the target in its own field. Count an action after the implementation and matched evidence are traceable. Use `partial` for measurements made during an unfinished observation window and specify the later checkpoint.
+
+SIS12’s board reassignments, time-logging policy and offline pytest guard are already in the historical register. Any overlapping SIS13 change qualifies only with new demonstrated results. [SIS12 board evidence](https://github.com/yerassyl-clou/SmartCampus/blob/736e30c020ac38ff3910bebc3fa9cedfd73a4dcc/docs/sis12/BOARD_BEFORE_AFTER_EVIDENCE.md) · [SIS12 guard](https://github.com/yerassyl-clou/SmartCampus/pull/30) · [SIS13 rubric and dispositions](../quality/RUBRIC_COMPLIANCE.md)
