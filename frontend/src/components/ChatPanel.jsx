@@ -14,11 +14,6 @@ const suggestions = [
     label: 'Make sense of coursework',
     question: 'What are the project requirements?',
   },
-  {
-    icon: 'book',
-    label: 'Find the right information',
-    question: 'Where can I find information about course deadlines?',
-  },
 ]
 
 function Welcome({ onSuggestion }) {
@@ -40,7 +35,7 @@ function Welcome({ onSuggestion }) {
         From assignment deadlines to course requirements,
         <br className="desktop-break" /> let’s find the information you need.
       </p>
-      <div className="suggestions" aria-label="Suggested questions">
+      <div className="suggestions" role="group" aria-label="Suggested questions and shortcuts">
         {suggestions.map(({ icon, label, question }) => (
           <button
             key={question}
@@ -54,6 +49,12 @@ function Welcome({ onSuggestion }) {
             <Icon name="arrow" size={17} className="suggestion-arrow" />
           </button>
         ))}
+        <a className="suggestion" href="#upcoming-deadlines">
+          <Icon name="book" size={21} />
+          <span className="suggestion-label">Plan your schedule</span>
+          <span className="suggestion-question">View course deadlines</span>
+          <Icon name="arrow" size={17} className="suggestion-arrow" />
+        </a>
       </div>
       <span className="welcome-note">
         <Icon name="source" size={14} /> Answers with context. Sources you can

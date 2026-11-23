@@ -60,6 +60,27 @@ test('welcome suggestions populate and focus the input without requesting an ans
   expect(calls).toBe(0)
 })
 
+for (const viewport of [{ width: 1440, height: 1000 }, { width: 375, height: 812 }]) {
+  test(`welcome deadline shortcut focuses the dashboard at ${viewport.width}px`, async ({ page }) => {
+    await page.setViewportSize(viewport)
+    const chatRequests = []
+    page.on('request', (request) => {
+      if (new URL(request.url()).pathname === '/api/chat') chatRequests.push(request)
+    })
+
+    const shortcut = page.getByRole('link', { name: /view course deadlines/i })
+    await shortcut.focus()
+    await page.keyboard.press('Enter')
+
+    const dashboard = page.getByRole('region', { name: 'Course deadlines', exact: true })
+    await expect(page).toHaveURL(/#upcoming-deadlines$/)
+    await expect(dashboard).toBeFocused()
+    await expect(dashboard.getByRole('heading', { name: 'No deadlines to show' })).toBeInViewport()
+    await expect(page.getByRole('textbox', { name: 'Your question' })).toHaveValue('')
+    expect(chatRequests).toHaveLength(0)
+  })
+}
+
 test('sends the contract, trims questions, renders multiple sources and preserves history', async ({
   page,
 }) => {

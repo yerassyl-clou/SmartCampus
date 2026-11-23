@@ -1,4 +1,6 @@
+import { mkdir } from 'node:fs/promises'
 import { createRequire } from 'node:module'
+import { join } from 'node:path'
 
 const require = createRequire(new URL('../../../../frontend/package.json', import.meta.url))
 const { chromium, expect } = require('@playwright/test')
@@ -10,10 +12,18 @@ if (args.some(arg => arg !== '--reference') || args.length > 1) {
 
 // Reference mode checks the existing sidebar link on the baseline app.
 const reference = args.includes('--reference')
+const captureDir = reference ? undefined : process.env.SIS13_CAPTURE_DIR
+if (captureDir) await mkdir(captureDir, { recursive: true })
 const baseUrl = process.env.SIS13_BASE_URL ?? 'http://127.0.0.1:5193'
 const viewports = [{ width: 1440, height: 1000 }, { width: 375, height: 812 }]
 const browser = await chromium.launch()
 let failures = 0
+
+async function expectVisibleFocus(control) {
+  await expect(control).toBeFocused()
+  await expect(control).toHaveCSS('outline-style', 'solid')
+  await expect(control).toHaveCSS('outline-width', '3px')
+}
 
 try {
   for (const viewport of viewports) {
@@ -40,17 +50,30 @@ try {
         await page.keyboard.press('Tab')
         if (await shortcut.evaluate(element => element === document.activeElement)) break
       }
-      await expect(shortcut).toBeFocused()
+      await expectVisibleFocus(shortcut)
+      if (captureDir) {
+        await page.screenshot({
+          path: join(captureDir, `sis13-08-sc-iss-003-after-focus-${viewport.width}.png`),
+          animations: 'disabled',
+        })
+      }
       await page.keyboard.press('Enter')
 
       const panel = page.getByRole('region', { name: 'Course deadlines', exact: true })
       await expect(page).toHaveURL(/#upcoming-deadlines$/)
-      await expect(panel).toBeFocused()
+      await expectVisibleFocus(panel)
       await expect(panel.getByRole('heading', { name: 'Course deadlines', exact: true })).toBeInViewport()
       await expect(panel.locator('time')).toHaveCount(6)
       await expect(page.getByText(/No supporting course evidence was found/)).toHaveCount(0)
       expect(chatPosts).toHaveLength(0)
       expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(viewport.width)
+
+      if (captureDir) {
+        await page.screenshot({
+          path: join(captureDir, `sis13-08-sc-iss-003-after-dashboard-${viewport.width}.png`),
+          animations: 'disabled',
+        })
+      }
 
       const fallbackResponse = page.waitForResponse(result => result.url() === baseUrl + '/api/chat')
       const composer = page.getByRole('textbox', { name: 'Your question' })
@@ -73,5 +96,5 @@ try {
   await browser.close()
 }
 
-console.log(`${reference ? 'Reference' : 'Proposed welcome shortcut'} failures: ${failures}/${viewports.length}`)
+console.log(`${reference ? 'Reference' : 'Welcome shortcut'} failures: ${failures}/${viewports.length}`)
 process.exitCode = failures ? 1 : 0
