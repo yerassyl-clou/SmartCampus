@@ -28,6 +28,25 @@ Select at least three approved actions. Identify two that can be delivered indep
 | E-09 | Zero GitHub Actions workflows at the 17 November infrastructure sample. The SIS13 main baseline also has zero tracked workflow files. | If selected, capture workflow configuration and an authenticated PR run at the after SHA. A configured workflow and a successful run are separate measurements. | [Infrastructure audit](https://github.com/yerassyl-clou/SmartCampus/blob/8ad73158a9c6961101ec6469835c5aab17cd8642/docs/sis12/INFRA_RESOURCE_LIMITS.md) |
 | E-11 | 126 → 127 backend tests passed in the 17 November Python 3.13 comparison, including one new rejection test. | Existing SIS12 guardrail. Probe any proposed new improvement on a pinned baseline with the same scenario before and after. Test totals alone cannot measure provider-call or cost savings. | [Provider test guard evidence](https://github.com/yerassyl-clou/SmartCampus/blob/6645b5ef95e2cb4d00aa4bb6756705ac84475654/docs/sis12/PROVIDER_TEST_OPTIMIZATION.md) |
 
+## Candidate measurement for the deadline shortcut
+
+SIS13-07 reproduced SC-ISS-003 on 23 November against app SHA `6645b5ef95e2cb4d00aa4bb6756705ac84475654`. Both runs reached the fallback while the fictional dashboard exposed six deadlines. SIS13-08 supplies the original before captures. This is a same-day candidate baseline and has no approved I-ID or A-ID yet. [Replay and result](https://github.com/yerassyl-clou/SmartCampus/blob/d052ccfafbec58e762e98bbb7c6786b587c32dc9/docs/SIS13/evidence/ux/UX_IMPLEMENTATION.md) · [Capture protocol and originals](https://github.com/yerassyl-clou/SmartCampus/blob/42b93507a09ab39bf146ef628411308ef5ec94b2/docs/SIS13/presentation/UX_ASSET_INDEX.md)
+
+| Measure | Observed baseline | Proposed success threshold | Measured after |
+| --- | --- | --- | --- |
+| Failed deadline-discovery journeys divided by two valid keyboard attempts | 2/2 (100%). Desktop 1440 × 1000 and mobile 375 × 812 each recorded HTTP 200, `grounded=false`, zero sources and six available deadline records. | 0/2 (0%) if this scope and outcome are approved. Each attempt must surface available deadlines or reach the populated deadlines view as specified by the approved solution. | Not yet measured. |
+
+- Use one fresh Chromium session per viewport with the same fixture, fixed browser clock, provider-free configuration and deadline-discovery intent. Record both commit SHAs and replay commands. Match the keyboard entry point and user intent when the solution changes the interaction.
+- Record success or failure for each run and retain the observation that supports it. Confirm visible focus and the absence of horizontal overflow as separate checks. If the fixture, local service or setup is invalid, log the invalid run and fix the setup before replacing it. A valid product failure stays in the denominator.
+- Publish the two original after captures with their scenario outcomes and calculate the percentage from the observed numerator and denominator. The sample measures this specific journey on two layouts. It does not estimate a population-wide success rate.
+
+## Approval and validation
+
+1. Confirm the SIS13-10 reviewer disposition and pin `INSIGHT_BACKLOG.md` and `FIVE_WHYS.md`. Resolve each chosen I-ID and all referenced E-IDs, then confirm at least three high-priority insights and a supported link from cause to action in each record.
+2. For each selected implementation, require a named owner, an exact deadline, a pinned pre-change measure and a feasible target. For a board metric capture the cohort and field criteria before the change. For a technical metric record the case, fixture and replay at the before SHA. Obtain the owners' agreement on two independently measurable delivery actions and the evidence they will return.
+3. Confirm baseline, target and after value use the same unit and compare like cohorts or scenarios. Recompute any ratios from raw counts. Label the target as planned, the result as actual only after observation and an unfinished observation window as partial with its next checkpoint.
+4. Send the approved I-ID, A-ID, owner, deadline, baseline, target and exact verification method to the implementation task. Record the approval and linked implementation tasks before requesting Review on SIS13-03.
+
 ## Matched before and after protocol
 
 Capture the baseline before modifying a live board or product behavior. Keep the scenario, inclusion rules, unit, denominator, fixture, tool version and environment fixed. Record the baseline and after SHAs for code, or dated snapshots with the same filters for process evidence. Link before and after captures with task-scoped EV-IDs and keep secrets and private rating material out of the repository.
