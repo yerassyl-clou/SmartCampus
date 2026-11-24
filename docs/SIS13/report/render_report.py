@@ -96,7 +96,7 @@ def draw_page(pdf, content, page, total):
     pdf.setStrokeColor(LINE)
     pdf.line(MARGIN, 51, WIDTH - MARGIN, 51)
     pdf.setFont("Helvetica", 9)
-    pdf.drawString(MARGIN, 33, "IT Project Management | 23 November 2026")
+    pdf.drawString(MARGIN, 33, "IT Project Management | 24 November 2026")
     pdf.drawRightString(WIDTH - MARGIN, 33, f"{page} / {total}")
 
     y = HEIGHT - 76

@@ -1,5 +1,5 @@
 # SmartCampus sprint retrospective
-IT Project Management · SIS 13 · English report draft · 23 November 2026
+IT Project Management · SIS 13 · English report draft · 24 November 2026
 
 ## Executive summary
 The retrospective covers 7-20 November 2026 in Asia/Almaty. Eleven documented events show how the team moved from a measured QA baseline to the SIS 10-11 release and then addressed resource visibility and offline testing in SIS 12.
@@ -7,13 +7,13 @@ The retrospective covers 7-20 November 2026 in Asia/Almaty. Eleven documented ev
 The release combined deadline grouping, course-aware retrieval and answer feedback. The team recorded tests on the merged revision and closed 20 associated ClickUp tasks. Later work redistributed two documented responsibilities and exposed gaps in time tracking and provider account evidence.
 
 ## Evidence at this checkpoint
-- The frozen event register and the independently approved timeline are available. Release integration waits on the designated register review.
-- The deadline shortcut failed in both tested layouts while six deadline records were available. The direct dashboard candidate passed both matched local journeys, with 0/2 failures. Formal action approval is pending.
+- The frozen event register and the independently approved timeline are integrated in main.
+- The deadline shortcut failed in both tested layouts while six deadline records were available. The direct dashboard candidate passed both matched local journeys, with 0/2 failures. Independent reruns passed 72 browser and 127 backend tests. Formal action approval is pending.
 - Four publication-approved rating sets, the ranked insights and two approved and measured SIS13 improvements are still required.
 
 This draft is for team review and assembly. The 23-24 November follow-up cycle is reported separately from the historical observation window.
 
-See the [SmartCampus Task Board](https://app.clickup.com/1100310000007240/v/l/z8q7hb2y28-378) and [delivery playbook](https://github.com/yerassyl-clou/SmartCampus/blob/9dff9c289289eda7bb2402fb2ef2075f1b7d6571/docs/SIS13/AGENT_PLAYBOOK.md).
+See the [SmartCampus Task Board](https://app.clickup.com/1100310000007240/v/l/z8q7hb2y28-378) and [delivery playbook](https://github.com/yerassyl-clou/SmartCampus/blob/main/docs/SIS13/AGENT_PLAYBOOK.md).
 
 ---
 # Reporting period and method
@@ -26,7 +26,7 @@ The roster uses stable E-IDs. GitHub merge metadata establishes when changes rea
 Direct evidence supports the fact it records. Corroborated evidence combines agreeing records. An item remains uncertain where its source cannot establish the claimed outcome. The verified historical delay concerns board updates. The records do not establish a missed assignment deadline.
 
 ## Current limits
-The ClickUp Primary quota limit prevented a fresh read of historical comments and closure records. Gleb was asked to confirm E-01, E-02 and E-05 through E-08. The GitHub file and PR locators and local date conversions have been checked. A PR merge time establishes publication or integration, while a test log carries its own execution date.
+The integration review verified the original ClickUp comments and closure field for E-01, E-02 and E-05 through E-08. GitHub sources and timezone conversions were also checked. A PR merge time establishes publication or integration, while a test log carries its own execution date.
 
 See the [frozen register with source grades](https://github.com/yerassyl-clou/SmartCampus/blob/d903dfbb3317fff7fdce856b6643fffc33a1071f/docs/SIS13/event-timeline/EVENT_EVIDENCE_REGISTER.md) and [SIS 10-11 acceptance evidence](https://github.com/yerassyl-clou/SmartCampus/blob/9dff9c289289eda7bb2402fb2ef2075f1b7d6571/docs/sis1011/FINAL_ACCEPTANCE_REPORT.md).
 
@@ -55,7 +55,7 @@ See the [timeline and evidence links](https://github.com/yerassyl-clou/SmartCamp
 Each member rates every frozen event privately before group discussion. The scale is -5 for a very negative experience, 0 for neutral and +5 for very positive. Record one integer per event. Danaya keeps the association between names and member codes private and confirms publication consent separately.
 
 ## Available evidence
-The published draft contains 11 event rows. At the inspected revision, all 44 member-score cells and 11 means are blank. The validator reports 0/4 complete vectors and refuses final rendering. The actual chart will be inserted here after private receipt and publication approval.
+The current candidate contains 44 scores and 11 means. It exactly matches an earlier AI-simulated fixture. Original independent submissions and coded publication consent still require verification. The chart remains pending for the report.
 
 Four independent member curves and the team mean will use E-01 through E-11 on the horizontal axis and -5 through +5 on the vertical axis. Each complete mean is the sum of four ratings divided by four. Blank rows remain missing until all four approved values exist.
 
@@ -151,8 +151,8 @@ The table records visible SIS13 artifacts and assigned responsibilities. Confirm
 
 | Member | Evidence available for this draft | Outstanding handoff |
 | --- | --- | --- |
-| Yerassyl Babayev | Frozen register, timeline, draft action plan, audit and report coordination | Integrate accepted PRs and assemble final report |
-| Danaya Aliyeva | Timeline review, rating material, seismograph validator and UX baseline | Approved scores, UX approval and defense coordination |
+| Yerassyl Babayev | Frozen register, timeline, draft action plan, audit and report coordination | Assemble final report from accepted evidence |
+| Danaya Aliyeva | Timeline review, rating material, seismograph renderer and tested UX candidate | Approved scores, UX approval and defense coordination |
 | Gleb Yurtayev | Assigned process and insight lead | Reviewed insight backlog, process evidence and contribution confirmation |
 | Ratislav Ovchinnikov | Assigned technical and regression lead | Technical change, test evidence and contribution confirmation |
 
