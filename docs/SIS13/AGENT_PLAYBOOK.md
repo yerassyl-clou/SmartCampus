@@ -30,13 +30,17 @@ SmartCampus is the existing fictional-campus application with a React interface,
 2. Move the assigned task to `in progress` and post a short dated plan with baseline, intended branch and expected evidence. Use a task-specific `codex/sis13-XX-topic` branch created from the recorded baseline. Keep commits off `main`.
 3. Confirm shared-file ownership before edits. Put independent contributions in scoped files or worktrees and coordinate consolidation with the named owner. Preserve API compatibility, fictional data, source grounding and safe fallback behavior.
 4. Produce exact planned artifacts and actual verification. Commit scoped changes, push your branch and open a PR targeting `main`, including documentation-only outputs. Use the ClickUp task link, objective, changes, changed files, exact test commands and results, screenshots/evidence, Actions run/status, remaining issues and risks in the PR.
-5. Post the PR, evidence and measured/failure outcomes in the ClickUp completion comment and move the task to `review`. Reviewer verifies sources, correctness, compatibility and artifacts. The authorized integrator merges accepted work and sets `done`. Keep rejected or incomplete work actionable in the task.
-6. Starting state is `to do`. Use a task comment for blockers with dependency, owner, evidence, attempted recovery, next checkpoint and work that can continue. Agree a resolution with the reviewer. Retain actual failures and identify partial results. Follow the ClickUp owner and reviewer for work authorization.
+5. Post the PR, evidence and measured/failure outcomes in the ClickUp completion comment and move the task to `review`. Centralized technical review verifies sources, correctness, compatibility and artifacts. Yerassyl records PM acceptance, integrates accepted work and sets `done`. Keep rejected or incomplete work actionable in the task.
+6. Starting state is `to do`. Use a task comment for blockers with dependency, owner, evidence, attempted recovery, next checkpoint and work that can continue. Agree a resolution with the project manager and affected owners. Retain actual failures and identify partial results. Follow the ClickUp owner and the project manager for work authorization.
 
 The official handout governs grading. This playbook governs shared schemas and coordination. The task governs its exact scope and outputs. Use merged repository content and original GitHub/ClickUp records for project facts, and reconcile contradictions with the coordinator in the affected task. For evidence, timestamp the source and disclose gaps or uncertainty.
 
 
 See [artifact schemas](ARTIFACT_SCHEMAS.md), [CI instructions](GITHUB_ACTIONS.md) and [historical sources](SOURCE_REGISTER.md).
+
+## Review workflow amendment · 24 November 2026
+
+All four SmartCampus team members have authorized centralized Codex-assisted technical review and PM-led integration, as confirmed by the project manager. Yerassyl records technical review and PM acceptance in the PR and in the ClickUp integration comment. Designated reviewers can still provide feedback. Their individual approval is required only where GitHub enforces it. Preserve individual reviews as submitted. This amendment supersedes the prior SIS13 review routing in ClickUp and preserves task criteria, evidence requirements, dependencies and repository rules.
 
 ## Report and defense
 
