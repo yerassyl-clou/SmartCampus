@@ -1,8 +1,8 @@
 # SIS13-08 UX asset index
 
-**Status:** Matched evidence ready for review. Formal action approval is pending SIS13-03.
+**Status:** Matched evidence for approved A-01. Integrate this evidence after [PR #38](https://github.com/yerassyl-clou/SmartCampus/pull/38). On 24 November 2026 the PM retrospectively approved SC-ISS-003 → I-01 → A-01 (E-01, E-03), with 2/2 failed before, 0/2 target and 0/2 failed after. [PM decision](https://github.com/yerassyl-clou/SmartCampus/pull/38#issuecomment-7131524329)
 
-All four assets were captured on **23 November 2026, 08:40:25 Asia/Almaty** for [SIS13-08](https://app.clickup.com/t/z8q7hbx7w3) and [SIS13-07](https://app.clickup.com/t/z8q7hbx7w1). They show the real React/FastAPI/SQLite application at `6645b5ef95e2cb4d00aa4bb6756705ac84475654` with the fictional seed. The [capture protocol](../evidence/ux/UX_CAPTURE_PROTOCOL.md) records the browser, fixture, clock and keyboard checks.
+The four baseline assets were captured on **23 November 2026, 08:40:25 Asia/Almaty** for [SIS13-08](https://app.clickup.com/t/z8q7hbx7w3) and [SIS13-07](https://app.clickup.com/t/z8q7hbx7w1). They show the real React/FastAPI/SQLite application at `6645b5ef95e2cb4d00aa4bb6756705ac84475654` with the fictional seed. The [capture protocol](../evidence/ux/UX_CAPTURE_PROTOCOL.md) records the browser, fixture, clock and keyboard checks.
 
 | Evidence ID | Original | Scenario and purpose | Stage | Placement and limits |
 | --- | --- | --- | --- | --- |
@@ -24,4 +24,4 @@ Captured **23 November 2026, 11:05:14 Asia/Almaty** on [implementation commit `7
 | EV-08-07 | [sis13-08-sc-iss-003-after-dashboard-1440.png](../evidence/ux/sis13-08-sc-iss-003-after-dashboard-1440.png) | Desktop dashboard after Enter, with focused panel and all six records | After · 1440 × 1000 | Pair with EV-08-01 for the desktop journey result |
 | EV-08-08 | [sis13-08-sc-iss-003-after-dashboard-375.png](../evidence/ux/sis13-08-sc-iss-003-after-dashboard-375.png) | Mobile dashboard after Enter, with focused panel and records continuing below the fold | After · 375 × 812 | Pair with EV-08-02 for the mobile journey result |
 
-**Suggested result caption:** “Failed deadline journeys fell from 2/2 to 0/2 on the same fictional dataset. After the change, keyboard activation opened Course deadlines directly on desktop and mobile.” Use the [capture protocol](../evidence/ux/UX_CAPTURE_PROTOCOL.md) for sample limits. Present the results as a tested candidate until the action is approved.
+**Suggested result caption:** “Failed deadline journeys fell from 2/2 to 0/2 on the same fictional dataset. After the change, keyboard activation opened Course deadlines directly on desktop and mobile.” Use the [capture protocol](../evidence/ux/UX_CAPTURE_PROTOCOL.md) for sample limits. The PM approved the observed result on 24 November, after measurement.
