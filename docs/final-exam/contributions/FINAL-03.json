@@ -1,0 +1,8 @@
+{
+  "task": "FINAL-03",
+  "owner": "Gleb Yurtayev",
+  "contribution": "PostgreSQL ownership migrations and repository guard",
+  "ai_assisted": true,
+  "actual_minutes": null,
+  "status": "ready_for_review"
+}
