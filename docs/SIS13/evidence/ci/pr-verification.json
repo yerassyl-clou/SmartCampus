@@ -1,0 +1,27 @@
+{
+  "comparison": {
+    "head": "668a230d7610c493efa1cf73729ea26b84cae915",
+    "check_runs": 0
+  },
+  "implementation": {
+    "head": "eabdbf3ec15b6c2bc857d87e7420d699125fd8cf",
+    "event": "pull_request",
+    "run": 45393821788,
+    "jobs": [
+      {
+        "name": "Frontend build",
+        "html_url": "https://github.com/yerassyl-clou/SmartCampus/actions/runs/45393821788/job/138444191451",
+        "conclusion": "success",
+        "started_at": "2026-11-24T12:28:23Z",
+        "completed_at": "2026-11-24T12:28:33Z"
+      },
+      {
+        "name": "Backend pytest",
+        "html_url": "https://github.com/yerassyl-clou/SmartCampus/actions/runs/45393821788/job/138444191910",
+        "conclusion": "success",
+        "started_at": "2026-11-24T12:28:23Z",
+        "completed_at": "2026-11-24T12:28:40Z"
+      }
+    ]
+  }
+}
