@@ -1,6 +1,6 @@
 # SIS13-17 retrospective report
 
-The existing report source and generator produce an 11-page English PDF for review. The evidence-draft header records the open presentation and contribution cross-check, along with the missing verified participant figure described in the report. See the [supplementary audit](../quality/FINAL_SUPPLEMENTARY_CHECK.md).
+The existing report source and generator produce an 11-page English PDF for review. The evidence-draft header records the open presentation and contribution cross-check, along with the provenance limitation of the PM-authorized figure. See the [supplementary audit](../quality/FINAL_SUPPLEMENTARY_CHECK.md).
 
 From the repository root, fetch the published SIS13 timeline, emotional-analysis and UX-evidence branches, then run with Python and ReportLab:
 

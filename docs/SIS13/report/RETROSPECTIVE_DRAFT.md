@@ -54,15 +54,13 @@ See the [timeline and evidence links](https://github.com/yerassyl-clou/SmartCamp
 ---
 
 # Emotional Seismograph
-## Collection status
-Danaya published the 11-event collection template and documented the invitation workflow in SIS13-05. The visible collector checkpoint records 0/4 confirmed vectors. A later repository note reports an aggregate attestation of four responses and coded-publication consent. Original receipts and individual consent decisions were unavailable to this review.
+The PM authorized use of the existing 44 ratings on 24 November 2026 in the SIS13-05/06 Final Data Confirmation handoff. The four coded series and the mean use the frozen E-01–E-11 order.
 
-## Candidate dataset verification
-The candidate CSV and the earlier AI-generated demonstration CSV are byte-identical. Both have SHA-256 73d32acf0677b833b696c5f86284d58845b82559448c2da0b34e9bee1ed4d332. The renderer verified 11 ordered E-IDs, four numeric columns on the -5 to +5 scale and all 11 means. The candidate graph reproduced pixel for pixel.
+![PM-authorized AI-assisted dataset with four coded series and their mean](39560457abb7e4206da6080bc13b3d462700aaf0:docs/SIS13/emotional-seismograph/EMOTIONAL_SEISMOGRAPH.png)
 
-The required participant figure and participant-based conclusions are pending. The reproducible candidate remains source material for technical verification. For release, Danaya must reconcile each coded vector against its private original and a separate publication decision. Keep originals private.
+The values exactly match the earlier AI-assisted demonstration. Independent original responses and individual permission for coded publication remain unverified. The figure summarizes the authorized dataset. The academic criterion for independently collected ratings remains open. Source messages and identity mappings stay private.
 
-See the [collector checkpoint](https://app.clickup.com/t/z8q7hbx7w0#comment-1100310000219160), [collection record](https://github.com/yerassyl-clou/SmartCampus/pull/36) and [chart renderer](https://github.com/yerassyl-clou/SmartCampus/pull/37).
+See the [collection record](https://github.com/yerassyl-clou/SmartCampus/pull/36) and the [analysis handoff](https://app.clickup.com/t/z8q7hbx7vz#comment-1100310000222509).
 
 ---
 
@@ -72,8 +70,8 @@ The team established an executable QA baseline before the release. E-04 document
 
 E-07 documents two reallocations totaling 165 planned minutes. E-08 records a time logging protocol and zero positive tracked-time entries in the historical 20-task sample. These records establish assignment and process facts. Actual effort and participant reactions remain unverified.
 
-## Participant interpretation pending
-Apply the spread and adjacent-change checks after independent submissions and publication permission are verified. Retain the roster order and report only verified participant-derived findings.
+## Interpretation of the authorized dataset
+The mean peaked at +4.50 on E-03 and reached −3.00 on E-05. The largest adjacent drop was 7.25 points from E-04 to E-05, followed by a 6.50-point rebound from E-05 to E-06. Spreads of four points or more occurred at E-05 (4), E-07 (6), E-08 (5) and E-11 (4). These are properties of the authorized dataset. Participant reactions and the causes of the score differences remain unverified.
 
 See the [event register](https://github.com/yerassyl-clou/SmartCampus/pull/32), [closure evidence](https://github.com/yerassyl-clou/SmartCampus/pull/25) and [allocation evidence](https://github.com/yerassyl-clou/SmartCampus/pull/26).
 
@@ -90,7 +88,7 @@ The Yerassyl/Codex contribution ranks insights by observed impact, evidence qual
 | I-04 · Actual effort | E-07, E-08. Two moves shifted 165 planned minutes. Zero of 20 historical tasks had positive tracked time. | Estimates and assignment history did not establish actual effort. Check adoption of the SIS12 protocol. |
 | I-05 · Provider visibility | E-09, E-10. The local fixture measured 36,864 bytes. Account usage and spend stayed unknown. | Account evidence must come from the provider account. Request a dated owner snapshot. |
 
-The Five Whys chains distinguish observed mechanisms from hypotheses about initial decisions, logging adoption and missing account data. The documented quota delay and later closure warrant discussion about the handoff. The candidate rating series is excluded from the ranking pending verification.
+The Five Whys chains distinguish observed mechanisms from hypotheses about initial decisions, logging adoption and missing account data. The documented quota delay and later closure warrant discussion about the handoff. The ranking uses documented project evidence. The PM-authorized rating series is summarized separately.
 
 See the [ranked backlog, Five Whys and action decision](https://github.com/yerassyl-clou/SmartCampus/pull/34).
 
@@ -141,7 +139,7 @@ Automated coverage rose from 0/2 to 2/2 for the sampled PRs. Both after jobs pas
 The prior SIS13-08 comment recorded a baseline capture and pending scope. The new authenticated ClickUp record names the PM reviewer, links PR #39, pins 668a230 and states the dated acceptance decision. Read the [before comment](https://app.clickup.com/t/z8q7hbx7w3#comment-1100310000219176) and [after comment](https://app.clickup.com/t/z8q7hbx7w3#comment-1100310000222417) on the [SmartCampus Task Board](https://app.clickup.com/1100310000007240/v/l/z8q7hb2y28-378).
 
 ## Rubric and next checkpoint
-The report covers the timeline, ranked insights, root causes, SMART actions, two measured improvements and the board pilot. Verified participant ratings and the associated figure and interpretation remain pending.
+The report covers the timeline, ranked insights, root causes, SMART actions, two measured improvements and the board pilot. The PM-authorized figure and interpretation are included with the independent-collection and consent limits.
 
 Before submission, verify the defense uses the same figures and identifiers, team members confirm contributions, and the audience can access the linked materials. Use the same rating-status disclosure in the deck.
 
