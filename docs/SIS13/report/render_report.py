@@ -1,4 +1,4 @@
-"""Build the editable SmartCampus retrospective source into its draft PDF."""
+"""Build the editable SmartCampus retrospective source into its PDF."""
 
 import argparse
 import io
@@ -124,7 +124,9 @@ def draw_page(pdf, content, page, total):
         if asset:
             image = figure(asset[2])
             width, height = image.getSize()
-            max_height = 285 if width / height >= 1.6 else 207
+            max_height = 240 if len(FIGURE.findall(content)) > 1 else 285
+            if width / height < 1.6:
+                max_height = min(max_height, 207)
             scale = min(BODY_WIDTH / width, max_height / height)
             width, height = width * scale, height * scale
             y -= height
@@ -154,7 +156,7 @@ def main():
         raise ValueError("The report must be 8-12 pages.")
     rl_config.useA85 = 0
     pdf = canvas.Canvas(str(args.output), pagesize=A4, invariant=1, pageCompression=1)
-    pdf.setTitle("SmartCampus Sprint Retrospective | SIS 13 Evidence Draft")
+    pdf.setTitle("SmartCampus Sprint Retrospective | SIS 13")
     pdf.setSubject("Retrospective and continuous improvement, 7-20 November 2026")
     for index, page in enumerate(pages, 1):
         draw_page(pdf, page, index, len(pages))

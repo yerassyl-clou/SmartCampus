@@ -1,16 +1,13 @@
-# SIS13-17 retrospective report draft
+# SIS13-17 retrospective report
 
-Open `SmartCampus_SIS13_Retrospective_Report.pdf` for review. Edit `RETROSPECTIVE_DRAFT.md` to update the narrative. The report contains dated and source-linked evidence plus explicit pending inputs. The visible evidence-draft marker is required while acceptance gates remain open.
+The existing report source and generator produce an 11-page English PDF for review. The evidence-draft header records the open presentation and contribution cross-check, along with the rating-receipt limitation described in the report. See the [supplementary audit](../quality/FINAL_SUPPLEMENTARY_CHECK.md).
 
-From the repository root, fetch the referenced branches if their pinned commits are absent locally, then render with Python 3 and ReportLab 4.4.9.
+From the repository root, fetch the published SIS13 timeline, emotional-analysis and UX-evidence branches, then run with Python and ReportLab:
 
 ```sh
-git fetch origin codex/sis13-02-event-timeline codex/sis13-08-ux-evidence
 python3 docs/SIS13/report/render_report.py
 pdfinfo docs/SIS13/report/SmartCampus_SIS13_Retrospective_Report.pdf
-pdftoppm -r 100 -png docs/SIS13/report/SmartCampus_SIS13_Retrospective_Report.pdf /tmp/sis13-report
+pdftotext docs/SIS13/report/SmartCampus_SIS13_Retrospective_Report.pdf -
 ```
 
-Each Markdown `---` creates a page break. The renderer supports headings, paragraphs, separate bullet rows, three- or four-column tables, HTTPS links and image references relative to this folder or in `commit:path` form. The timeline uses the independently approved revision. The UX image shows the candidate after capture, with both states linked in the source. Check its reference against the accepted register before final submission.
-
-Before release, incorporate the privacy-approved chart and verified interpretation, ranked insights, approved actions, at least two implementations and comparable results, contribution confirmations and speaking plan. Reconcile the PDF with SIS13-04 and SIS13-18. Verify Task Board and source access for the intended readers, then render and inspect all pages and confirm the 8-12 page limit.
+The source pins the Git objects for the timeline, seismograph and UX images. The CI figures are original browser captures in `docs/SIS13/evidence/ci/`. The generator rejects an out-of-range page count or content extending beyond the page layout.
