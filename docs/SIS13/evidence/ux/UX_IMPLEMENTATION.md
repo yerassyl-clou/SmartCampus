@@ -1,6 +1,16 @@
 # SIS13-07 deadline shortcut
 
-**Status:** Candidate implemented and tested. Formal SIS13 acceptance awaits the SIS13-10 insight and SIS13-03 action approval.
+**Status:** Implemented, measured and accepted by the PM under centralized technical review. The formal decision was recorded retrospectively on 24 November 2026 at 17:29 Asia/Almaty, after the implementation and measurement on 23 November.
+
+**Traceability:** SC-ISS-003 → I-01 → A-01 (E-01, E-03). [PM decision](https://github.com/yerassyl-clou/SmartCampus/pull/38#issuecomment-7131524329) · [Approved Action Plan](https://github.com/yerassyl-clou/SmartCampus/blob/95024f8/docs/SIS13/improvement-plan/ACTION_PLAN.md) · [Ranked insight](https://github.com/yerassyl-clou/SmartCampus/blob/95024f8/docs/SIS13/insight-backlog/INSIGHT_BACKLOG.md)
+
+The approved measure is failed keyboard deadline-discovery journeys. Run Tab/Enter once at 1440 × 1000 and once at 375 × 812 in Chromium with the same fictional SQLite fixture and fixed clock. A pass requires all six seeded records, visible dashboard focus and zero chat POSTs during navigation.
+
+| Measure | Baseline | Approved target | Actual |
+| --- | --- | --- | --- |
+| Failed journeys | 2/2 at `6645b5ef95e2cb4d00aa4bb6756705ac84475654` | 0/2 | 0/2 at `748f6951a870ee0c7bb4a29179bd54e754d25cb2` |
+
+The sample covers two local keyboard journeys on one fictional dataset. See the [eight matched originals](https://github.com/yerassyl-clou/SmartCampus/blob/668a230/docs/SIS13/presentation/UX_ASSET_INDEX.md).
 
 ## SC-ISS-003 baseline
 
@@ -17,7 +27,7 @@ The expected journey surfaces the available deadlines or sends the student direc
 | --- | --- | --- | --- |
 | Shortcut attempts ending in a fallback while the deadline dashboard has records | 2/2 (100%). One run at each viewport, same fixture and browser. | 0/2 failures proposed in SIS13-03. | 0/2 failures observed on the candidate. |
 
-The sample measures the tested path under two viewport configurations. An approved action can use the same denominator and record whether each activation surfaced data or reached the deadline view without a fallback. The historical SIS 10–11 report and source register provide context. Confirmed E/I/A linkage remains pending [SIS13-10](https://app.clickup.com/t/z8q7hbx7w5) and [SIS13-03](https://app.clickup.com/t/z8q7hbx7vx). [Draft action plan](https://github.com/yerassyl-clou/SmartCampus/pull/34)
+The sample measures the tested path under two viewport configurations. An approved action can use the same denominator and record whether each activation surfaced data or reached the deadline view without a fallback. The historical SIS 10–11 report and source register provide context. At the baseline checkpoint, the formal E/I/A linkage was pending. The approved linkage now appears above.
 
 ## Replay and local verification
 
@@ -79,3 +89,9 @@ Run the real services as described above, then press Tab to reach “View course
 | `SIS13_CAPTURE_DIR=/absolute/output node docs/SIS13/evidence/ux/check-deadline-shortcut.mjs` | Repeated both passes on the clean tested SHA and captured four unedited PNGs |
 
 Evidence and per-file limitations are indexed in [PR #39](https://github.com/yerassyl-clou/SmartCampus/pull/39). These checks use Chromium and the local fixture. The sample supports a claim about those two journeys.
+
+## Compatibility with main after the hosted CI merge
+
+On 24 November the PR applied cleanly to `origin/main` at `25df09f7d655c2df918a5d580145a09238482577`. The product and fixture paths on main match the original base. The new [PR workflow](https://github.com/yerassyl-clou/SmartCampus/pull/42) adds backend pytest with empty provider settings and a frontend build. The workflow was verified on #42. At the compatibility check GitHub had recorded zero hosted checks on the existing #38 head.
+
+The local reruns passed on 24 November on the #38 product tree. `npm run build` passed, `npm test` passed all 72 Playwright tests, and `OPENAI_API_KEY='' OPENAI_MODEL='' python -m pytest backend/tests -q` passed all 127 tests with one existing Starlette deprecation warning.
