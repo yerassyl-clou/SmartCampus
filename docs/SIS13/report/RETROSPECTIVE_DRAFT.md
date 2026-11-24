@@ -9,7 +9,7 @@ The release combined deadline grouping, course-aware retrieval and answer feedba
 ## Evidence at this checkpoint
 - The frozen event register and the independently approved timeline are integrated in main.
 - The deadline shortcut failed in both tested layouts while six deadline records were available. The direct dashboard candidate passed both matched local journeys, with 0/2 failures. Independent reruns passed 72 browser and 127 backend tests. The PM retrospectively approved A-01 on 24 November.
-- The report includes four coded rating sets as attested in the collection record, five ranked insights and three approved actions. The UX and hosted CI improvements have measured results. A one-task board pilot adds a third measured result.
+- Five evidence-ranked insights and three approved actions support the follow-up. Independent ratings and consent still require verification. The UX and hosted CI improvements have measured results. A one-task board pilot adds a third measured result.
 
 This report is for team review. The 23-24 November follow-up cycle is reported separately from the historical observation window.
 
@@ -54,28 +54,33 @@ See the [timeline and evidence links](https://github.com/yerassyl-clou/SmartCamp
 ---
 
 # Emotional Seismograph
-Danaya published four coded score series for the 11 frozen events, with a team mean and a -5 to +5 scale.
+## Collection status
+Danaya published the 11-event collection template and documented the invitation workflow in SIS13-05. The visible collector checkpoint records 0/4 confirmed vectors. A later repository note reports an aggregate attestation of four responses and coded-publication consent. Original receipts and individual consent decisions were unavailable to this review.
 
-![Four coded member curves and team average](39560457abb7e4206da6080bc13b3d462700aaf0:docs/SIS13/emotional-seismograph/EMOTIONAL_SEISMOGRAPH.png)
+## Candidate dataset verification
+The candidate CSV and the earlier AI-generated demonstration CSV are byte-identical. Both have SHA-256 73d32acf0677b833b696c5f86284d58845b82559448c2da0b34e9bee1ed4d332. The renderer verified 11 ordered E-IDs, four numeric columns on the -5 to +5 scale and all 11 means. The candidate graph reproduced pixel for pixel.
 
-The collection handoff records the submitting user's confirmation of four actual responses and coded-publication consent. The canonical scores match the earlier simulation fixture in every value. Individual original receipts and independence were unavailable for direct inspection. The chart is reproduced from Danaya's published production asset with that provenance limitation.
+The required participant figure and participant-based conclusions are pending. The reproducible candidate remains source material for technical verification. For release, Danaya must reconcile each coded vector against its private original and a separate publication decision. Keep originals private.
 
-See the [rating collection and provenance](https://github.com/yerassyl-clou/SmartCampus/pull/36) and [chart and renderer](https://github.com/yerassyl-clou/SmartCampus/pull/37).
+See the [collector checkpoint](https://app.clickup.com/t/z8q7hbx7w0#comment-1100310000219160), [collection record](https://github.com/yerassyl-clou/SmartCampus/pull/36) and [chart renderer](https://github.com/yerassyl-clou/SmartCampus/pull/37).
 
 ---
 
-# Team experience and interpretation
-The team mean reached +4.50 at E-03, the SIS 10-11 integration merge. The lowest mean was -3.00 at E-05, the reported connector quota delay. From E-04 to E-05 the mean dropped 7.25 points, the largest adjacent drop. It rose 6.50 points at E-06, the recorded board closure and largest adjacent rebound. The spread reached at least four points at E-05 (4), E-07 (6), E-08 (5) and E-11 (4). At E-07, scores from -2 to +4 produced a mean of +1.00, so the positive mean includes a negative response. The event register establishes the project sequence, and individual causal interpretations remain open.
+# Retrospective interpretation
+## Findings supported by project records
+The team established an executable QA baseline before the release. E-04 documents 126 backend, 70 standard browser and nine live browser checks passing on the merged release revision in separate logged local runs. E-05 documents a connector quota issue during board closure activity. E-06 records closure of the final QA task after acceptance and the handoff reports 20 tasks Done.
 
-## Retrospective follow-up
-Ask participants privately about the widest spreads and agree which practices to retain after reviewing their explanations. The board records two reallocations totaling 165 planned minutes. Historical actual effort remains unmeasured.
+E-07 documents two reallocations totaling 165 planned minutes. E-08 records a time logging protocol and zero positive tracked-time entries in the historical 20-task sample. These records establish assignment and process facts. Actual effort and participant reactions remain unverified.
 
-See [Danaya's chart interpretation](https://github.com/yerassyl-clou/SmartCampus/pull/37), [closure handoff](https://github.com/yerassyl-clou/SmartCampus/pull/25) and [allocation evidence](https://github.com/yerassyl-clou/SmartCampus/pull/26).
+## Participant interpretation pending
+Apply the spread and adjacent-change checks after independent submissions and publication permission are verified. Retain the roster order and report only verified participant-derived findings.
+
+See the [event register](https://github.com/yerassyl-clou/SmartCampus/pull/32), [closure evidence](https://github.com/yerassyl-clou/SmartCampus/pull/25) and [allocation evidence](https://github.com/yerassyl-clou/SmartCampus/pull/26).
 
 ---
 
 # Insight backlog and root causes
-The Yerassyl/Codex contribution ranks insights by observed impact, evidence quality and feasibility. Gleb retains ownership of the upstream insight task.
+The Yerassyl/Codex contribution ranks insights by observed impact, evidence quality and feasibility. The PM accepted this contribution as the action plan’s content input. Gleb retains ownership of the upstream task and process-audit reconciliation.
 
 | Ranked insight | Event and observed impact | Root cause and response |
 | --- | --- | --- |
@@ -85,7 +90,7 @@ The Yerassyl/Codex contribution ranks insights by observed impact, evidence qual
 | I-04 · Actual effort | E-07, E-08. Two moves shifted 165 planned minutes. Zero of 20 historical tasks had positive tracked time. | Estimates and assignment history did not establish actual effort. Check adoption of the SIS12 protocol. |
 | I-05 · Provider visibility | E-09, E-10. The local fixture measured 36,864 bytes. Account usage and spend stayed unknown. | Account evidence must come from the provider account. Request a dated owner snapshot. |
 
-The Five Whys chains distinguish observed mechanisms from hypotheses about initial decisions, logging adoption and missing account data. The mean's E-05 decline and E-06 rebound warrant discussion about closure. The scores alone leave causality open.
+The Five Whys chains distinguish observed mechanisms from hypotheses about initial decisions, logging adoption and missing account data. The documented quota delay and later closure warrant discussion about the handoff. The candidate rating series is excluded from the ranking pending verification.
 
 See the [ranked backlog, Five Whys and action decision](https://github.com/yerassyl-clou/SmartCampus/pull/34).
 
@@ -120,7 +125,7 @@ Before (EV-15-01). PR #39 at 668a230 showed no checks. Main at 4aeb0a1 held zero
 ![GitHub before](../evidence/ci/ci-baseline.png)
 After (EV-15-02). PR #42 at eabdbf3 triggered both jobs. Backend pytest and frontend build passed.
 ![GitHub Actions after](../evidence/ci/ci-after.png)
-Automated coverage rose from 0/2 to 2/2 for the sampled PRs. Both after jobs passed. The sample covers one hosted run and leaves deployment and provider usage outside the measurement. See [before checks](https://github.com/yerassyl-clou/SmartCampus/pull/39/checks) and the [hosted run](https://github.com/yerassyl-clou/SmartCampus/actions/runs/45393821788).
+Automated coverage rose from 0/2 to 2/2 for the sampled PRs. Both after jobs passed and PR #42 merged into main at 25df09f. The sample covers one hosted run and leaves deployment and provider usage outside the measurement. See [before checks](https://github.com/yerassyl-clou/SmartCampus/pull/39/checks) and the [hosted run](https://github.com/yerassyl-clou/SmartCampus/actions/runs/45393821788).
 
 ---
 
@@ -136,27 +141,28 @@ Automated coverage rose from 0/2 to 2/2 for the sampled PRs. Both after jobs pas
 The prior SIS13-08 comment recorded a baseline capture and pending scope. The new authenticated ClickUp record names the PM reviewer, links PR #39, pins 668a230 and states the dated acceptance decision. Read the [before comment](https://app.clickup.com/t/z8q7hbx7w3#comment-1100310000219176) and [after comment](https://app.clickup.com/t/z8q7hbx7w3#comment-1100310000222417) on the [SmartCampus Task Board](https://app.clickup.com/1100310000007240/v/l/z8q7hb2y28-378).
 
 ## Rubric and next checkpoint
-The report covers the timeline, coded ratings, ranked insights and root causes, SMART actions, measured implementation and board evidence. Source and contribution limits remain listed in the supplementary audit.
+The report covers the timeline, ranked insights, root causes, SMART actions, two measured improvements and the board pilot. Verified participant ratings and the associated figure and interpretation remain pending.
 
-Before submission, verify the defense uses the same figures and identifiers, team members confirm contributions, and the audience can access the linked materials. Keep the source-receipt limitation with the coded chart.
+Before submission, verify the defense uses the same figures and identifiers, team members confirm contributions, and the audience can access the linked materials. Use the same rating-status disclosure in the deck.
 
 ---
 
 # Contributions and references
-The table records visible SIS13 artifacts and assigned responsibilities. Confirm actual contributions and each speaking segment before release.
+The table separates evidenced work from assignments and outstanding confirmations. The named authors retain credit for their work.
 
 | Member | Verified or published contribution | Outstanding handoff |
 | --- | --- | --- |
-| Yerassyl Babayev | Frozen register, timeline, plan, backlog, audit, CI workflow, ClickUp pilot and report | Report integration |
-| Danaya Aliyeva | Timeline review, rating collection and production chart, UX implementation and matched captures | Defense coordination and private rating receipts |
-| Gleb Yurtayev | Assigned process and insight lead | SIS13 process/insight handoff and contribution confirmation pending |
-| Ratislav Ovchinnikov | Assigned technical and regression lead | SIS13 technical handoff and contribution confirmation pending |
+| Yerassyl Babayev | Frozen register, timeline and PM review. Codex-assisted backlog, plan, CI workflow, board pilot, audit and report. | Report integration |
+| Danaya Aliyeva | Timeline review, Rating collection materials, chart renderer, UX implementation and matched captures | Defense coordination and private rating receipts |
+| Gleb Yurtayev | SIS12 infrastructure and finance audit used as evidence. Assigned SIS13 process/insight lead. | SIS13 contribution confirmation pending |
+| Ratislav Ovchinnikov | SIS12 provider audit used as evidence. Assigned SIS13 technical lead. | SIS13 contribution confirmation pending |
 
 ## Primary references
 - [SmartCampus Task Board](https://app.clickup.com/1100310000007240/v/l/z8q7hb2y28-378) and [SIS13 task dependency index](https://github.com/yerassyl-clou/SmartCampus/blob/9dff9c289289eda7bb2402fb2ef2075f1b7d6571/docs/SIS13/TASK_DEPENDENCIES.md)
 - [Frozen event register](https://github.com/yerassyl-clou/SmartCampus/pull/32) and [approved visual timeline](https://github.com/yerassyl-clou/SmartCampus/pull/33)
 - [Action plan](https://github.com/yerassyl-clou/SmartCampus/pull/34) and [rubric audit](https://github.com/yerassyl-clou/SmartCampus/pull/35)
-- [Independent ratings](https://github.com/yerassyl-clou/SmartCampus/pull/36) and [Seismograph preparation](https://github.com/yerassyl-clou/SmartCampus/pull/37)
+- [Rating collection record](https://github.com/yerassyl-clou/SmartCampus/pull/36) and [Seismograph preparation](https://github.com/yerassyl-clou/SmartCampus/pull/37)
 - [UX candidate tests](https://github.com/yerassyl-clou/SmartCampus/pull/38) and [original UX captures](https://github.com/yerassyl-clou/SmartCampus/pull/39)
 - [Hosted workflow implementation](https://github.com/yerassyl-clou/SmartCampus/pull/42) and [defense handoff](https://github.com/yerassyl-clou/SmartCampus/pull/41#issuecomment-7131524262)
 - Course handout: SIS 13. Sprint Retrospective & Continuous Improvement Challenge, IT Project Management.
+- Historical contributions: [Gleb’s infrastructure and finance audit](https://github.com/yerassyl-clou/SmartCampus/pull/28) and [Ratislav’s provider audit](https://github.com/yerassyl-clou/SmartCampus/pull/29).
