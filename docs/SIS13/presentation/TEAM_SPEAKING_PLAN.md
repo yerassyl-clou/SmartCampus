@@ -1,13 +1,13 @@
-# SIS 13 team speaking plan
+# SIS13 team speaking plan
 
-**Draft rehearsal schedule. Planned duration 8 minutes. Actual rehearsal and attendance are pending.**
+Planned duration is exactly 8 minutes across four speakers. Actual rehearsal, attendance and individual contribution confirmations remain open.
 
 | Slides | Speaker | Window | Handoff |
 | --- | --- | --- | --- |
-| 1–3 | Yerassyl Babayev | 0:00–2:10 | Establish the two date windows and hand off after the accepted timeline. |
-| 4 | Danaya Aliyeva | 2:10–2:55 | Present the seismograph once collection provenance is accepted. |
-| 5–7 | Gleb Yurtayev | 2:55–5:15 | Connect supported causes and ranked insights to approved actions. |
-| 8 | Danaya Aliyeva | 5:15–6:10 | Demonstrate the deadline journey and report the measured sample. |
-| 9–10 | Ratislav Ovchinnikov | 6:10–8:00 | Present the second confirmed change and close on the next sprint. |
+| 1–3 | Yerassyl Babayev | 0:00–2:10 | Introduce the project, both date windows and the event timeline. |
+| 4 | Danaya Aliyeva | 2:10–2:55 | Explain the PM-authorized AI-assisted seismograph and disclose the independent-collection and consent limits. |
+| 5–7 | Gleb Yurtayev | 2:55–5:15 | Present five ranked insights, summarize the Five Whys and connect the first three insights to the approved actions. |
+| 8 | Danaya Aliyeva | 5:15–6:10 | Demonstrate A-01 and explain the matched keyboard measurement and retrospective PM approval. |
+| 9–10 | Ratislav Ovchinnikov | 6:10–8:00 | Explain the hosted CI and board pilot comparisons, acknowledge contributors and close on next-cycle decisions. |
 
-Rehearse from the editable deck with all four speakers. Record actual elapsed time, handoffs, participant confirmations and any changes to the timings once the rehearsal takes place. Each presenter should be ready to answer questions about their evidence.
+Rehearse with the editable deck. Record the actual duration and handoffs when the four speakers complete a timed run. Use the [defense notes](DEFENSE_NOTES.md) to prepare for questions on measurements, provenance and evidence limits.
