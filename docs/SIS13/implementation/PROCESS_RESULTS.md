@@ -14,7 +14,7 @@
 The same rule was used for before and after:
 
 1. Count the same SIS13-08 task.
-2. Require the comment to name the decision, reviewer, revision SHA and deadline.
+2. Require the comment to include a dated decision, named reviewer, linked PR and reviewed revision SHA.
 3. Exclude comments that only contain code, baseline, or preparation evidence.
 4. Report numerator and denominator separately.
 
@@ -27,4 +27,4 @@ The same rule was used for before and after:
 
 ## Follow-up
 
-Owner: Gleb Yurtayev. Check the live record and all-board adoption by 24 November 2026 23:59 Asia/Almaty. Evidence: [process record](PROCESS_CHANGE_RECORD.md), [evidence index](../evidence/process/README.md).
+Owner: Gleb Yurtayev. Review adoption across eligible tasks at the next sprint retrospective. The 24 November 2026 23:59 Almaty checkpoint was the original review target. The authenticated readback verifies the one-task pilot. Evidence: [process record](PROCESS_CHANGE_RECORD.md), [evidence index](../evidence/process/README.md).

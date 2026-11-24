@@ -1,7 +1,7 @@
 # SIS13-09 ClickUp process and workflow audit
 
-**Owner:** Gleb Yurtayev  
-**Reviewer:** Yerassyl Babayev  
+**Owner:** Gleb Yurtayev
+**Reviewer:** Yerassyl Babayev
 **Audit cutoff:** 24 November 2026, Asia/Almaty
 
 ## Scope and inclusion rule
@@ -12,7 +12,7 @@ The sample uses project tasks with a GitHub or ClickUp evidence URL and a record
 
 | Metric | Numerator | Denominator | Rule |
 |---|---:|---:|---|
-| Complete acceptance record | 1 | 1 | A comment contains task, decision, reviewer, revision SHA and deadline. |
+| Complete acceptance record | 1 | 1 | A comment contains a dated decision, named reviewer, linked PR and reviewed revision SHA. |
 | PR trigger coverage | 2 passed jobs | 2 intended jobs | Count only hosted job conclusions on the same pull request head. |
 | Checklist-only compliance | Verified in repository | Not measured | Counts checklists/documents, not elapsed work time. |
 
@@ -27,7 +27,7 @@ No elapsed-time or actual-effort result is claimed from board timestamps: 0/20 h
 
 ## Blocker visibility
 
-Blockers become visible when a dated task/comment identifies the missing dependency and owner. The evidence gap is that live ClickUp mutation and comment history cannot be re-run in this repository session; exact board screenshots and authenticated API responses remain external evidence.
+Blockers become visible when a dated task/comment identifies the missing dependency and owner. The pilot comparison uses the original ClickUp comments. Its [evidence index](../evidence/process/README.md) separates the baseline handoff from the later acceptance decision. Board-wide coverage remains unmeasured.
 
 ## Evidence
 
@@ -39,4 +39,4 @@ Blockers become visible when a dated task/comment identifies the missing depende
 
 ## Limitations
 
-This is a source-grounded audit, not an authenticated live-board export. No due/closed timestamps were invented. Board clock, retry window and future follow-up remain `partial` until an authorized reviewer supplies the live record.
+This is a source-grounded audit, not an authenticated live-board export. No due/closed timestamps were invented. The authenticated pilot readback supports the one-task result. Board-wide adoption and closure latency remain unmeasured.
