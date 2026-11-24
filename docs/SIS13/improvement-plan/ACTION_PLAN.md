@@ -1,6 +1,6 @@
 # SmartCampus improvement action plan
 
-PM scope acceptance · 24 November 2026 · Asia/Almaty (UTC+05:00). The [ranked insights](../insight-backlog/INSIGHT_BACKLOG.md) and [Five Whys](../insight-backlog/FIVE_WHYS.md) are the Yerassyl/Codex contribution accepted for these action decisions. Gleb retains SIS13-10 ownership. The ClickUp dependency remains active. Acceptance records the delegated PM decision under centralized technical review.
+PM scope acceptance · 24 November 2026 · Asia/Almaty (UTC+05:00). The [ranked insights](../insight-backlog/INSIGHT_BACKLOG.md) and [Five Whys](../insight-backlog/FIVE_WHYS.md) are the Yerassyl/Codex contribution accepted for these action decisions. Gleb retains SIS13-10 ownership. The pinned backlog and Five Whys satisfy this plan’s content dependency under the PM decision recorded in [SIS13-10](https://app.clickup.com/t/z8q7hbx7w5#comment-1100310000222423). The native ClickUp dependency and SIS13-10 ownership are retained. The separate process-audit reconciliation and emotional-data verification remain open. Acceptance records the delegated PM decision under centralized technical review.
 
 | Action / trace | Specific change and supported cause | Owner / deadline (UTC+05:00) | Baseline → target → actual | Measurement, evidence and status |
 | --- | --- | --- | --- | --- |
