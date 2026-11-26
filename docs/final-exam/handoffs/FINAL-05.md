@@ -1,0 +1,11 @@
+# FINAL-05 handoffs
+
+Version `v2-preliminary.2` · 26 November 2026 · Operator: Yerassyl. Exact revisions are recorded in Git and the FINAL-05 PR. Release acceptance is pending.
+
+| ID | Consumer | State | Original deadline, Almaty | Artifact and next action |
+| --- | --- | --- | --- | --- |
+| H-FINAL-05-03 | FINAL-03 / Gleb | preliminary | 25 Nov 11:00 | [Interface](../product/INFRA_PRELIMINARY.md) delivered on 26 Nov at `82bea68bcf7cf10cd42018f505af708fd6bf0f1b` through [PR #43](https://github.com/yerassyl-clou/SmartCampus/pull/43#issuecomment-7194107954). Verify UUID ownership locally and reconcile byte cap before freeze. |
+| H-FINAL-05-06 | FINAL-06 / Danaya | preliminary | Upon accepted design and applicable fixture readiness | Use local synthetic mode and proposed environment names. Consult [runbook](../product/DEPLOYMENT_RUNBOOK.md) for held callback states; wait for exact isolated environment before integration. |
+| H-FINAL-05-07/08/09/11/15 | Gleb and Ratislav | preliminary | 26 Nov 12:00 / 15:00 | [Gates](../product/CLOUD_GATES.md) and [contract](../product/INFRA_PRELIMINARY.md). Use local fixtures, record interface drift and wait for verified environments before hosted apply. |
+| H-FINAL-05-13 | FINAL-13 / Yerassyl | blocked | 26 Nov 15:00 | [Runbook](../product/DEPLOYMENT_RUNBOOK.md) and [gates](../product/CLOUD_GATES.md). Verify plans, headroom, origins, schema/API compatibility, operator permission and preview evidence before applying. |
+| H-FINAL-05-17 | FINAL-17 / Yerassyl | blocked | Before release approval | Verify authorization, data location and transfer basis. Sign a mode-specific GO/HOLD decision against actual evidence. |

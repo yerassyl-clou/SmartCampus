@@ -1,0 +1,28 @@
+[
+  {
+    "occurred_at": "2026-11-26T19:20:45+05:00",
+    "mode": "local synthetic",
+    "classification": "public-safe",
+    "role": "integration preparation",
+    "id": "EV-FINAL-05-01",
+    "command": "python3 static JSON, route regex and env assertions",
+    "expected": "API excluded from SPA fallback, client/server variables separated, credential placeholders empty",
+    "observed": "Passed locally. No Vercel routing engine or hosted settings exercised.",
+    "artifact_sha256": {
+      "infra/deploy/frontend.vercel.template.json": "9ad6350335f9efd227f172aa23f822c629a7b6a8531abd575836d70776c5e5ea",
+      "infra/deploy/backend.vercel.template.json": "2693f20e581ea79a0ab05279526b3676c61b368f656a02afc1fca9188c4b8bf2",
+      "infra/environment/final-05.env.example": "4f74943e701609857006003fcf0291025288d1476d710065908adf245047a548"
+    }
+  },
+  {
+    "occurred_at": "2026-11-26T19:20:45+05:00",
+    "mode": "local synthetic",
+    "classification": "public-safe",
+    "role": "integration preparation",
+    "id": "EV-FINAL-05-02",
+    "command": "FastAPI TestClient(app); GET /api/health and GET /api/v2/session",
+    "expected": "Legacy app imports and health returns 200; unimplemented V2 route returns 404",
+    "observed": "Passed: 200 health, 404 V2 session. No hosted runtime or login exercised.",
+    "source_revision": "6a5798d1a398b2512b9809e0e3b96fc14377a0b4"
+  }
+]

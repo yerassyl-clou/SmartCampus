@@ -1,6 +1,6 @@
 # FINAL-05 preliminary infrastructure contract
 
-Version `v2-preliminary.1` · 26 November 2026, Asia/Almaty · Owner: Yerassyl · Consumer: Gleb / FINAL-03. Original handoff deadline: 25 November 2026 11:00 Asia/Almaty, elapsed. This interface is for local synthetic schema and integration work while FINAL-01 acceptance is pending.
+Version `v2-preliminary.1` · 26 November 2026, Asia/Almaty · Owner: Yerassyl · Consumer: Gleb / FINAL-03. Original handoff deadline: 25 November 2026 11:00 Asia/Almaty, elapsed. This interface is for local synthetic schema and integration work under the conditionally accepted FINAL-01 baseline integrated at `6a5798d1a398b2512b9809e0e3b96fc14377a0b4`. The original handoff is preserved at `82bea68bcf7cf10cd42018f505af708fd6bf0f1b`.
 
 | Boundary | Proposed portable interface |
 | --- | --- |
