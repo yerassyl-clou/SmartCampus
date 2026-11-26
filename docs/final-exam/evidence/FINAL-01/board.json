@@ -1,0 +1,342 @@
+{
+  "version": "v2",
+  "final01_status_updated_at": "2026-11-26T18:28:20+05:00",
+  "list_id": "1100310000045293",
+  "tasks": [
+    {
+      "stable_id": "FINAL-01",
+      "url": "https://app.clickup.com/t/z8q7hby8d5",
+      "status": "in progress",
+      "priority": "urgent",
+      "start": "2026-11-25T09:00:00+05:00",
+      "due": "2026-11-25T10:00:00+05:00",
+      "estimate_minutes": 40,
+      "predecessors": [],
+      "owners": [
+        "Y"
+      ]
+    },
+    {
+      "stable_id": "FINAL-02",
+      "url": "https://app.clickup.com/t/z8q7hby8dg",
+      "status": "to do",
+      "priority": "high",
+      "start": "2026-11-25T09:00:00+05:00",
+      "due": "2026-11-25T13:30:00+05:00",
+      "estimate_minutes": 110,
+      "predecessors": [],
+      "owners": [
+        "D"
+      ]
+    },
+    {
+      "stable_id": "FINAL-03",
+      "url": "https://app.clickup.com/t/z8q7hby8dj",
+      "status": "in progress",
+      "priority": "urgent",
+      "start": "2026-11-25T09:00:00+05:00",
+      "due": "2026-11-26T10:15:00+05:00",
+      "estimate_minutes": 160,
+      "predecessors": [],
+      "owners": [
+        "G"
+      ]
+    },
+    {
+      "stable_id": "FINAL-04",
+      "url": "https://app.clickup.com/t/z8q7hby8dk",
+      "status": "to do",
+      "priority": "urgent",
+      "start": "2026-11-25T09:00:00+05:00",
+      "due": "2026-11-25T14:30:00+05:00",
+      "estimate_minutes": 115,
+      "predecessors": [],
+      "owners": [
+        "R"
+      ]
+    },
+    {
+      "stable_id": "FINAL-05",
+      "url": "https://app.clickup.com/t/z8q7hby8dm",
+      "status": "to do",
+      "priority": "urgent",
+      "start": "2026-11-25T10:30:00+05:00",
+      "due": "2026-11-26T14:00:00+05:00",
+      "estimate_minutes": 125,
+      "predecessors": [
+        "FINAL-01"
+      ],
+      "owners": [
+        "Y"
+      ]
+    },
+    {
+      "stable_id": "FINAL-06",
+      "url": "https://app.clickup.com/t/z8q7hby8dn",
+      "status": "to do",
+      "priority": "urgent",
+      "start": "2026-11-25T15:00:00+05:00",
+      "due": "2026-11-26T15:00:00+05:00",
+      "estimate_minutes": 150,
+      "predecessors": [
+        "FINAL-02"
+      ],
+      "owners": [
+        "D"
+      ]
+    },
+    {
+      "stable_id": "FINAL-07",
+      "url": "https://app.clickup.com/t/z8q7hby8dp",
+      "status": "in progress",
+      "priority": "urgent",
+      "start": "2026-11-26T11:30:00+05:00",
+      "due": "2026-11-27T12:00:00+05:00",
+      "estimate_minutes": 175,
+      "predecessors": [
+        "FINAL-03"
+      ],
+      "owners": [
+        "G"
+      ]
+    },
+    {
+      "stable_id": "FINAL-08",
+      "url": "https://app.clickup.com/t/z8q7hby8dq",
+      "status": "to do",
+      "priority": "urgent",
+      "start": "2026-11-25T16:00:00+05:00",
+      "due": "2026-11-27T10:30:00+05:00",
+      "estimate_minutes": 180,
+      "predecessors": [
+        "FINAL-04"
+      ],
+      "owners": [
+        "R"
+      ]
+    },
+    {
+      "stable_id": "FINAL-09",
+      "url": "https://app.clickup.com/t/z8q7hby8dr",
+      "status": "in progress",
+      "priority": "urgent",
+      "start": "2026-11-27T13:45:00+05:00",
+      "due": "2026-11-28T11:30:00+05:00",
+      "estimate_minutes": 165,
+      "predecessors": [
+        "FINAL-07"
+      ],
+      "owners": [
+        "G"
+      ]
+    },
+    {
+      "stable_id": "FINAL-10",
+      "url": "https://app.clickup.com/t/z8q7hby8dt",
+      "status": "to do",
+      "priority": "urgent",
+      "start": "2026-11-26T16:00:00+05:00",
+      "due": "2026-11-28T09:45:00+05:00",
+      "estimate_minutes": 175,
+      "predecessors": [
+        "FINAL-06"
+      ],
+      "owners": [
+        "D"
+      ]
+    },
+    {
+      "stable_id": "FINAL-11",
+      "url": "https://app.clickup.com/t/z8q7hby8du",
+      "status": "to do",
+      "priority": "urgent",
+      "start": "2026-11-27T12:30:00+05:00",
+      "due": "2026-11-28T15:00:00+05:00",
+      "estimate_minutes": 185,
+      "predecessors": [
+        "FINAL-08"
+      ],
+      "owners": [
+        "R"
+      ]
+    },
+    {
+      "stable_id": "FINAL-12",
+      "url": "https://app.clickup.com/t/z8q7hby8dv",
+      "status": "to do",
+      "priority": "urgent",
+      "start": "2026-11-28T11:00:00+05:00",
+      "due": "2026-11-29T10:15:00+05:00",
+      "estimate_minutes": 150,
+      "predecessors": [
+        "FINAL-10"
+      ],
+      "owners": [
+        "D"
+      ]
+    },
+    {
+      "stable_id": "FINAL-13",
+      "url": "https://app.clickup.com/t/z8q7hby8dw",
+      "status": "to do",
+      "priority": "urgent",
+      "start": "2026-11-26T15:00:00+05:00",
+      "due": "2026-11-29T13:30:00+05:00",
+      "estimate_minutes": 105,
+      "predecessors": [
+        "FINAL-05"
+      ],
+      "owners": [
+        "Y"
+      ]
+    },
+    {
+      "stable_id": "FINAL-14",
+      "url": "https://app.clickup.com/t/z8q7hby8dx",
+      "status": "to do",
+      "priority": "urgent",
+      "start": "2026-11-28T16:15:00+05:00",
+      "due": "2026-11-29T18:00:00+05:00",
+      "estimate_minutes": 135,
+      "predecessors": [
+        "FINAL-11"
+      ],
+      "owners": [
+        "R"
+      ]
+    },
+    {
+      "stable_id": "FINAL-15",
+      "url": "https://app.clickup.com/t/z8q7hby8dy",
+      "status": "in progress",
+      "priority": "high",
+      "start": "2026-11-28T13:00:00+05:00",
+      "due": "2026-11-29T15:30:00+05:00",
+      "estimate_minutes": 145,
+      "predecessors": [],
+      "owners": [
+        "G"
+      ]
+    },
+    {
+      "stable_id": "FINAL-16",
+      "url": "https://app.clickup.com/t/z8q7hby8dz",
+      "status": "to do",
+      "priority": "high",
+      "start": "2026-11-29T11:30:00+05:00",
+      "due": "2026-12-02T11:00:00+05:00",
+      "estimate_minutes": 125,
+      "predecessors": [
+        "FINAL-12"
+      ],
+      "owners": [
+        "D"
+      ]
+    },
+    {
+      "stable_id": "FINAL-17",
+      "url": "https://app.clickup.com/t/z8q7hby8e0",
+      "status": "to do",
+      "priority": "urgent",
+      "start": "2026-11-29T19:30:00+05:00",
+      "due": "2026-11-30T12:15:00+05:00",
+      "estimate_minutes": 70,
+      "predecessors": [
+        "FINAL-13",
+        "FINAL-14"
+      ],
+      "owners": [
+        "Y"
+      ]
+    },
+    {
+      "stable_id": "FINAL-18",
+      "url": "https://app.clickup.com/t/z8q7hby8e1",
+      "status": "to do",
+      "priority": "urgent",
+      "start": "2026-11-30T13:20:00+05:00",
+      "due": "2026-12-02T10:30:00+05:00",
+      "estimate_minutes": 75,
+      "predecessors": [
+        "FINAL-17"
+      ],
+      "owners": [
+        "Y"
+      ]
+    },
+    {
+      "stable_id": "FINAL-19",
+      "url": "https://app.clickup.com/t/z8q7hby8e2",
+      "status": "in progress",
+      "priority": "high",
+      "start": "2026-11-29T17:00:00+05:00",
+      "due": "2026-12-02T11:45:00+05:00",
+      "estimate_minutes": 140,
+      "predecessors": [
+        "FINAL-15"
+      ],
+      "owners": [
+        "G"
+      ]
+    },
+    {
+      "stable_id": "FINAL-20",
+      "url": "https://app.clickup.com/t/z8q7hby8e3",
+      "status": "to do",
+      "priority": "high",
+      "start": "2026-11-29T19:30:00+05:00",
+      "due": "2026-12-01T13:00:00+05:00",
+      "estimate_minutes": 130,
+      "predecessors": [
+        "FINAL-14"
+      ],
+      "owners": [
+        "R"
+      ]
+    },
+    {
+      "stable_id": "FINAL-21",
+      "url": "https://app.clickup.com/t/z8q7hby8e4",
+      "status": "to do",
+      "priority": "urgent",
+      "start": "2026-12-02T12:45:00+05:00",
+      "due": "2026-12-02T16:30:00+05:00",
+      "estimate_minutes": 85,
+      "predecessors": [
+        "FINAL-16",
+        "FINAL-18",
+        "FINAL-19",
+        "FINAL-20"
+      ],
+      "owners": [
+        "G",
+        "R",
+        "Y",
+        "D"
+      ]
+    }
+  ],
+  "native_edges": [
+    "FINAL-01 → FINAL-05",
+    "FINAL-02 → FINAL-06",
+    "FINAL-03 → FINAL-07",
+    "FINAL-04 → FINAL-08",
+    "FINAL-05 → FINAL-13",
+    "FINAL-06 → FINAL-10",
+    "FINAL-07 → FINAL-09",
+    "FINAL-08 → FINAL-11",
+    "FINAL-10 → FINAL-12",
+    "FINAL-11 → FINAL-14",
+    "FINAL-12 → FINAL-16",
+    "FINAL-13 → FINAL-17",
+    "FINAL-14 → FINAL-17",
+    "FINAL-14 → FINAL-20",
+    "FINAL-15 → FINAL-19",
+    "FINAL-16 → FINAL-21",
+    "FINAL-17 → FINAL-18",
+    "FINAL-18 → FINAL-21",
+    "FINAL-19 → FINAL-21",
+    "FINAL-20 → FINAL-21"
+  ],
+  "discrepancies": []
+}

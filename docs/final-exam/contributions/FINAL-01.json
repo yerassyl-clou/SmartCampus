@@ -1,0 +1,34 @@
+{
+  "id": "FINAL-01",
+  "role": "Project Manager / Technical Integration and Release Coordinator",
+  "work_items": [
+    "Verified source and task inventory with Codex assistance",
+    "Prepared the versioned contract and evidence index"
+  ],
+  "proof": [
+    "tasks/FINAL-01.md",
+    "management/TASK_BOARD_EVIDENCE.md"
+  ],
+  "estimated_minutes": {
+    "active_owner": 40,
+    "human_touch_subset": 25,
+    "agent_only": 35
+  },
+  "actual_minutes": {
+    "human": null,
+    "agent_only": null
+  },
+  "method": "Authenticated connectors and repository verification. Actual human effort and agent-only processing are unknown.",
+  "date": "2026-11-26",
+  "ai_tools": [
+    {
+      "name": "Codex",
+      "purpose": "Read ClickUp and GitHub, audit the board and draft documentation"
+    }
+  ],
+  "slide_summary": "A versioned delivery baseline aligns ownership, review dates and evidence intake across 21 tasks.",
+  "speaker_notes": "Show the dated board and distinguish native dependencies from informational handoffs. State which permissions and acceptance decisions remain open.",
+  "approved_visuals": [],
+  "confirmed_by": null,
+  "confirmed_at": null
+}
