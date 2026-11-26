@@ -23,3 +23,11 @@ Coordinator self-check: the candidate contains only FINAL-01 documentation and s
 **Visual:** Authenticated snapshot and dated SIS13 before/after pointers. Capture a redacted tagged board screenshot before portfolio use when available.
 
 **Speaker notes:** Explain the difference between scheduled milestones and observed task status. Show the tagged scope and the dated one-task historical pilot. State remaining verification gaps and use verified reviewer permissions.
+
+## Coordinator review on 26 November 2026
+
+- Verified the official seven-page handout locally against C01–C10 (37 team points and 3 individual), all 20 presentation topics, 15–20 English slides, the ten portfolio components, and the LMS deadline at least 48 hours before defense. The rubric now distinguishes the source's two allowed portfolio forms and the team's selected PDF.
+- Verified the draft PR #50 review head `6bb2b0e3c779803a85373f8331d5947e458936d1` and its successful [CI run](https://github.com/yerassyl-clou/SmartCampus/actions/runs/45830074719). That run belongs to the original head.
+- The historical snapshot contains 21 stable IDs and 20 edges. In the new authenticated readback 19 tasks and 18 incoming edges were compared with zero planned-field differences. The connector's daily limit prevented a fresh detailed read of FINAL-07 and FINAL-13. FINAL-02 is now in Review; the historical snapshot remains dated as captured.
+- Danaya's acknowledgment verifies access to the preliminary handoff. Independent acceptance evidence and confirmation by other recipients remain open. The browser session displayed Danaya2, so an authenticated Yerassyl board screenshot is still pending.
+- Decision: HOLD. Keep the original deadlines and record replacement review windows only once owners confirm capacity. FINAL-05 stays To Do. The original PDF was verified locally; controlled access to it for intended viewers still needs verification.

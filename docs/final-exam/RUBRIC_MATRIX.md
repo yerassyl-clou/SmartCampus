@@ -68,7 +68,7 @@ Total 40, team 37 and individual 3. Level bands from p.4: Excellent 90–100%, G
 | S02 / 1,5 | English throughout | 21 checks figures, labels, notes, video transcript and PDF |
 | S03 / 4–5 | One 15–20-slide PPTX or PDF | 19 slides selected, actual rendered QA by 21 |
 | S04 / 5 | 20 topics, title course/team/full names, clear visuals | §12 storyboard, actual team number and sources checked |
-| S05 / 6 | One indexed portfolio with ten required components | FINAL-21 PDF bookmarks/manifest |
+| S05 / 6 | One portfolio PDF or shared folder with a contents page, covering ten required components | Team selection: FINAL-21 PDF bookmarks and manifest |
 | S06 / 6 | Product, repo and board proof/view | 01/17/20/21 authorized instructor-equivalent link test |
 | S07 / 6 | 2–3 min backup demo and offline contingency | 20 true playback/hash, 21 offline rehearsal |
 | S08 / 1,6 | One team submission via LMS ≥48h before defense | Y checks official earlier deadline, receipt and two files |
