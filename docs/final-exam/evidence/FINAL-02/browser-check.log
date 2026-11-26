@@ -1,0 +1,19 @@
+light ink/bg 14.68:1
+light ink/surface 15.67:1
+light muted/surface 6.52:1
+light accent/bg 5.28:1
+light accent/tint 4.85:1
+light on-accent/accent 5.64:1
+light warm/surface 6.56:1
+light danger/surface 6.74:1
+dark ink/bg 15.08:1
+dark ink/surface 12.71:1
+dark muted/surface 7.69:1
+dark accent/bg 9.14:1
+dark accent/tint 6.15:1
+dark on-accent/accent 9.14:1
+dark warm/surface 8.22:1
+dark danger/surface 7.78:1
+93 nonblank EN/RU/KK key tuples
+1440px: 36 route/locale renders, theme, keyboard citation, auth hold/cancel, upload retry, candidate and isolation passed
+375px: 36 route/locale renders, theme, keyboard citation, auth hold/cancel, upload retry, candidate and isolation passed
