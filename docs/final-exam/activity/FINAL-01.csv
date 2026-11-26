@@ -1,0 +1,2 @@
+local_date,stable_id,owner,started_at,end,planned_minutes,hands_on_minutes_or_null,effort_type,from_status,to_status,blocker,source
+2026-11-26,FINAL-01,Yerassyl,2026-11-26T18:28:20+05:00,,40,null,agent-assisted,to do,in progress,Independent verification pending,https://app.clickup.com/t/z8q7hby8d5
