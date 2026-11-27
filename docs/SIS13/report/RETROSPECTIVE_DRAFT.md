@@ -141,19 +141,19 @@ The prior SIS13-08 comment recorded a baseline capture and pending scope. The ne
 ## Rubric and next checkpoint
 The report covers the timeline, ranked insights, root causes, SMART actions, two measured improvements and the board pilot. The PM-authorized figure and interpretation are included with the independent-collection and consent limits.
 
-Before submission, verify the defense uses the same figures and identifiers, team members confirm contributions, and the audience can access the linked materials. Use the same rating-status disclosure in the deck.
+The defense uses the same action metrics, evidence identifiers and rating disclosure. The contribution table cites the published SIS13 work. Confirm access to the linked materials for review.
 
 ---
 
 # Contributions and references
-The table separates evidenced work from assignments and outstanding confirmations. The named authors retain credit for their work.
+The table records published work and its supporting evidence.
 
-| Member | Verified or published contribution | Outstanding handoff |
+| Member | Verified or published contribution | Evidence |
 | --- | --- | --- |
-| Yerassyl Babayev | Frozen register, timeline and PM review. Codex-assisted backlog, plan, CI workflow, board pilot, audit and report. | Report integration |
-| Danaya Aliyeva | Timeline review, Rating collection materials, chart renderer, UX implementation and matched captures | Defense coordination and private rating receipts |
-| Gleb Yurtayev | SIS12 infrastructure and finance audit used as evidence. Assigned SIS13 process/insight lead. | SIS13 contribution confirmation pending |
-| Ratislav Ovchinnikov | SIS12 provider audit used as evidence. Assigned SIS13 technical lead. | SIS13 contribution confirmation pending |
+| Yerassyl Babayev | Frozen register, timeline and PM review. Codex-assisted backlog, plan, CI workflow, board pilot, audit and report. | [Action Plan](https://github.com/yerassyl-clou/SmartCampus/pull/34), [CI workflow](https://github.com/yerassyl-clou/SmartCampus/pull/42) |
+| Danaya Aliyeva | Timeline review, Rating collection materials, chart renderer, UX implementation and matched captures. | [Shortcut](https://github.com/yerassyl-clou/SmartCampus/pull/38), [Matched evidence](https://github.com/yerassyl-clou/SmartCampus/pull/39) |
+| Gleb Yurtayev | SIS13 process audit, pilot change record and before/after measurement. | [Process evidence](https://github.com/yerassyl-clou/SmartCampus/pull/48) |
+| Ratislav Ovchinnikov | SIS13 technical audit, regression checks and hosted result verification. | [Technical results](https://github.com/yerassyl-clou/SmartCampus/pull/46), [Regression](https://github.com/yerassyl-clou/SmartCampus/pull/47) |
 
 ## Primary references
 - [SmartCampus Task Board](https://app.clickup.com/1100310000007240/v/l/z8q7hb2y28-378) and [SIS13 task dependency index](https://github.com/yerassyl-clou/SmartCampus/blob/9dff9c289289eda7bb2402fb2ef2075f1b7d6571/docs/SIS13/TASK_DEPENDENCIES.md)
