@@ -53,14 +53,14 @@ function Page({ route, locale, t }) {
   }
 }
 
-export default function Shell() {
+export default function Shell({ pathname }) {
   const [locale,setLocale] = useState(()=>{
     const preferred = readPreference('sc-v2-locale')
     return locales.includes(preferred) ? preferred : 'en'
   })
   const [theme,setTheme] = useState(()=>readPreference('sc-v2-theme')==='dark'?'dark':'light')
   const t = translator(locale)
-  const route = matchRoute(location.pathname)
+  const route = matchRoute(pathname)
   const main = useRef(null)
 
   useEffect(()=>{

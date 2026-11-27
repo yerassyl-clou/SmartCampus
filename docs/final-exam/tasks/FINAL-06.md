@@ -12,7 +12,7 @@
 | Original delivery / acceptance | 2026-11-26 15:00 / 16:00 Asia/Almaty, elapsed |
 | Accepted baseline | `c95c0a448218611c1a61c7f71acda3580ef1ec04` integrates FINAL-02. Conditional FINAL-01 acceptance entered main via PR #50. |
 | Packet prepared | 2026-11-28T00:18:38+05:00 |
-| Implementation and captures | Frontend tree `43e2fe2791fa42a185a729eb8ad79381c306deab`. Exact PR, head and review request time appear in the ClickUp review notice. |
+| Implementation and captures | Frontend tree `5c6876dd2fe8a2c9e3acd1d1f27d9d7e8f6a2568`. Exact PR, head and review request time appear in the ClickUp review notice. |
 | Acceptance / merge of FINAL-06 | Pending independent reviewer decision |
 | Effort | Planned 150 active owner minutes, 65 human touch subset, 160 agent-only minutes and 20 reserved rework minutes. Actual human and agent-only time unknown. |
 
@@ -27,8 +27,8 @@
 | --- | --- |
 | `cd frontend && npm ci` | Passed. The existing dev-dependency audit reports two findings. Runtime-only npm audit reported zero. |
 | `cd frontend && npm run build` | Passed. |
-| `cd frontend && npx playwright test tests/v2-shell.spec.js` | 10 passed, including responsive and keyboard tests, three locales, both themes, OAuth fixture callback and eligibility, role denial and no guest network requests. |
-| `cd frontend && npm test` | 82 passed, including 72 existing legacy tests. |
+| `cd frontend && npx playwright test tests/v2-shell.spec.js` | 13 passed, including responsive and keyboard tests, three locales, both themes, OAuth fixture callback and eligibility, role denial and no guest network requests. |
+| `cd frontend && npm test` | 85 passed, including 72 existing legacy tests. |
 
 [QA report](../quality/UX_SHELL_QA.md) · [Asset manifest](../quality/SHELL_ASSETS.md) · [Test output](../evidence/FINAL-06/checks.log) · [Capture manifest](../evidence/FINAL-06/captures.json) · [Downstream handoffs](../handoffs/FINAL-06.md) · [Activity](../activity/FINAL-06.csv) · [Contribution](../contributions/FINAL-06.json)
 
@@ -53,8 +53,12 @@ FINAL-04 has yet to freeze the final API example schema and approved live demo r
 
 **Slide 11 · Separation of access modes**
 
-“The local frontend passes ten shell checks and 72 existing regression checks. Personal routes wait for server eligibility. The default profile keeps Google sign-in held.”
+“The local frontend passes thirteen shell checks and 72 existing regression checks. Personal routes wait for server eligibility. The default profile keeps Google sign-in held.”
 
 **Speaker notes** “Show the held sign-in capture and demonstrate guest access. The PKCE tests use synthetic broker responses. The hosted decision has its own evidence and approval gate.” [Held sign-in](../evidence/FINAL-06/EV-FINAL-06-07-held-1440.jpg)
 
 **AI disclosure** Codex assisted with implementation, localized strings, tests, browser checks, evidence preparation and delivery documentation. Chromium screenshots were generated from the running frontend. Independent acceptance and native linguistic review are open.
+
+## Independent review correction
+
+The [review finding](https://github.com/yerassyl-clou/SmartCampus/pull/53#pullrequestreview-6092547592) reproduced automatic legacy requests on both entry paths when the synthetic release and legacy application flags were configured together. Both new browser tests failed on the first submitted entry logic and intercepted `/api/deadlines`. The corrected entry logic resolves the synthetic release first and gives `/legacy` the V2 landing in that profile. Explicit legacy mode continues to pass its compatibility checks. See the [before and after output](../evidence/FINAL-06/checks.log) and [updated captures](../evidence/FINAL-06/captures.json).

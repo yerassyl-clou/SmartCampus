@@ -1,6 +1,6 @@
 # FINAL-06 handoff
 
-Contract `2.0.0-shell-review.1`. Packet prepared 2026-11-28T00:18:38+05:00. Baseline `c95c0a448218611c1a61c7f71acda3580ef1ec04`. Verified frontend tree `43e2fe2791fa42a185a729eb8ad79381c306deab`. The [task’s review notice](https://app.clickup.com/t/z8q7hby8dn) supplies the PR, exact submitted head, actual delivery timestamp and CI result. The [QA report](../quality/UX_SHELL_QA.md) records fixture mode and verification limits.
+Contract `2.0.0-shell-review.2`. Rework packet prepared 2026-11-28T00:29:44+05:00. Baseline `c95c0a448218611c1a61c7f71acda3580ef1ec04`. Verified frontend tree `5c6876dd2fe8a2c9e3acd1d1f27d9d7e8f6a2568`. The [task’s review notice](https://app.clickup.com/t/z8q7hby8dn) supplies the PR, exact submitted head, actual delivery timestamp and CI result. The [QA report](../quality/UX_SHELL_QA.md) records fixture mode and verification limits.
 
 | ID | From → to | State | Original deadline, Almaty | Next operation and recovery |
 | --- | --- | --- | --- | --- |
@@ -10,3 +10,5 @@ Contract `2.0.0-shell-review.1`. Packet prepared 2026-11-28T00:18:38+05:00. Base
 | H-FINAL-06-21 | D → Y / FINAL-21 | preliminary | 2026-11-26 16:00 | Verify capture classification, [asset provenance](../quality/SHELL_ASSETS.md), [slides and notes](../tasks/FINAL-06.md), exact head and independent acceptance. Label the material local synthetic runtime in the defense. |
 
 Accepted FINAL-02 and conditional FINAL-01 are integrated. FINAL-04 remains informational and may replace the preliminary wire-facing assumptions only through its versioned handoff. FINAL-05 preliminary.3 holds live OAuth and uses the operator’s exact approved preview origin when available. An eligible session result alone still needs server-side per-operation authorization from the downstream owners. Do not start FINAL-10 until the FINAL-06 native gate is accepted.
+
+Release precedence at this revision: synthetic mode overrides explicit and compatibility legacy selectors at both entry paths. Consumers should include this configuration in release smoke tests.

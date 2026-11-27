@@ -1,2 +1,3 @@
 local_date,stable_id,owner,started_at,end,planned_minutes,hands_on_minutes_or_null,effort_type,from_status,to_status,blocker,source
 2026-11-28,FINAL-06,Danaya Aliyeva,2026-11-28T00:09:45.323+05:00,2026-11-28T00:18:38+05:00,150,null,agent-assisted,to do,in progress,Hosted OAuth and final API fixtures held,https://app.clickup.com/t/z8q7hby8dn
+2026-11-28,FINAL-06,Danaya Aliyeva,2026-11-28T00:27:56+05:00,2026-11-28T00:29:44+05:00,20,null,agent-assisted rework,review,review,Independent re-review pending,https://github.com/yerassyl-clou/SmartCampus/pull/53#pullrequestreview-6092547592

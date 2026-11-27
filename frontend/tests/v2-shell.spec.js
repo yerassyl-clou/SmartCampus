@@ -239,3 +239,39 @@ test('successful PKCE fixture restores only the allowlisted route and leaves dem
   await expect(page.locator('.sc-answer')).toContainText(dictionaries.en.answer)
   expect(apiCalls).toBe(beforeDemo)
 })
+
+for (const route of ['/', '/legacy']) {
+  test(`synthetic release overrides explicit legacy at ${route}`, async ({page}) => {
+    const origin = 'http://127.0.0.1:5178'
+    const unexpected = []
+    await page.route('**/*', request => {
+      const url = new URL(request.request().url())
+      if (url.origin !== origin || /^\/(api|auth\/v1)(\/|$)/.test(url.pathname)) {
+        unexpected.push(url.pathname)
+        return request.abort()
+      }
+      return request.continue()
+    })
+    if (route==='/legacy') await page.setViewportSize({width:375,height:812})
+    await page.goto(origin+route)
+    // Wait for either app to render so the baseline reports the actual network leak.
+    await expect(page.getByRole('heading', {level:1})).toBeVisible()
+    if (await page.getByRole('heading', {name:'Academic assistant',exact:true}).isVisible()) {
+      await expect.poll(()=>unexpected).toContain('/api/deadlines')
+    }
+    expect(unexpected).toEqual([])
+    await expect(page.getByRole('heading', {name:dictionaries.en.headline})).toBeVisible()
+    await capture(page,route==='/'?'EV-FINAL-06-13-synthetic-root-1440':'EV-FINAL-06-14-synthetic-legacy-375')
+    await page.locator('main').getByRole('link', {name:dictionaries.en.demo}).click()
+    await expect(page.getByText(dictionaries.en.synthetic)).toBeVisible()
+    await page.goto(origin+'/signin')
+    await expect(page.getByRole('status')).toHaveText(dictionaries.en.held)
+    expect(unexpected).toEqual([])
+  })
+}
+
+test('explicit legacy retains the legacy alias without the synthetic flag', async ({page}) => {
+  await page.route('**/api/deadlines', route=>route.fulfill({json:{items:[],total:0}}))
+  await page.goto('http://127.0.0.1:5173/legacy')
+  await expect(page.getByRole('heading', {name:'Academic assistant',exact:true})).toBeVisible()
+})

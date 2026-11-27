@@ -49,7 +49,7 @@ export default defineConfig({
     {
       command: 'npm run dev -- --host 127.0.0.1 --strictPort',
       url: 'http://127.0.0.1:5173',
-      env: { VITE_USE_MOCK_CHAT: 'false' },
+      env: { VITE_APP_MODE: 'legacy', VITE_RELEASE_MODE: '', VITE_USE_MOCK_CHAT: 'false' },
     },
     {
       command: 'npm run dev -- --host 127.0.0.1 --port 5174 --strictPort',
@@ -69,6 +69,15 @@ export default defineConfig({
         VITE_APP_MODE: 'workspace', VITE_SUPABASE_URL: 'http://127.0.0.1:5177',
         VITE_SUPABASE_PUBLISHABLE_KEY: 'sb_publishable_browser_test_fixture',
         VITE_API_BASE_URL: '',
+      },
+    },
+    {
+      command: 'npm run dev -- --host 127.0.0.1 --port 5178 --strictPort',
+      url: 'http://127.0.0.1:5178',
+      env: {
+        VITE_RELEASE_MODE: 'synthetic', VITE_APP_MODE: 'legacy',
+        VITE_SUPABASE_URL: 'http://127.0.0.1:5178',
+        VITE_SUPABASE_PUBLISHABLE_KEY: 'sb_publishable_browser_test_fixture',
       },
     },
     // Deliberately build with the flag set: the production guard must still win.

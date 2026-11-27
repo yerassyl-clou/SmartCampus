@@ -5,6 +5,7 @@
     "Implemented the trilingual V2 shell and accepted SmartCampus brand",
     "Integrated guarded Google PKCE and server eligibility using isolated browser fixtures",
     "Built local synthetic replay, source dialog and deadline dashboard",
+    "Corrected synthetic release precedence and added browser coverage for both entry paths",
     "Verified two viewports and legacy compatibility, captured runtime evidence and prepared consumer handoffs"
   ],
   "proof": [
