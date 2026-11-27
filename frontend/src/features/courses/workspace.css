@@ -1,0 +1,27 @@
+.sc-workspace { margin-top: 16px }
+.sc-workspace .sc-heading h1 { margin-bottom: 0 }
+.sc-work-links { margin-bottom: 16px }
+.sc-workspace .sc-two { align-items: start }
+.sc-work-pane { min-width: 0; scroll-margin-top: 12px }
+.sc-work-list { list-style: none; padding: 0; margin: 12px 0 0 }
+.sc-work-list li { border-top: 1px solid var(--sc-line); padding: 14px 0 }
+.sc-work-list li:last-child { padding-bottom: 0 }
+.sc-work-list .sc-actions { margin-top: 8px; gap: 8px }
+.sc-work-form, .sc-work-form label { display: grid; gap: 8px }
+.sc-work-form { gap: 16px }
+.sc-work-form input {
+  min-height: 44px; padding: 8px; max-width: 100%; min-width: 0;
+  font: inherit; color: var(--sc-ink); background: var(--sc-surface);
+  border: 1px solid var(--sc-line); border-radius: 10px;
+}
+.sc-work-file { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 8px }
+.sc-work-file label { position: relative }
+.sc-work-file label:focus-within { outline: 3px solid var(--sc-accent); outline-offset: 3px }
+.sc-work-file label:has(input:disabled) { opacity: .65; cursor: default }
+.sc-work-file input { position: absolute; inset: 0; width: 100%; opacity: 0; cursor: inherit }
+.sc-workspace progress { width: 100%; accent-color: var(--sc-accent); margin-top: 12px }
+.sc-shell .sc-work-result { margin-top: 12px }
+.sc-source-drawer { position: fixed; inset: 0 0 0 auto; margin: 0; height: 100dvh; max-height: 100dvh; border-radius: 18px 0 0 18px }
+@media (max-width: 600px) {
+  .sc-source-drawer { inset: auto 0 0; width: 100%; height: auto; max-height: 85dvh; border-radius: 18px 18px 0 0 }
+}

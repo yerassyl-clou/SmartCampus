@@ -36,7 +36,7 @@ function Landing({ locale, t }) {
 }
 
 function Page({ route, locale, t }) {
-  if (route.access.startsWith('verified')) return <ProtectedPage route={route} t={t} />
+  if (route.access.startsWith('verified')) return <ProtectedPage route={route} t={t} locale={locale} />
   switch (route.id) {
     case 'landing': return <Landing locale={locale} t={t} />
     case 'signIn': return <SignIn t={t} />

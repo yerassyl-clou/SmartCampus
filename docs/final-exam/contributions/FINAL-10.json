@@ -1,0 +1,20 @@
+{
+  "id": "FINAL-10",
+  "role": "UI/UX Designer and Frontend Developer",
+  "work_items": [
+    "Extended the guarded shell with local course, syllabus and deadline workflows",
+    "Added localized forms, fixture recovery, original excerpt drawer and candidate review",
+    "Verified Chromium workflows and prepared handoffs and visual evidence"
+  ],
+  "proof": ["tasks/FINAL-10.md", "quality/COURSE_UI_QA.md", "evidence/FINAL-10/captures.json", "evidence/FINAL-10/full.log", "handoffs/FINAL-10.md"],
+  "estimated_minutes": {"active_owner": 175, "human_touch_subset": 75, "agent_only": 180, "rework_reserve": 20},
+  "actual_minutes": {"human": null, "agent_only": null},
+  "method": "Codex-assisted implementation and local browser QA with a mocked eligibility service. No human interaction time inferred.",
+  "date": "2026-11-28",
+  "ai_tools": [{"name":"Codex","purpose":"Implementation, localization, tests, screenshots and delivery drafts"}],
+  "slide_summary": "A guarded local fixture supports course setup, syllabus recovery and source-linked deadline review in three languages.",
+  "speaker_notes": "Show the localized mobile source drawer and the explicit candidate review. Disclose the held live upload.",
+  "approved_visuals": [],
+  "confirmed_by": null,
+  "confirmed_at": null
+}

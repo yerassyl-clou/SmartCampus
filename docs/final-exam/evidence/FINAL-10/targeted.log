@@ -1,0 +1,42 @@
+[WebServer] (node:89077) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:89120) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:89158) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:89191) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:89223) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:89258) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:89291) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:89327) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 9 tests using 3 workers
+
+(node:89329) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:89330) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:89331) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:89329) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:89330) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:89331) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [v2-courses] › tests/v2-courses.spec.js:41:1 › course CRUD, validation, confirmation and route persistence (2.1s)
+  ✓  4 [v2-courses] › tests/v2-courses.spec.js:118:1 › date-only deadlines use the Almaty day and preserve candidate provenance (1.2s)
+  ✓  5 [v2-courses] › tests/v2-courses.spec.js:154:1 › mobile keyboard focus and localized source navigation (442ms)
+  ✓  3 [v2-courses] › tests/v2-courses.spec.js:97:1 › cancellation, corrupt and scanned states, and expired reservation retry (3.9s)
+  ✓  7 [v2-courses] › tests/v2-courses.spec.js:200:1 › DOCX fixture stays local (1.2s)
+  ✓  6 [v2-courses] › tests/v2-courses.spec.js:179:1 › denied eligibility and foreign course never expose local workflow data (2.1s)
+  ✓  2 [v2-courses] › tests/v2-courses.spec.js:71:1 › bounded upload resumes at the chunk offset, hashes and rejects duplicate bytes (6.1s)
+  ✓  8 [v2-courses] › tests/v2-courses.spec.js:213:3 › locale and theme matrix at 375px (1.1s)
+  ✓  9 [v2-courses] › tests/v2-courses.spec.js:213:3 › locale and theme matrix at 1440px (671ms)
+
+  9 passed (12.2s)

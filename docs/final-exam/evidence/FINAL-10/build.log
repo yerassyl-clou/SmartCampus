@@ -1,0 +1,27 @@
+
+added 28 packages, and audited 29 packages in 1s
+
+3 packages are looking for funding
+  run `npm fund` for details
+
+2 vulnerabilities (1 moderate, 1 high)
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+> smartcampus-frontend@0.1.0 build
+> vite build
+
+vite v5.4.21 building for production...
+transforming...
+✓ 98 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.41 kB │ gzip:  0.28 kB
+dist/assets/Shell-D07FlQq7.css    6.51 kB │ gzip:  2.01 kB
+dist/assets/Shell-DxiAm4ss.js    26.82 kB │ gzip: 10.54 kB
+dist/assets/index-DPlU4XLU.js   143.01 kB │ gzip: 46.26 kB
+dist/assets/client-DPd6M_zi.js  231.32 kB │ gzip: 60.38 kB
+✓ built in 1.65s

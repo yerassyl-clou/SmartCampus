@@ -40,6 +40,11 @@ export default defineConfig({
       use: { baseURL: 'http://127.0.0.1:5176', timezoneId: 'Asia/Almaty' },
     },
     {
+      name: 'v2-courses',
+      testMatch: 'v2-courses.spec.js',
+      use: { baseURL: 'http://127.0.0.1:5179', timezoneId: 'America/Los_Angeles' },
+    },
+    {
       name: 'production',
       testMatch: 'production.spec.js',
       use: { baseURL: 'http://127.0.0.1:5175' },
@@ -78,6 +83,15 @@ export default defineConfig({
         VITE_RELEASE_MODE: 'synthetic', VITE_APP_MODE: 'legacy',
         VITE_SUPABASE_URL: 'http://127.0.0.1:5178',
         VITE_SUPABASE_PUBLISHABLE_KEY: 'sb_publishable_browser_test_fixture',
+      },
+    },
+    {
+      command: 'npm run dev -- --host 127.0.0.1 --port 5179 --strictPort',
+      url: 'http://127.0.0.1:5179',
+      env: {
+        VITE_APP_MODE: 'workspace', VITE_RELEASE_MODE: '', VITE_WORKSPACE_FIXTURE: 'true',
+        VITE_SUPABASE_URL: 'http://127.0.0.1:5179',
+        VITE_SUPABASE_PUBLISHABLE_KEY: 'sb_publishable_browser_test_fixture', VITE_API_BASE_URL: '',
       },
     },
     // Deliberately build with the flag set: the production guard must still win.

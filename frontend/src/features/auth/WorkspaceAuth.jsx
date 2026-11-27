@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { allowedReturn, v2Routes } from '../../app/v2Routes.js'
 import { Action, Card } from '../../app/components.jsx'
+import Workspace, {allowLocalWorkspaceFixture} from '../courses/Workspace.jsx'
 import { authState, readAuthConfig } from './config.js'
 
 export const authConfig = readAuthConfig(import.meta.env)
@@ -128,7 +129,7 @@ function useEligibility(attempt) {
       current = controller
       if (active) setResult({state:authState.loading})
       const next = await verifySession(authConfig,session,controller.signal)
-      if (active && !controller.signal.aborted) setResult(next)
+      if (active && !controller.signal.aborted) setResult({...next, owner:session?.user?.id})
     }
     import('./client.js').then(({authClient,verifySession}) => {
       if (!active) return
@@ -152,10 +153,10 @@ function useEligibility(attempt) {
   return result
 }
 
-export function ProtectedPage({ route, t }) {
+export function ProtectedPage({ route, t, locale }) {
   const [attempt,setAttempt] = useState(0)
   const [logout,setLogout] = useState('')
-  const {state,role} = useEligibility(attempt)
+  const {state,role,owner} = useEligibility(attempt)
   const signIn = '/signin?next=' + encodeURIComponent(allowedReturn(location.pathname))
   const access = route.access === 'verified-admin' && role !== 'admin' && state === authState.verified
     ? authState.denied : state
@@ -190,16 +191,19 @@ export function ProtectedPage({ route, t }) {
     </div>
   </Card>
 
+  const fixture = typeof owner === 'string' && ['courses','course','deadlines'].includes(route.id) &&
+    allowLocalWorkspaceFixture(authConfig, import.meta.env, location.origin)
   return <>
-    <p className="sc-banner">{t('personal')}</p>
+    {!fixture && <p className="sc-banner">{t('personal')}</p>}
     <nav aria-label={t('workspace')} className="sc-actions">
       {['courses','deadlines','settings',...(role==='admin'?['admin']:[])].map(id=>
-        <Action key={id} href={v2Routes[id].path}>{t(headings[id])}</Action>)}
+        <Action key={id} href={v2Routes[id].path} aria-current={route.id === id ? 'page' : undefined}>{t(headings[id])}</Action>)}
     </nav>
-    <Card>
+    {fixture ? <Workspace key={owner} route={route} owner={owner} locale={locale}
+      translate={t} signOut={signOut}/> : <Card>
       <h1>{t(headings[route.id])}</h1>
       <p role="status">{t('contentHold')}</p>
       <Action onClick={signOut}>{t('logout')}</Action>
-    </Card>
+    </Card>}
   </>
 }
