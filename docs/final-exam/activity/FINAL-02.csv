@@ -1,0 +1,3 @@
+local_date,stable_id,owner,started_at,end,planned_minutes,hands_on_minutes_or_null,effort_type,from_status,to_status,blocker,source
+2026-11-26,FINAL-02,Danaya Aliyeva,2026-11-26T18:32:26.181+05:00,2026-11-26T18:36:14+05:00,110,null,agent-assisted,to do,in progress,Figma connection requires reauthentication; editable manual fallback used,https://app.clickup.com/t/z8q7hby8dg
+2026-11-27,FINAL-02,Danaya Aliyeva,2026-11-27T23:58:52+05:00,2026-11-28T00:00:49.049+05:00,15,null,agent-assisted rework,review,review,Independent acceptance pending,https://github.com/yerassyl-clou/SmartCampus/pull/51#pullrequestreview-6075357784

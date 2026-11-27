@@ -1,0 +1,282 @@
+[
+  {
+    "id": "EV-FINAL-02-01",
+    "file": "EV-FINAL-02-01-landing-1440.jpg",
+    "revision": "d1e57518a40e84ac75b583d45bc64c64c78cf217",
+    "revision_type": "git-tree of design directory",
+    "occurred_at": "2026-11-28T00:00:44.969+05:00",
+    "mode": "local browser prototype",
+    "classification": "synthetic/public-safe",
+    "role": "design reviewer",
+    "dataset": "authored Design Research fixture",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "device": "Chromium desktop engine at fixed viewport",
+    "command": "DESIGN_TREE=<design-tree> node docs/final-exam/design/prototype/check.cjs",
+    "expected": "Render landing at the declared width without horizontal overflow",
+    "observed": "Rendered; screenshot captured",
+    "access": "Repository evidence path; project academic use"
+  },
+  {
+    "id": "EV-FINAL-02-02",
+    "file": "EV-FINAL-02-02-signin-1440.jpg",
+    "revision": "d1e57518a40e84ac75b583d45bc64c64c78cf217",
+    "revision_type": "git-tree of design directory",
+    "occurred_at": "2026-11-28T00:00:45.012+05:00",
+    "mode": "local browser prototype",
+    "classification": "synthetic/public-safe",
+    "role": "design reviewer",
+    "dataset": "authored Design Research fixture",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "device": "Chromium desktop engine at fixed viewport",
+    "command": "DESIGN_TREE=<design-tree> node docs/final-exam/design/prototype/check.cjs",
+    "expected": "Render signin at the declared width without horizontal overflow",
+    "observed": "Rendered; screenshot captured",
+    "access": "Repository evidence path; project academic use"
+  },
+  {
+    "id": "EV-FINAL-02-03",
+    "file": "EV-FINAL-02-03-guest-course-1440.jpg",
+    "revision": "d1e57518a40e84ac75b583d45bc64c64c78cf217",
+    "revision_type": "git-tree of design directory",
+    "occurred_at": "2026-11-28T00:00:45.091+05:00",
+    "mode": "local browser prototype",
+    "classification": "synthetic/public-safe",
+    "role": "design reviewer",
+    "dataset": "authored Design Research fixture",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "device": "Chromium desktop engine at fixed viewport",
+    "command": "DESIGN_TREE=<design-tree> node docs/final-exam/design/prototype/check.cjs",
+    "expected": "Render guest-course at the declared width without horizontal overflow",
+    "observed": "Rendered; screenshot captured",
+    "access": "Repository evidence path; project academic use"
+  },
+  {
+    "id": "EV-FINAL-02-04",
+    "file": "EV-FINAL-02-04-deadlines-1440.jpg",
+    "revision": "d1e57518a40e84ac75b583d45bc64c64c78cf217",
+    "revision_type": "git-tree of design directory",
+    "occurred_at": "2026-11-28T00:00:45.214+05:00",
+    "mode": "local browser prototype",
+    "classification": "synthetic/public-safe",
+    "role": "design reviewer",
+    "dataset": "authored Design Research fixture",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "device": "Chromium desktop engine at fixed viewport",
+    "command": "DESIGN_TREE=<design-tree> node docs/final-exam/design/prototype/check.cjs",
+    "expected": "Render deadlines at the declared width without horizontal overflow",
+    "observed": "Rendered; screenshot captured",
+    "access": "Repository evidence path; project academic use"
+  },
+  {
+    "id": "EV-FINAL-02-05",
+    "file": "EV-FINAL-02-05-guest-course-dark-1440.jpg",
+    "revision": "d1e57518a40e84ac75b583d45bc64c64c78cf217",
+    "revision_type": "git-tree of design directory",
+    "occurred_at": "2026-11-28T00:00:45.647+05:00",
+    "mode": "local browser prototype",
+    "classification": "synthetic/public-safe",
+    "role": "design reviewer",
+    "dataset": "authored Design Research fixture",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "device": "Chromium desktop engine at fixed viewport",
+    "command": "DESIGN_TREE=<design-tree> node docs/final-exam/design/prototype/check.cjs",
+    "expected": "Render guest-course-dark at the declared width without horizontal overflow",
+    "observed": "Rendered; screenshot captured",
+    "access": "Repository evidence path; project academic use"
+  },
+  {
+    "id": "EV-FINAL-02-06",
+    "file": "EV-FINAL-02-06-landing-375.jpg",
+    "revision": "d1e57518a40e84ac75b583d45bc64c64c78cf217",
+    "revision_type": "git-tree of design directory",
+    "occurred_at": "2026-11-28T00:00:47.627+05:00",
+    "mode": "local browser prototype",
+    "classification": "synthetic/public-safe",
+    "role": "design reviewer",
+    "dataset": "authored Design Research fixture",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "device": "Chromium desktop engine at fixed viewport",
+    "command": "DESIGN_TREE=<design-tree> node docs/final-exam/design/prototype/check.cjs",
+    "expected": "Render landing at the declared width without horizontal overflow",
+    "observed": "Rendered; screenshot captured",
+    "access": "Repository evidence path; project academic use"
+  },
+  {
+    "id": "EV-FINAL-02-07",
+    "file": "EV-FINAL-02-07-signin-375.jpg",
+    "revision": "d1e57518a40e84ac75b583d45bc64c64c78cf217",
+    "revision_type": "git-tree of design directory",
+    "occurred_at": "2026-11-28T00:00:47.660+05:00",
+    "mode": "local browser prototype",
+    "classification": "synthetic/public-safe",
+    "role": "design reviewer",
+    "dataset": "authored Design Research fixture",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "device": "Chromium desktop engine at fixed viewport",
+    "command": "DESIGN_TREE=<design-tree> node docs/final-exam/design/prototype/check.cjs",
+    "expected": "Render signin at the declared width without horizontal overflow",
+    "observed": "Rendered; screenshot captured",
+    "access": "Repository evidence path; project academic use"
+  },
+  {
+    "id": "EV-FINAL-02-08",
+    "file": "EV-FINAL-02-08-guest-course-375.jpg",
+    "revision": "d1e57518a40e84ac75b583d45bc64c64c78cf217",
+    "revision_type": "git-tree of design directory",
+    "occurred_at": "2026-11-28T00:00:47.709+05:00",
+    "mode": "local browser prototype",
+    "classification": "synthetic/public-safe",
+    "role": "design reviewer",
+    "dataset": "authored Design Research fixture",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "device": "Chromium desktop engine at fixed viewport",
+    "command": "DESIGN_TREE=<design-tree> node docs/final-exam/design/prototype/check.cjs",
+    "expected": "Render guest-course at the declared width without horizontal overflow",
+    "observed": "Rendered; screenshot captured",
+    "access": "Repository evidence path; project academic use"
+  },
+  {
+    "id": "EV-FINAL-02-09",
+    "file": "EV-FINAL-02-09-deadlines-375.jpg",
+    "revision": "d1e57518a40e84ac75b583d45bc64c64c78cf217",
+    "revision_type": "git-tree of design directory",
+    "occurred_at": "2026-11-28T00:00:47.777+05:00",
+    "mode": "local browser prototype",
+    "classification": "synthetic/public-safe",
+    "role": "design reviewer",
+    "dataset": "authored Design Research fixture",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "device": "Chromium desktop engine at fixed viewport",
+    "command": "DESIGN_TREE=<design-tree> node docs/final-exam/design/prototype/check.cjs",
+    "expected": "Render deadlines at the declared width without horizontal overflow",
+    "observed": "Rendered; screenshot captured",
+    "access": "Repository evidence path; project academic use"
+  },
+  {
+    "id": "EV-FINAL-02-10",
+    "file": "EV-FINAL-02-10-guest-source-tab-dark-375.jpg",
+    "revision": "d1e57518a40e84ac75b583d45bc64c64c78cf217",
+    "revision_type": "git-tree of design directory",
+    "occurred_at": "2026-11-28T00:00:48.159+05:00",
+    "mode": "local browser prototype",
+    "classification": "synthetic/public-safe",
+    "role": "design reviewer",
+    "dataset": "authored Design Research fixture",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "device": "Chromium desktop engine at fixed viewport",
+    "command": "DESIGN_TREE=<design-tree> node docs/final-exam/design/prototype/check.cjs",
+    "expected": "Render guest-source-tab-dark at the declared width without horizontal overflow",
+    "observed": "Rendered; screenshot captured",
+    "access": "Repository evidence path; project academic use"
+  },
+  {
+    "id": "EV-FINAL-02-11",
+    "file": "EV-FINAL-02-11-signin-held-1440.jpg",
+    "revision": "d1e57518a40e84ac75b583d45bc64c64c78cf217",
+    "revision_type": "git-tree of design directory",
+    "occurred_at": "2026-11-28T00:00:46.272+05:00",
+    "mode": "local browser prototype",
+    "classification": "synthetic/public-safe",
+    "role": "design reviewer",
+    "dataset": "authored Design Research fixture",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "device": "Chromium desktop engine at fixed viewport",
+    "command": "DESIGN_TREE=<design-tree> node docs/final-exam/design/prototype/check.cjs",
+    "expected": "Render signin-held at the declared width without horizontal overflow",
+    "observed": "Rendered; screenshot captured",
+    "access": "Repository evidence path; project academic use"
+  },
+  {
+    "id": "EV-FINAL-02-12",
+    "file": "EV-FINAL-02-12-signin-held-375.jpg",
+    "revision": "d1e57518a40e84ac75b583d45bc64c64c78cf217",
+    "revision_type": "git-tree of design directory",
+    "occurred_at": "2026-11-28T00:00:48.710+05:00",
+    "mode": "local browser prototype",
+    "classification": "synthetic/public-safe",
+    "role": "design reviewer",
+    "dataset": "authored Design Research fixture",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "device": "Chromium desktop engine at fixed viewport",
+    "command": "DESIGN_TREE=<design-tree> node docs/final-exam/design/prototype/check.cjs",
+    "expected": "Render signin-held at the declared width without horizontal overflow",
+    "observed": "Rendered; screenshot captured",
+    "access": "Repository evidence path; project academic use"
+  },
+  {
+    "id": "EV-FINAL-02-13",
+    "file": "EV-FINAL-02-13-simulated-live-dark-1440.jpg",
+    "revision": "d1e57518a40e84ac75b583d45bc64c64c78cf217",
+    "revision_type": "git-tree of design directory",
+    "occurred_at": "2026-11-28T00:00:46.625+05:00",
+    "mode": "local browser prototype",
+    "classification": "synthetic/public-safe",
+    "role": "design reviewer",
+    "dataset": "authored Design Research fixture",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "device": "Chromium desktop engine at fixed viewport",
+    "command": "DESIGN_TREE=<design-tree> node docs/final-exam/design/prototype/check.cjs",
+    "expected": "Render simulated-live-dark at the declared width without horizontal overflow",
+    "observed": "Rendered; screenshot captured",
+    "access": "Repository evidence path; project academic use"
+  },
+  {
+    "id": "EV-FINAL-02-14",
+    "file": "EV-FINAL-02-14-simulated-live-dark-375.jpg",
+    "revision": "d1e57518a40e84ac75b583d45bc64c64c78cf217",
+    "revision_type": "git-tree of design directory",
+    "occurred_at": "2026-11-28T00:00:49.049+05:00",
+    "mode": "local browser prototype",
+    "classification": "synthetic/public-safe",
+    "role": "design reviewer",
+    "dataset": "authored Design Research fixture",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "device": "Chromium desktop engine at fixed viewport",
+    "command": "DESIGN_TREE=<design-tree> node docs/final-exam/design/prototype/check.cjs",
+    "expected": "Render simulated-live-dark at the declared width without horizontal overflow",
+    "observed": "Rendered; screenshot captured",
+    "access": "Repository evidence path; project academic use"
+  }
+]

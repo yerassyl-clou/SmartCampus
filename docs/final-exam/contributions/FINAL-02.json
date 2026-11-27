@@ -1,0 +1,42 @@
+{
+  "id": "FINAL-02",
+  "role": "UI/UX Designer and Frontend Developer",
+  "work_items": [
+    "Created an editable browser prototype and original folded-page visual identity",
+    "Mapped 12 screens to component states and preliminary API contracts",
+    "Drafted and exercised English, Russian and Kazakh labels and both themes",
+    "Captured synthetic browser evidence and prepared downstream handoffs",
+    "Resolved reviewer findings on auth state consistency and synthetic guest labels; reran the width, language and theme matrix"
+  ],
+  "proof": [
+    "tasks/FINAL-02.md",
+    "design/UX_HANDOFF.md",
+    "design/ASSETS.md",
+    "evidence/FINAL-02/captures.json",
+    "evidence/FINAL-02/browser-check.log"
+  ],
+  "estimated_minutes": {
+    "active_owner": 110,
+    "human_touch_subset": 55,
+    "agent_only": 100,
+    "rework_reserve": 15
+  },
+  "actual_minutes": {
+    "human": null,
+    "agent_only": null
+  },
+  "method": "Codex-assisted prototype and documentation with Playwright Chromium checks and observed browser captures. Independent human and agent-only effort totals are unknown.",
+  "date": "2026-11-26",
+  "ai_tools": [
+    {
+      "name": "Codex",
+      "purpose": "Contract review, interface and SVG drafting, translations, browser verification and evidence documentation"
+    }
+  ],
+  "slide_summary": "Course material, cited questions and deadlines share an accessible, trilingual study context.",
+  "speaker_notes": "Show the desktop workspace and the compact chat. Open the original source excerpt and demonstrate the local synthetic label. Explain the two themes and the 72 route/locale render checks. The browser evidence covers the design prototype.",
+  "approved_visuals": [],
+  "confirmed_by": null,
+  "confirmed_at": null,
+  "last_verified_at": "2026-11-28T00:00:49.049+05:00"
+}
