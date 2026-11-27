@@ -1,0 +1,148 @@
+FINAL-06 Markdown evidence companion. Working directory: frontend.
+
+Frontend tree: 43e2fe2791fa42a185a729eb8ad79381c306deab
+
+$ npm ci
+
+
+added 28 packages, and audited 29 packages in 1s
+
+3 packages are looking for funding
+  run `npm fund` for details
+
+2 vulnerabilities (1 moderate, 1 high)
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+$ npm run build
+
+
+> smartcampus-frontend@0.1.0 build
+> vite build
+
+vite v5.4.21 building for production...
+transforming...
+✓ 90 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.41 kB │ gzip:  0.27 kB
+dist/assets/Shell-CDrro_CJ.css    5.08 kB │ gzip:  1.67 kB
+dist/assets/Shell-gv62X2zS.js    26.56 kB │ gzip: 10.43 kB
+dist/assets/index-Crcf2GiN.js   142.98 kB │ gzip: 46.24 kB
+dist/assets/client-BZHuhDjp.js  231.32 kB │ gzip: 60.38 kB
+✓ built in 925ms
+
+$ npx playwright test tests/v2-shell.spec.js
+
+
+Running 10 tests using 3 workers
+
+  ✓   1 [v2-shell] › tests/v2-shell.spec.js:19:1 › contracts have locale parity, strict return paths and isolated fixture data (17ms)
+  ✓   3 [v2-shell] › tests/v2-shell.spec.js:48:5 › 1440px › public landing, locale/theme persistence and readable controls (1.3s)
+  ✓   2 [v2-shell] › tests/v2-shell.spec.js:81:5 › 1440px › synthetic workspace, source, citation keyboard and deadline without requests (1.7s)
+  ✓   5 [v2-shell] › tests/v2-shell.spec.js:48:5 › 375px › public landing, locale/theme persistence and readable controls (719ms)
+  ✓   4 [v2-shell] › tests/v2-shell.spec.js:129:5 › 1440px › held auth, cancellation, callback cleanup and direct private routes (2.1s)
+  ✓   8 [v2-shell] › tests/v2-shell.spec.js:152:1 › workspace-configured browser gates unsafe redirects and handles rejected PKCE codes (1.1s)
+  ✓   6 [v2-shell] › tests/v2-shell.spec.js:81:5 › 375px › synthetic workspace, source, citation keyboard and deadline without requests (1.6s)
+  ✓   7 [v2-shell] › tests/v2-shell.spec.js:129:5 › 375px › held auth, cancellation, callback cleanup and direct private routes (1.3s)
+  ✓  10 [v2-shell] › tests/v2-shell.spec.js:209:1 › successful PKCE fixture restores only the allowlisted route and leaves demo isolated (779ms)
+  ✓   9 [v2-shell] › tests/v2-shell.spec.js:175:1 › server eligibility gates the restored fixture session and logout (1.4s)
+
+  10 passed (9.5s)
+
+$ npm test
+
+
+> smartcampus-frontend@0.1.0 test
+> playwright test
+
+
+Running 82 tests using 3 workers
+
+  ✓   2 [chat] › tests/chat.spec.js:64:3 › welcome deadline shortcut focuses the dashboard at 1440px (691ms)
+  ✓   3 [chat] › tests/chat.spec.js:64:3 › welcome deadline shortcut focuses the dashboard at 375px (699ms)
+  ✓   1 [chat] › tests/chat.spec.js:34:1 › welcome suggestions populate and focus the input without requesting an answer (664ms)
+  ✓   5 [chat] › tests/chat.spec.js:121:1 › optional course ID is passed only when supplied by the caller (395ms)
+  ✓   4 [chat] › tests/chat.spec.js:84:1 › sends the contract, trims questions, renders multiple sources and preserves history (687ms)
+  ✓   6 [chat] › tests/chat.spec.js:136:1 › pending state blocks button, Enter and direct form resubmission while preserving drafts (675ms)
+  ✓   7 [chat] › tests/chat.spec.js:174:1 › Enter sends, Shift+Enter adds a newline, and IME Enter does not submit (517ms)
+  ✓   8 [chat] › tests/chat.spec.js:196:1 › no-evidence answer has a clear warning and no attribution, even with inconsistent sources (454ms)
+  ✓   9 [chat] › tests/chat.spec.js:222:1 › empty or omitted source arrays do not imply verified evidence (516ms)
+  ✓  10 [chat] › tests/chat.spec.js:241:1 › partial source details are displayed safely without fabricating missing information (383ms)
+  ✓  11 [chat] › tests/chat.spec.js:270:3 › HTTP 422 preserves history, hides backend details and supports retry (649ms)
+  ✓  12 [chat] › tests/chat.spec.js:270:3 › HTTP 503 preserves history, hides backend details and supports retry (663ms)
+  ✓  13 [chat] › tests/chat.spec.js:270:3 › HTTP 501 preserves history, hides backend details and supports retry (677ms)
+  ✓  15 [chat] › tests/chat.spec.js:305:1 › network failure allows a new question without losing the failed one (499ms)
+  ✓  14 [chat] › tests/chat.spec.js:270:3 › HTTP 500 preserves history, hides backend details and supports retry (632ms)
+  ✓  16 [chat] › tests/chat.spec.js:334:3 › rejects malformed payload null (505ms)
+  ✓  17 [chat] › tests/chat.spec.js:334:3 › rejects malformed payload {} (394ms)
+  ✓  18 [chat] › tests/chat.spec.js:334:3 › rejects malformed payload {"answer":" ","grounded":true} (419ms)
+  ✓  19 [chat] › tests/chat.spec.js:334:3 › rejects malformed payload {"answer":42,"grounded":true} (413ms)
+  ✓  20 [chat] › tests/chat.spec.js:334:3 › rejects malformed payload {"answer":"Missing grounding"} (398ms)
+  ✓  21 [chat] › tests/chat.spec.js:334:3 › rejects malformed payload {"answer":"Wrong type","grounded":"true"} (386ms)
+  ✓  22 [chat] › tests/chat.spec.js:334:3 › rejects malformed payload {"answer":"Assignment 2 is due on 2026-11-06.","grounded":true,"sources":{}} (390ms)
+  ✓  24 [chat] › tests/chat.spec.js:376:1 › API-provided markup renders as text (378ms)
+  ✓  25 [chat] › tests/chat.spec.js:395:1 › keyboard access, live announcements and focus indicators are available (346ms)
+  ✓  23 [chat] › tests/chat.spec.js:351:1 › unreadable JSON and timed-out requests have recoverable errors (472ms)
+  ✓  26 [chat] › tests/chat.spec.js:422:3 › layout at 1440px wraps long content and scrolls to the newest answer (657ms)
+  ✓  27 [chat] › tests/chat.spec.js:422:3 › layout at 768px wraps long content and scrolls to the newest answer (620ms)
+  ✓  28 [chat] › tests/chat.spec.js:422:3 › layout at 375px wraps long content and scrolls to the newest answer (697ms)
+  ✓  29 [chat] › tests/chat.spec.js:488:3 › safe service category configuration is shown without provider details (369ms)
+  ✓  30 [chat] › tests/chat.spec.js:488:3 › safe service category authentication is shown without provider details (427ms)
+  ✓  31 [chat] › tests/chat.spec.js:488:3 › safe service category rejection is shown without provider details (375ms)
+  ✓  32 [chat] › tests/chat.spec.js:488:3 › safe service category rate_limit is shown without provider details (369ms)
+  ✓  33 [chat] › tests/chat.spec.js:488:3 › safe service category timeout is shown without provider details (383ms)
+  ✓  34 [chat] › tests/chat.spec.js:488:3 › safe service category invalid_output is shown without provider details (372ms)
+  ✓  35 [chat] › tests/chat.spec.js:488:3 › safe service category database_unavailable is shown without provider details (406ms)
+  ✓  36 [feedback] › tests/feedback.spec.js:30:1 › helpful submits once, retains signed IDs and announces confirmed success (567ms)
+  ✓  37 [feedback] › tests/feedback.spec.js:52:3 › negative feedback with no comment (691ms)
+  ✓  39 [feedback] › tests/feedback.spec.js:71:1 › 501 Unicode code points are rejected and 500 are accepted (893ms)
+  ✓  38 [feedback] › tests/feedback.spec.js:52:3 › negative feedback with plain-text comment (1.0s)
+  ✓  40 [feedback] › tests/feedback.spec.js:89:3 › 503 preserves one UUID on retry and reports the outcome (897ms)
+  ✓  41 [feedback] › tests/feedback.spec.js:89:3 › 422 preserves one UUID on retry and reports the outcome (795ms)
+  ✓  42 [feedback] › tests/feedback.spec.js:89:3 › network preserves one UUID on retry and reports the outcome (763ms)
+  ✓  43 [feedback] › tests/feedback.spec.js:89:3 › invalid 201 preserves one UUID on retry and reports the outcome (772ms)
+  ✓  46 [feedback] › tests/feedback.spec.js:130:3 › form keyboard and layout at 375 px (436ms)
+  ✓  44 [feedback] › tests/feedback.spec.js:89:3 › duplicate preserves one UUID on retry and reports the outcome (564ms)
+  ✓  45 [feedback] › tests/feedback.spec.js:115:1 › separate answers have independent feedback and safe fallback can be rated (620ms)
+  ✓  48 [feedback] › tests/feedback.spec.js:130:3 › form keyboard and layout at 1440 px (523ms)
+  ✓  47 [feedback] › tests/feedback.spec.js:130:3 › form keyboard and layout at 768 px (532ms)
+  ✓  49 [deadlines] › tests/deadlines.spec.js:27:1 › SC-ISS-001 groups yesterday, today and tomorrow by the Asia/Almaty day (372ms)
+  ✓  52 [deadlines] › tests/deadlines.spec.js:72:1 › pending request announces loading and prevents concurrent refresh (305ms)
+  ✓  51 [deadlines] › tests/deadlines.spec.js:41:1 › all-past datasets keep their records and show an empty upcoming group (384ms)
+  ✓  50 [deadlines] › tests/deadlines.spec.js:48:1 › GET renders all six server records, sorts dates and breaks equal-date ties by ID (425ms)
+  ✓  53 [deadlines] › tests/deadlines.spec.js:88:1 › empty API response shows useful state and can be refreshed (259ms)
+  ✓  54 [deadlines] › tests/deadlines.spec.js:100:3 › http failure has a readable error and a working Retry (340ms)
+  ✓  55 [deadlines] › tests/deadlines.spec.js:100:3 › network failure has a readable error and a working Retry (412ms)
+  ✓  56 [deadlines] › tests/deadlines.spec.js:100:3 › json failure has a readable error and a working Retry (355ms)
+  ✓  57 [deadlines] › tests/deadlines.spec.js:128:3 › rejects malformed contract: missing items (305ms)
+  ✓  58 [deadlines] › tests/deadlines.spec.js:128:3 › rejects malformed contract: mismatched total (309ms)
+  ✓  59 [deadlines] › tests/deadlines.spec.js:128:3 › rejects malformed contract: invalid calendar date (318ms)
+  ✓  60 [deadlines] › tests/deadlines.spec.js:128:3 › rejects malformed contract: empty required field (340ms)
+  ✓  61 [deadlines] › tests/deadlines.spec.js:128:3 › rejects malformed contract: duplicate IDs (318ms)
+  ✓  62 [deadlines] › tests/deadlines.spec.js:128:3 › rejects malformed contract: invalid record ID (304ms)
+  ✓  63 [deadlines] › tests/deadlines.spec.js:128:3 › rejects malformed contract: invalid course ID (326ms)
+  ✓  64 [deadlines] › tests/deadlines.spec.js:136:1 › Refresh and page reload fetch updated server data (577ms)
+  ✓  65 [deadlines] › tests/deadlines.spec.js:157:1 › failed refresh keeps prior records with an explicit stale-data notice, then Retry recovers (438ms)
+  ✓  66 [deadlines] › tests/deadlines.spec.js:175:1 › timeout is recoverable and Retry starts a fresh request (410ms)
+  ✓  67 [deadlines] › tests/deadlines.spec.js:188:1 › API markup is rendered as text rather than executable content (336ms)
+  ✓  68 [deadlines] › tests/deadlines.spec.js:198:3 › deadline layout at 1440px wraps long records without horizontal overflow (494ms)
+  ✓  69 [deadlines] › tests/deadlines.spec.js:198:3 › deadline layout at 768px wraps long records without horizontal overflow (456ms)
+  ✓  70 [deadlines] › tests/deadlines.spec.js:198:3 › deadline layout at 375px wraps long records without horizontal overflow (405ms)
+  ✓  72 [v2-shell] › tests/v2-shell.spec.js:19:1 › contracts have locale parity, strict return paths and isolated fixture data (11ms)
+  ✓  74 [v2-shell] › tests/v2-shell.spec.js:48:5 › 1440px › public landing, locale/theme persistence and readable controls (613ms)
+  ✓  73 [v2-shell] › tests/v2-shell.spec.js:81:5 › 1440px › synthetic workspace, source, citation keyboard and deadline without requests (999ms)
+  ✓  76 [v2-shell] › tests/v2-shell.spec.js:48:5 › 375px › public landing, locale/theme persistence and readable controls (492ms)
+  ✓  75 [v2-shell] › tests/v2-shell.spec.js:129:5 › 1440px › held auth, cancellation, callback cleanup and direct private routes (1.0s)
+  ✓  77 [v2-shell] › tests/v2-shell.spec.js:81:5 › 375px › synthetic workspace, source, citation keyboard and deadline without requests (933ms)
+  ✓  78 [v2-shell] › tests/v2-shell.spec.js:129:5 › 375px › held auth, cancellation, callback cleanup and direct private routes (979ms)
+  ✓  71 [demo] › tests/demo.spec.js:3:1 › explicit demo mode is labeled, returns fictional sources, and never calls the backend (3.2s)
+  ✓  79 [v2-shell] › tests/v2-shell.spec.js:152:1 › workspace-configured browser gates unsafe redirects and handles rejected PKCE codes (974ms)
+  ✓  82 [production] › tests/production.spec.js:3:1 › production ignores the demo flag and displays API failures without invented answers (686ms)
+  ✓  80 [v2-shell] › tests/v2-shell.spec.js:175:1 › server eligibility gates the restored fixture session and logout (1.8s)
+  ✓  81 [v2-shell] › tests/v2-shell.spec.js:209:1 › successful PKCE fixture restores only the allowlisted route and leaves demo isolated (1.2s)
+
+  82 passed (23.8s)

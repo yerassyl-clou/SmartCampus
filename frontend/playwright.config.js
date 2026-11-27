@@ -35,6 +35,11 @@ export default defineConfig({
       use: { baseURL: 'http://127.0.0.1:5174' },
     },
     {
+      name: 'v2-shell',
+      testMatch: 'v2-shell.spec.js',
+      use: { baseURL: 'http://127.0.0.1:5176', timezoneId: 'Asia/Almaty' },
+    },
+    {
       name: 'production',
       testMatch: 'production.spec.js',
       use: { baseURL: 'http://127.0.0.1:5175' },
@@ -50,6 +55,21 @@ export default defineConfig({
       command: 'npm run dev -- --host 127.0.0.1 --port 5174 --strictPort',
       url: 'http://127.0.0.1:5174',
       env: { VITE_USE_MOCK_CHAT: 'true' },
+    },
+    {
+      command: 'npm run dev -- --host 127.0.0.1 --port 5176 --strictPort',
+      url: 'http://127.0.0.1:5176',
+      env: { VITE_APP_MODE: 'public-demo', VITE_SUPABASE_URL: '', VITE_SUPABASE_PUBLISHABLE_KEY: '' },
+    },
+    {
+      command: 'npm run dev -- --host 127.0.0.1 --port 5177 --strictPort',
+      url: 'http://127.0.0.1:5177',
+      // Reserved local fixture configuration. All API and broker responses are intercepted.
+      env: {
+        VITE_APP_MODE: 'workspace', VITE_SUPABASE_URL: 'http://127.0.0.1:5177',
+        VITE_SUPABASE_PUBLISHABLE_KEY: 'sb_publishable_browser_test_fixture',
+        VITE_API_BASE_URL: '',
+      },
     },
     // Deliberately build with the flag set: the production guard must still win.
     {
