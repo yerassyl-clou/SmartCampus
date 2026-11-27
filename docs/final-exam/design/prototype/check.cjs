@@ -14,10 +14,18 @@ const tracks = [
 ];
 const revision = process.env.DESIGN_TREE;
 const entries = [];
+const captureIds = {
+  'landing-1440':1, 'signin-1440':2, 'guest-course-1440':3, 'deadlines-1440':4,
+  'guest-course-dark-1440':5, 'landing-375':6, 'signin-375':7, 'guest-course-375':8,
+  'deadlines-375':9, 'guest-source-tab-dark-375':10, 'signin-held-1440':11,
+  'signin-held-375':12, 'simulated-live-dark-1440':13, 'simulated-live-dark-375':14
+};
 
 async function capture(page,name) {
   const viewport=page.viewportSize();
-  const id='EV-FINAL-02-'+String(entries.length+1).padStart(2,'0');
+  const number=captureIds[name+'-'+viewport.width];
+  assert.ok(number,'Capture ID must be stable');
+  const id='EV-FINAL-02-'+String(number).padStart(2,'0');
   const file=id+'-'+name+'-'+viewport.width+'.jpg';
   await page.evaluate(()=>document.activeElement.blur());
   await page.screenshot({path:path.join(evidence,file),quality:84,fullPage:true});
@@ -127,10 +135,60 @@ async function run() {
       assert.equal(await page.getByRole('button',{name:'Upload PDF or DOCX'}).count(),0);
       assert.deepEqual(external,[]);
       assert.deepEqual(errors,[]);
+      for (const [index, language] of ['EN','RU','KK'].entries()) {
+        for (const theme of ['light','dark']) {
+          await page.goto(base+'?profile=workspace#/signin');
+          await page.locator('#locale').selectOption(language);
+          await page.evaluate(value=>{localStorage.scDesignTheme=value;},theme);
+          await page.reload();
+          const picker=page.locator('#state');
+          const google=page.locator('main a[href="#/auth/callback"]');
+          const assertAuth=async (key,hasGoogle) => {
+            assert.equal(await picker.inputValue(),key);
+            assert.equal(await page.getByRole('status').innerText(),copy[key][index]);
+            assert.equal(await google.count(),hasGoogle?1:0);
+            assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+          };
+          assert.equal(await page.locator('html').getAttribute('data-theme'),theme);
+          await assertAuth('authAvailable',true);
+          await picker.selectOption('held');
+          await assertAuth('held',false);
+          if (language==='EN'&&theme==='light') await capture(page,'signin-held');
+          await picker.selectOption('authLoading');
+          await assertAuth('authLoading',false);
+          await picker.selectOption('authFailed');
+          await assertAuth('authFailed',false);
+          await page.locator('[data-action="retryAuth"]').click();
+          await assertAuth('authAvailable',true);
+          await google.press('Enter');
+          await page.waitForURL(url=>url.hash==='#/auth/callback');
+          await page.locator('#state option[value=connected]').waitFor({state:'attached'});
+          await assertAuth('authLoading',false);
+          await picker.selectOption('cancelled');
+          await assertAuth('cancelled',false);
+          await picker.selectOption('connected');
+          await assertAuth('connected',false);
+          assert.equal(await page.locator('main a[href="#/app/courses"]').count(),1);
+          await page.goto(base+'#/auth/callback');
+          await assertAuth('held',false);
+          assert.equal(await picker.isDisabled(),true);
+          await page.goto(base+'#/demo/course/design-research');
+          await picker.selectOption('simulatedLive');
+          assert.equal(await page.locator('.banner').innerText(),copy.simulatedLive[index]);
+          assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+          assert.equal(await page.locator('[data-action="upload"]').count(),0);
+          if (language==='EN'&&theme==='dark') await capture(page,'simulated-live-dark');
+          await page.locator('[data-action="sample"]').click();
+          assert.equal(await page.locator('.banner').innerText(),copy.synthetic[index]);
+        }
+      }
+      assert.deepEqual(external,[]);
+      assert.deepEqual(errors,[]);
+      console.log(width+'px: auth/guest regressions passed across EN/RU/KK and light/dark');
       console.log(width+'px: 36 route/locale renders, theme, keyboard citation, auth hold/cancel, upload retry, candidate and isolation passed');
       await page.close();
     }
-    fs.writeFileSync(path.join(evidence,'captures.json'),JSON.stringify(entries,null,2)+'\n');
+    fs.writeFileSync(path.join(evidence,'captures.json'),JSON.stringify(entries.sort((a,b)=>a.id.localeCompare(b.id)),null,2)+'\n');
   } finally {
     await browser.close();
   }

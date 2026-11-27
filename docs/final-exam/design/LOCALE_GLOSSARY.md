@@ -11,7 +11,8 @@
 | source | Source excerpt | Фрагмент источника | Дереккөз үзіндісі |
 | deadlines | Deadlines | Сроки | Мерзімдер |
 | candidates | Date candidates | Предложенные даты | Ұсынылған күндер |
-| synthetic | Synthetic demo · Example replay | Демо · Пример ответа | Демо · Үлгі жауап |
+| synthetic | Synthetic demo · Example replay | Демо на синтетических данных · Готовый ответ | Синтетикалық деректері бар демо · Дайын жауап |
+| simulatedLive | Synthetic demo · Simulated live mode · Example replay | Демо на синтетических данных · Имитация живого режима · Готовый ответ | Синтетикалық деректері бар демо · Тікелей режим симуляциясы · Дайын жауап |
 | held | Sign-in is currently unavailable | Вход пока недоступен | Кіру әзірге қолжетімсіз |
 | unavailable | Data unavailable | Данные недоступны | Деректер қолжетімсіз |
 

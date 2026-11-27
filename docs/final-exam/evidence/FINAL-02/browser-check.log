@@ -14,6 +14,8 @@ dark accent/tint 6.15:1
 dark on-accent/accent 9.14:1
 dark warm/surface 8.22:1
 dark danger/surface 7.78:1
-93 nonblank EN/RU/KK key tuples
+99 nonblank EN/RU/KK key tuples
+1440px: auth/guest regressions passed across EN/RU/KK and light/dark
 1440px: 36 route/locale renders, theme, keyboard citation, auth hold/cancel, upload retry, candidate and isolation passed
+375px: auth/guest regressions passed across EN/RU/KK and light/dark
 375px: 36 route/locale renders, theme, keyboard citation, auth hold/cancel, upload retry, candidate and isolation passed

@@ -1,6 +1,6 @@
 # SmartCampus V2 design handoff
 
-Version 2.0.0-review.1 · FINAL-02 · Danaya Aliyeva · Review candidate
+Version 2.0.0-review.2 · FINAL-02 · Danaya Aliyeva · Review candidate
 
 ## Direction
 
@@ -12,7 +12,7 @@ The folded-page mark combines course material with a campus cap. Flat surfaces, 
 
 ## Editable frames
 
-Serve this directory with `python3 -m http.server 8769 --bind 127.0.0.1`. Open [the prototype](prototype/index.html) at `http://127.0.0.1:8769/prototype/`. The browser combines the hash fragment as a design-frame identifier with the optional `?profile=workspace` query before the hash. The default demonstrates the public-demo CTA hold. The workspace profile is a visual simulation. Use the localized **Preview state** control to inspect variants. Personal URLs and figures are synthetic and directly inspectable for design review.
+Serve this directory with `python3 -m http.server 8769 --bind 127.0.0.1`. Open [the prototype](prototype/index.html) at `http://127.0.0.1:8769/prototype/`. The browser combines the hash fragment as a design-frame identifier with the optional `?profile=workspace` query before the hash. The default demonstrates the public-demo CTA hold. The workspace profile is a visual simulation. The sign-in frame offers separate available and held variants. The simulated Google action appears only in the available state. A direct callback in the default profile remains held. Use the localized **Preview state** control to inspect variants. Personal URLs and figures are synthetic and directly inspectable for design review.
 
 Edit [markup and interactions](prototype/prototype.js), [styles](prototype/style.css), [strings](prototype/strings.js) and [tokens](tokens-v2.json). Chromium evidence is indexed in [captures](../evidence/FINAL-02/captures.json). Use viewport 1440×1000 or 375×812 and the in-header theme and language controls. Figma required reauthentication at execution. These authored source files are the editable fallback.
 
@@ -37,9 +37,9 @@ API paths below use the approved preliminary `/api/v2` prefix. OAuth uses the ap
 | --- | --- | --- | --- |
 | `/` | Landing, product sample, enabled Google or launch hold | Approved release profile, synthetic illustration | workspace, headline, intro, demo, google, held, privacy |
 | `/privacy` | Privacy notice, return to demo | Versioned notice copy, acknowledgement via POST /session/consent when eligible | privacy, privacyText, demo |
-| `/signin` and `/auth/callback` | OAuthEntry, hold, loading, cancelled, expired, denied and verified | Supabase OIDC + GET /session. Show hold for invalid or unavailable configuration. Successful callback clears authorization parameters. | signin, signIntro, google, held, callback, loading, cancelled, expired, denied, connected, retry |
-| `/demo` | GuestCourses, synthetic banner and mode-appropriate CTA | Embedded fixture in offline mode. GET /demo only for an enabled synthetic API adapter. | synthetic, live, courses, course, openCourse, syllabus, brief, google, held |
-| `/demo/course/:slug` | GuestCourse, read-only source, authored sample and deadlines. Example replay on live budget hold. | Fixture by slug. Approved live mode POST /demo/chat with curated slug and locale. | synthetic, live, course, documents, chat, deadlines, scope, question, answer, citation, source, original, extracted |
+| `/signin` and `/auth/callback` | OAuthEntry, available, hold, loading, cancelled, failed, expired, denied and simulated success | Supabase OIDC + GET /session. Show hold for invalid or unavailable configuration. Successful callback clears authorization parameters. | signin, signIntro, google, held, callback, authAvailable, authLoading, authSimulation, authFailed, cancelled, expired, denied, connected, retry |
+| `/demo` | GuestCourses, synthetic banner and mode-appropriate CTA | Embedded fixture in offline mode. GET /demo only for an enabled synthetic API adapter. | synthetic, simulatedLive, courses, course, openCourse, syllabus, brief, google, held |
+| `/demo/course/:slug` | GuestCourse, read-only source, authored sample and deadlines. The prototype’s simulated live mode always replays an authored example. Runtime uses example replay on live budget hold. | Fixture by slug. Approved live mode POST /demo/chat with curated slug and locale. | synthetic, simulatedLive, course, documents, chat, deadlines, scope, question, answer, citation, source, original, extracted |
 | `/app/courses` | CourseList/Editor, list, create, empty, loading, error, success and quota | GET/POST /courses. Show names, document counts and nearest deadline. | owned, courses, addCourse, label, course, openCourse, loading, empty, error, successful, retry, quota |
 | `/app/courses/:id` | CourseWorkspace, CourseEditor, DocumentList, UploadProgress. Pending, uploading, processing, ready, duplicate, failed, deleting. | GET/PATCH/DELETE /courses/{id}; GET /courses/{id}/documents; POST /courses/{id}/uploads; reserved private TUS; POST /documents/{id}/finalize or /retry; DELETE /documents/{id}; GET /documents/{id}/source | documents, upload, pending, uploading, processing, ready, duplicate, failed, deleting, remove, rename, history, newChat, retry, source |
 | `/app/courses/:id/chats/:id` | ThreadHistory, Composer, Answer and CitationDialog. Empty, sending, grounded, insufficient, provider error and quota. | GET/POST /courses/{id}/threads; GET/POST /threads/{id}/messages; GET /documents/{id}/source. Do not render a citation for insufficient answers. | chat, history, newChat, emptyChat, ask, send, scope, loading, question, answer, citation, insufficient, provider, quota, source, original |

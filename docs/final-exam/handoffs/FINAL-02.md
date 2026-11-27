@@ -1,6 +1,6 @@
 # FINAL-02 design handoffs
 
-Contract version **2.0.0-review.1** · Danaya Aliyeva · packet prepared 2026-11-26T18:36:14+05:00. Exact design tree `f4bb3c42d3c99915f7e59d4c0503a09dabdf11cd`. Review branch `codex/final-02-workspace-design`. The [review notice](https://app.clickup.com/t/z8q7hby8dg) records the exact PR and head. Read the [task packet](../tasks/FINAL-02.md) and [evidence manifest](../evidence/FINAL-02/captures.json) for validation and mode limits.
+Contract version **2.0.0-review.2** · Danaya Aliyeva · review corrections verified 2026-11-28T00:00:49.049+05:00. Exact design tree `d1e57518a40e84ac75b583d45bc64c64c78cf217`. Review branch `codex/final-02-workspace-design`. The [review notice](https://app.clickup.com/t/z8q7hby8dg) records the exact PR and head. Read the [task packet](../tasks/FINAL-02.md) and [evidence manifest](../evidence/FINAL-02/captures.json) for validation and mode limits.
 
 | Handoff ID | From → to | State | Original deadline, Asia/Almaty | Artifact and next action | Prerequisite, limitation and recovery |
 | --- | --- | --- | --- | --- | --- |
@@ -13,7 +13,7 @@ Contract version **2.0.0-review.1** · Danaya Aliyeva · packet prepared 2026-11
 
 ## FINAL-06 preparation at the review gate
 
-- Compare the accepted FINAL-01 mirror with the published V2 route and mode definitions. The latest inspected accepted main has no merged FINAL-01 mirror. The preliminary branch supplies delivery schemas for this packet.
+- Compare the accepted FINAL-01 mirror with the published V2 route and mode definitions. The FINAL-01 mirror is integrated through PR #50 at main `6a5798d1a398b2512b9809e0e3b96fc14377a0b4`. The ledger approves the execution baseline and records conditional acceptance.
 - Read FINAL-04's versioned `contracts/API_V2.md` and `api-v2-fixtures.json` when delivered. The published baseline allows offline fixture-only guest routes. The authored preview supplies a synthetic course, syllabus excerpt, explicitly dated deadline and curated replay for visual verification. Map these to R04's accepted fixtures before using runtime adapters.
-- Validate FINAL-05's environment and release disposition with Yerassyl. Use a held-auth visual state until the approved configuration is available. Personal route guards must wait for server-verified `GET /session` eligibility.
+- Validate FINAL-05's environment and release disposition with Yerassyl. The FINAL-05 draft permits local synthetic replay and keeps personal processing and OAuth held pending verification. Use the held-auth visual state until the approved configuration is available. Personal route guards must wait for server-verified `GET /session` eligibility.
 - After the native acceptance gate, implement and test on the separate FINAL-06 branch. Keep provider and release operations under owner control. The prototype controls generate no personal server calls.

@@ -16,15 +16,13 @@ const candidateExcerpt = 'Interview plan — November 30, 2026. Bring one partic
 const excerpt = 'Research brief — November 30, 2026. Include your research question and two interview prompts.';
 const t = key => copy[key][languages.indexOf(locale)];
 const keyStates = {
-  signin:['held','cancelled','expired','denied','connected'],
-  callback:['loading','cancelled','expired','denied','connected'],
   courses:['ready','empty','loading','error','quota','successful'],
   course:['ready','pending','uploading','processing','duplicate','failed','deleting','empty','loading','error','successful'],
   thread:['ready','empty','loading','insufficient','provider','quota'],
   deadlines:['ready','empty','loading','error','successful'],
   settings:['ready','deleting','error','successful'],
   admin:['ready','loading','denied','unavailable','empty'],
-  guest:['synthetic','live']
+  guest:['synthetic','simulatedLive']
 };
 const route = () => location.hash.slice(1) || '/';
 const link = (href,key,css='') => `<a class="${css}" href="#${href}" ${route()===href?'aria-current="page"':''}>${t(key)}</a>`;
@@ -35,8 +33,9 @@ const status = (key, css='') => `<p role="status" class="${css}">${t(key)}</p>`;
 const date = () => new Intl.DateTimeFormat(locale,{dateStyle:'medium',timeZone:'Asia/Almaty'}).format(new Date('2026-11-30T12:00:00+05:00'));
 const guest = () => route().startsWith('/demo');
 const coursePath = () => guest() ? '/demo/course/design-research' : '/app/courses/design-research';
-const banner = () => `<p class="banner">${t(guest()?(state==='live'?'live':'synthetic'):'owned')}</p>`;
-const statePicker = screen => keyStates[screen] ? `<label class="muted">${t('state')} <select id="state">${keyStates[screen].map((key,index)=>`<option value="${index===0?'':key}" ${state===key?'selected':''}>${t(key)}</option>`).join('')}</select></label>` : '';
+const banner = () => `<p class="banner">${t(guest()?(state==='simulatedLive'?'simulatedLive':'synthetic'):'owned')}</p>`;
+const pickerCopy = {synthetic: 'previewReplay', simulatedLive: 'previewSimulatedLive'};
+const statePicker = screen => keyStates[screen] ? `<label class="muted">${t('state')} <select id="state">${keyStates[screen].map((key,index)=>`<option value="${index===0?'':key}" ${state===key?'selected':''}>${t(pickerCopy[key] || key)}</option>`).join('')}</select></label>` : '';
 const renderState = (key,css='') => status(state || key,css);
 
 function header() {
@@ -57,9 +56,24 @@ function landing() {
 }
 
 function auth(screen) {
-  return `<section class="card narrow">${heading(screen==='signin'?'signin':'callback',statePicker(screen))}
-    <p>${t('signIntro')}</p>${screen==='signin'&&workspacePreview&&!state?'':renderState(screen==='signin'?'held':'loading','warm')}
-    <div class="actions">${screen==='signin'?(workspacePreview?link('/auth/callback','google','button primary'):''):link('/signin','retry','button')}${state==='connected'?link('/app/courses','workspace','button primary'):''}${link('/demo','demo','button')}</div></section>`;
+  const signIn = screen === 'signin';
+  const states = workspacePreview
+    ? [signIn ? 'authAvailable' : 'authLoading', 'held', 'cancelled', 'authFailed', 'expired', 'denied', ...(signIn ? ['authLoading'] : ['connected'])]
+    : ['held'];
+  const current = states.includes(state) ? state : states[0];
+  const picker = `<label class="muted">${t('state')} <select id="state" ${states.length===1?'disabled':''}>${states.map(key=>`<option value="${key}" ${current===key?'selected':''}>${t(key)}</option>`).join('')}</select></label>`;
+  const actions = {
+    authAvailable: link('/auth/callback','google','button primary'),
+    cancelled: button('retryAuth','retry'),
+    authFailed: button('retryAuth','retry'),
+    expired: button('retryAuth','retry'),
+    denied: button('retryAuth','retry'),
+    connected: link('/app/courses','workspace','button primary')
+  };
+  return `<section class="card narrow">${heading(signIn?'signin':'callback',picker)}
+    <p>${t('authSimulation')}</p>${current==='authAvailable'?`<p>${t('signIntro')}</p>`:''}
+    ${status(current,current==='authFailed'?'danger':'warm')}
+    <div class="actions">${actions[current] || ''}${link('/demo','demo','button')}</div></section>`;
 }
 
 function courses() {
@@ -159,6 +173,10 @@ const actions = {
   candidateSource() { dialog('source',`<p>${t('citation')} · ${t('original')}</p><blockquote lang="en">${candidateExcerpt}</blockquote>`); },
   sample() { state=''; answerShown=true; redraw('[data-action="sample"]'); },
   newChat() { state=''; answerShown=false; redraw('#question'); },
+  retryAuth() {
+    if (route()==='/signin') { state='authAvailable'; redraw('main a.primary'); }
+    else location.hash='/signin';
+  },
   reset() { state=''; redraw('#state'); },
   upload() { state='uploading'; redraw('#state'); },
   retryUpload() { state='processing'; redraw('#state'); },

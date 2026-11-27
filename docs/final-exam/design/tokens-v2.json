@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0-review.1",
+  "version": "2.0.0-review.2",
   "themes": {
     "light": {"bg":"#F6F8F6","surface":"#FFFFFF","ink":"#172625","muted":"#4D625D","accent":"#087560","on-accent":"#FFFFFF","tint":"#E3F1EB","line":"#CCDAD3","warm":"#875022","danger":"#A33345"},
     "dark": {"bg":"#121D1C","surface":"#1D2C29","ink":"#E8F2EE","muted":"#A9C2B9","accent":"#6DCEB4","on-accent":"#121D1C","tint":"#233E35","line":"#455C53","warm":"#F3B77D","danger":"#FFA5AE"}
