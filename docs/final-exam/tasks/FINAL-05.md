@@ -19,6 +19,6 @@ Owner: Yerassyl. Acceptance, reviewer disposition and merge belong to the separa
 
 ## Continuation evidence
 
-[Provider console readback and HTTPS probes](../evidence/FINAL-05/cloud-readback.md) record the saved signup hold, quota observations and blocked first-deployment path. Both Vercel Hobby projects are configured. The first Preview attempt was rejected because Vercel requires a Production bootstrap. Only Preview-scoped synthetic flags were stored; no provider credentials are embedded in the artifacts.
+[Provider console readback and HTTPS probes](../evidence/FINAL-05/cloud-readback.md) record the saved signup hold, quota observations and blocked first-deployment path. Both Vercel Hobby projects now have static Production holding pages and protected Preview deployments. Direct and proxied health are verified. Supabase has one exact Preview callback. Groq Free and a synthetic API request are verified; the sensitive key is stored for backend Preview only.
 
-Local verification on continuation: Python 3.12 backend suite passed 129 tests with one dependency warning; frontend `npm ci && npm run build` passed. JSON, CSV, relative Markdown links and `git diff --check` passed. PR #52 remains a draft until a protected hosted candidate and reviewer evidence are ready.
+Local verification on continuation: Python 3.12 backend suite passed 129 tests with one dependency warning; frontend `npm ci && npm run build` passed. JSON, CSV, relative Markdown links and `git diff --check` passed. PR #52 remains a draft pending accepted PKCE, schema/private Storage, authenticated response cache evidence and migration/rollback smoke. See [hosted evidence](../evidence/FINAL-05/hosted-checks.json).

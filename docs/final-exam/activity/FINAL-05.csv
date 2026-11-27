@@ -1,3 +1,4 @@
 local_date,stable_id,owner,started_at,end,planned_minutes,hands_on_minutes_or_null,effort_type,from_status,to_status,blocker,source
 2026-11-26,FINAL-05,Yerassyl,,2026-11-26T19:20:08+05:00,125,null,agent-assisted,to do,to do,Cloud authorization and ClickUp synchronization pending,https://app.clickup.com/t/z8q7hby8dm
 2026-11-28,FINAL-05,Yerassyl,,,125,null,agent-assisted,in progress,in progress,Hosted preview and OAuth verification pending,https://app.clickup.com/t/z8q7hby8dm
+2026-11-28,FINAL-05,Yerassyl,,2026-11-28T00:18:25+05:00,125,null,agent-assisted,in progress,in progress,PKCE and accepted migration prerequisites pending,https://app.clickup.com/t/z8q7hby8dm

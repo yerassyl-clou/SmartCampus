@@ -1,0 +1,54 @@
+{
+  "revision": "1171f57c288907e394bded333ac7dd48e9707c6d",
+  "observed_at": "2026-11-28T00:18:25+05:00",
+  "mode": "static holding production; protected legacy synthetic smoke",
+  "classification": "sanitized",
+  "role": "Yerassyl operator",
+  "checks": [
+    {
+      "id": "EV-FINAL-05-10",
+      "expected": "Production static hold only",
+      "observed": "Both HTTPS 200 with holding copy, no-store and noindex. Health is 404.",
+      "source": [
+        "https://smartcampus-frontend-mauve.vercel.app",
+        "https://smartcampus-backend-iota.vercel.app"
+      ],
+      "method": "curl"
+    },
+    {
+      "id": "EV-FINAL-05-11",
+      "expected": "Protected direct HTTPS health",
+      "observed": "Ready in fra1. Anonymous 302, TLS valid and no-store. Authenticated Chrome displayed status ok.",
+      "source": "https://smartcampus-backend-hln2gry53-yerassyl-clous-projects.vercel.app/api/health",
+      "method": "Vercel CLI, curl, Chrome"
+    },
+    {
+      "id": "EV-FINAL-05-12",
+      "expected": "Protected same-origin HTTPS health",
+      "observed": "Ready. Anonymous 302 with no-store. Authenticated Chrome displayed status ok; authenticated response headers require separate evidence.",
+      "source": "https://smartcampus-frontend-nhusae0yw-yerassyl-clous-projects.vercel.app/api/health",
+      "method": "Vercel CLI, curl, Chrome"
+    },
+    {
+      "id": "EV-FINAL-05-13",
+      "expected": "Groq Free eligible model and scoped key",
+      "observed": "Current plan Free. Model 30 RPM, 1000 RPD, 8000 TPM, 200000 TPD. Synthetic request HTTP 200. Existing key stored as sensitive backend Preview only.",
+      "source": "https://console.groq.com/settings/limits",
+      "method": "Console, curl, Vercel CLI"
+    },
+    {
+      "id": "EV-FINAL-05-14",
+      "expected": "Exact callback with registration held",
+      "observed": "Single allowlist entry https://smartcampus-frontend-nhusae0yw-yerassyl-clous-projects.vercel.app/auth/callback. Google broker callback https://tuzspnktaesibhpecrzo.supabase.co/auth/v1/callback. Signup and Google disabled. Open Google project had no OAuth client; deployed frontend lacks PKCE callback.",
+      "source": "https://supabase.com/dashboard/project/tuzspnktaesibhpecrzo/auth/url-configuration",
+      "method": "Authenticated Chrome"
+    },
+    {
+      "id": "EV-FINAL-05-15",
+      "expected": "Accepted revision before hosted migration",
+      "observed": "FINAL-03/07 In Progress. PR #43 open at 90d412440b31710298aa1e2bb22361007c4825cb. No hosted migrations applied.",
+      "source": "https://github.com/yerassyl-clou/SmartCampus/pull/43",
+      "method": "ClickUp, GitHub API"
+    }
+  ]
+}

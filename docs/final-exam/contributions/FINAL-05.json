@@ -39,10 +39,14 @@
       "Authenticated provider console readback",
       "Persisted the Supabase signup hold",
       "Verified TLS and anonymous denial at observed provider routes",
-      "Reconciled GitHub and ClickUp state"
+      "Reconciled GitHub and ClickUp state",
+      "Provisioned static holding and protected Preview deployments",
+      "Verified hosted health and exact Auth callback",
+      "Verified Groq Free and scoped the sensitive key to backend Preview"
     ],
     "proof": [
-      "evidence/FINAL-05/cloud-readback.md"
+      "evidence/FINAL-05/cloud-readback.md",
+      "evidence/FINAL-05/hosted-checks.json"
     ],
     "actual_human_minutes": null,
     "actual_agent_only_minutes": null
