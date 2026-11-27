@@ -1,0 +1,54 @@
+{
+  "id": "FINAL-05",
+  "role": "Project Manager / Technical Integration and Release Coordinator",
+  "work_items": [
+    "Prepared isolated configuration and environment templates",
+    "Published provider gates, migration and rollback procedure and infrastructure handoff",
+    "Verified local FastAPI startup and documented hosted checks still pending"
+  ],
+  "proof": [
+    "tasks/FINAL-05.md",
+    "handoffs/FINAL-05.md",
+    "evidence/FINAL-05/checks.json"
+  ],
+  "estimated_minutes": {
+    "active_owner": 125,
+    "human_touch_subset": 100,
+    "agent_only": 40
+  },
+  "actual_minutes": {
+    "human": null,
+    "agent_only": null
+  },
+  "method": "Repository and local synthetic validation with Codex assistance.",
+  "date": "2026-11-26",
+  "ai_tools": [
+    {
+      "name": "Codex",
+      "purpose": "Compare provider documentation, prepare infrastructure templates and run local checks"
+    }
+  ],
+  "slide_summary": "$0 plan with a local synthetic fallback and explicit hosted gates.",
+  "speaker_notes": "Show the gate table. Distinguish public plans from actual account evidence and describe the rollback sequence.",
+  "approved_visuals": [],
+  "confirmed_by": null,
+  "confirmed_at": null,
+  "continuation": {
+    "date": "2026-11-28",
+    "work_items": [
+      "Authenticated provider console readback",
+      "Persisted the Supabase signup hold",
+      "Verified TLS and anonymous denial at observed provider routes",
+      "Reconciled GitHub and ClickUp state",
+      "Provisioned static holding and protected Preview deployments",
+      "Verified hosted health and exact Auth callback",
+      "Verified Groq Free and scoped the sensitive key to backend Preview"
+    ],
+    "proof": [
+      "evidence/FINAL-05/cloud-readback.md",
+      "evidence/FINAL-05/hosted-checks.json"
+    ],
+    "actual_human_minutes": null,
+    "actual_agent_only_minutes": null
+  }
+}

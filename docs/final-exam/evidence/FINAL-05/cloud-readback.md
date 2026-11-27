@@ -1,0 +1,13 @@
+# FINAL-05 authenticated cloud readback
+
+Observation window: 27–28 November 2026, Asia/Almaty (UTC+05:00). Operator scope: Yerassyl. Application revision inspected: `02e3872e14038c5420c4c3c5321ee84364459bec`. Mode: credential-free local application and synthetic-only Supabase provisioning. Classification: sanitized observations, no personal records or credentials.
+
+| Evidence | Surface and expected result | Observation |
+| --- | --- | --- |
+| EV-FINAL-05-05 | Supabase project and organization dashboard. Free, isolated project in the requested region. | SmartCampus Free, one listed project. `smartcampus-preview` Healthy, Nano, eu-central-1, no GitHub link, migrations or backups. Project overview: CPU 0%, disk 13%, RAM 50%, 5/60 connections. Organization counters are rounded and not equivalent to disk utilization. |
+| EV-FINAL-05-06 | Supabase Auth, Data API and Storage. Keep signup disabled and verify empty preview surfaces. | Changed Allow new users to sign up from on to off, saved, and read back off. Google disabled. Zero Auth users, no redirect entries, localhost Site URL. Data API enabled; two exposed schemas, automatic exposure of new tables off. No Storage bucket listed. Hosted RLS policies and two-user isolation require accepted migrations. |
+| EV-FINAL-05-07 | Vercel Hobby scope, actual usage and first-deployment isolation. | Hobby scope and usage verified. Neither SmartCampus project initially existed. Created both via the authenticated CLI under the Hobby scope. API readback: frontend root `frontend`, Vite, npm ci, npm run build, dist; backend root `backend`, FastAPI. Both have Standard Protection and their respective synthetic-only Preview env flag. The import page targeted main. An explicit backend Preview deploy returned `first_deployment_production`; no Production deploy was attempted. The unrelated project was left untouched. |
+| EV-FINAL-05-08 | Groq account limits and eligible model. | Limits page returned a login requirement. No provider token used and no inference request sent. |
+| EV-FINAL-05-09 | HTTPS request without auth headers to the preview Supabase origin. Expect certificate validation and no successful access to protected resources. | `curl` reported TLS verification result 0 for all three requests. `/rest/v1/` and `/auth/v1/settings` returned 401. `/storage/v1/bucket` returned 400. These responses do not verify per-owner isolation. |
+
+Provider originals require authorized console access. No browser image is included in this packet. Supabase endpoint: [project overview](https://supabase.com/dashboard/project/tuzspnktaesibhpecrzo). Vercel operator scope: [projects](https://vercel.com/yerassyl-clous-projects).
