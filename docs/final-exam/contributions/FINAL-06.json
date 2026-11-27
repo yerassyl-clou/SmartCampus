@@ -1,0 +1,30 @@
+{
+  "id": "FINAL-06",
+  "role": "UI/UX Designer and Frontend Developer",
+  "work_items": [
+    "Implemented the trilingual V2 shell and accepted SmartCampus brand",
+    "Integrated guarded Google PKCE and server eligibility using isolated browser fixtures",
+    "Built local synthetic replay, source dialog and deadline dashboard",
+    "Corrected synthetic release precedence and added browser coverage for both entry paths",
+    "Verified two viewports and legacy compatibility, captured runtime evidence and prepared consumer handoffs"
+  ],
+  "proof": [
+    "tasks/FINAL-06.md",
+    "quality/UX_SHELL_QA.md",
+    "quality/SHELL_ASSETS.md",
+    "evidence/FINAL-06/captures.json",
+    "evidence/FINAL-06/checks.log"
+  ],
+  "estimated_minutes": {"active_owner": 150, "human_touch_subset": 65, "agent_only": 160, "rework_reserve": 20},
+  "actual_minutes": {"human": null, "agent_only": null},
+  "method": "Codex-assisted React implementation, browser-fixture verification and genuine local Chromium capture. Human and agent-only effort totals are unknown.",
+  "date": "2026-11-28",
+  "ai_tools": [
+    {"name": "Codex", "purpose": "Implementation, copy, tests, verification and delivery documents"}
+  ],
+  "slide_summary": "The trilingual frontend connects local synthetic course content, example answers, citations and deadlines, with guarded personal access.",
+  "speaker_notes": "Show the actual local guest application at two widths. Open the original source and explain the hold on hosted verification.",
+  "approved_visuals": [],
+  "confirmed_by": null,
+  "confirmed_at": null
+}

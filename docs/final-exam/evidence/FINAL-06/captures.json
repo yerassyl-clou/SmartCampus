@@ -1,0 +1,298 @@
+[
+  {
+    "id": "EV-FINAL-06-01",
+    "file": "EV-FINAL-06-01-landing-1440.jpg",
+    "sha256": "d1b9511252446726e13f03d90754997c65942ea53953cd1b47fed434fad6400c",
+    "occurred_at": "2026-11-28T00:28:57.348+05:00",
+    "revision": "5c6876dd2fe8a2c9e3acd1d1f27d9d7e8f6a2568",
+    "revision_type": "frontend git tree",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "device": "Chromium desktop engine at fixed viewport",
+    "mode": "local public-demo Vite application",
+    "classification": "synthetic/public-safe",
+    "role": "guest",
+    "dataset": "Authored Design Research example",
+    "command": "SMARTCAMPUS_V2_CAPTURE_DIR=<directory> npx playwright test tests/v2-shell.spec.js",
+    "expected": "Responsive landing with demo and held sign-in entry",
+    "observed": "Rendered in the application and captured after passing the associated browser assertions",
+    "access": "Repository evidence path; SmartCampus academic use"
+  },
+  {
+    "id": "EV-FINAL-06-02",
+    "file": "EV-FINAL-06-02-landing-375.jpg",
+    "sha256": "35473095f8c4d2e42b33dafebd946bb99deef4a905a33b1497383f91a1d69ffa",
+    "occurred_at": "2026-11-28T00:28:57.869+05:00",
+    "revision": "5c6876dd2fe8a2c9e3acd1d1f27d9d7e8f6a2568",
+    "revision_type": "frontend git tree",
+    "viewport": [
+      375,
+      812
+    ],
+    "device": "Chromium desktop engine at fixed viewport",
+    "mode": "local public-demo Vite application",
+    "classification": "synthetic/public-safe",
+    "role": "guest",
+    "dataset": "Authored Design Research example",
+    "command": "SMARTCAMPUS_V2_CAPTURE_DIR=<directory> npx playwright test tests/v2-shell.spec.js",
+    "expected": "Responsive landing with demo and held sign-in entry",
+    "observed": "Rendered in the application and captured after passing the associated browser assertions",
+    "access": "Repository evidence path; SmartCampus academic use"
+  },
+  {
+    "id": "EV-FINAL-06-03",
+    "file": "EV-FINAL-06-03-replay-1440.jpg",
+    "sha256": "e15d43b0b869b4f30a4af3b92d438ab7bc9a1b3c1d2c0babdca9d8fbe7cf8ef7",
+    "occurred_at": "2026-11-28T00:28:57.777+05:00",
+    "revision": "5c6876dd2fe8a2c9e3acd1d1f27d9d7e8f6a2568",
+    "revision_type": "frontend git tree",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "device": "Chromium desktop engine at fixed viewport",
+    "mode": "local public-demo Vite application",
+    "classification": "synthetic/public-safe",
+    "role": "guest",
+    "dataset": "Authored Design Research example",
+    "command": "SMARTCAMPUS_V2_CAPTURE_DIR=<directory> npx playwright test tests/v2-shell.spec.js",
+    "expected": "Curated replay with citation",
+    "observed": "Rendered in the application and captured after passing the associated browser assertions",
+    "access": "Repository evidence path; SmartCampus academic use"
+  },
+  {
+    "id": "EV-FINAL-06-04",
+    "file": "EV-FINAL-06-04-replay-375.jpg",
+    "sha256": "065c769ceadbac5b153e4933e10134f98a48162a2834969dc271dbffa46f4969",
+    "occurred_at": "2026-11-28T00:28:58.691+05:00",
+    "revision": "5c6876dd2fe8a2c9e3acd1d1f27d9d7e8f6a2568",
+    "revision_type": "frontend git tree",
+    "viewport": [
+      375,
+      812
+    ],
+    "device": "Chromium desktop engine at fixed viewport",
+    "mode": "local public-demo Vite application",
+    "classification": "synthetic/public-safe",
+    "role": "guest",
+    "dataset": "Authored Design Research example",
+    "command": "SMARTCAMPUS_V2_CAPTURE_DIR=<directory> npx playwright test tests/v2-shell.spec.js",
+    "expected": "Curated replay with citation",
+    "observed": "Rendered in the application and captured after passing the associated browser assertions",
+    "access": "Repository evidence path; SmartCampus academic use"
+  },
+  {
+    "id": "EV-FINAL-06-05",
+    "file": "EV-FINAL-06-05-replay-ru-dark-1440.jpg",
+    "sha256": "8ce097f1ccd3aded02b7e38d1ba221be0798755e879985e53711134f5ac8e09b",
+    "occurred_at": "2026-11-28T00:28:57.863+05:00",
+    "revision": "5c6876dd2fe8a2c9e3acd1d1f27d9d7e8f6a2568",
+    "revision_type": "frontend git tree",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "device": "Chromium desktop engine at fixed viewport",
+    "mode": "local public-demo Vite application",
+    "classification": "synthetic/public-safe",
+    "role": "guest",
+    "dataset": "Authored Design Research example",
+    "command": "SMARTCAMPUS_V2_CAPTURE_DIR=<directory> npx playwright test tests/v2-shell.spec.js",
+    "expected": "Russian replay in dark mode",
+    "observed": "Rendered in the application and captured after passing the associated browser assertions",
+    "access": "Repository evidence path; SmartCampus academic use"
+  },
+  {
+    "id": "EV-FINAL-06-06",
+    "file": "EV-FINAL-06-06-replay-ru-dark-375.jpg",
+    "sha256": "bb1b4933e569833a5fa9524655080b3a62f9fcbd6fb8eba572e14700960906e6",
+    "occurred_at": "2026-11-28T00:28:58.792+05:00",
+    "revision": "5c6876dd2fe8a2c9e3acd1d1f27d9d7e8f6a2568",
+    "revision_type": "frontend git tree",
+    "viewport": [
+      375,
+      812
+    ],
+    "device": "Chromium desktop engine at fixed viewport",
+    "mode": "local public-demo Vite application",
+    "classification": "synthetic/public-safe",
+    "role": "guest",
+    "dataset": "Authored Design Research example",
+    "command": "SMARTCAMPUS_V2_CAPTURE_DIR=<directory> npx playwright test tests/v2-shell.spec.js",
+    "expected": "Russian replay in dark mode",
+    "observed": "Rendered in the application and captured after passing the associated browser assertions",
+    "access": "Repository evidence path; SmartCampus academic use"
+  },
+  {
+    "id": "EV-FINAL-06-07",
+    "file": "EV-FINAL-06-07-held-1440.jpg",
+    "sha256": "558a34f987d6737d00a6b7c1d980c209591e0ec4f3c12496f793e2e69dde66dc",
+    "occurred_at": "2026-11-28T00:28:57.345+05:00",
+    "revision": "5c6876dd2fe8a2c9e3acd1d1f27d9d7e8f6a2568",
+    "revision_type": "frontend git tree",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "device": "Chromium desktop engine at fixed viewport",
+    "mode": "local public-demo Vite application",
+    "classification": "synthetic/public-safe",
+    "role": "guest",
+    "dataset": "Authored Design Research example",
+    "command": "SMARTCAMPUS_V2_CAPTURE_DIR=<directory> npx playwright test tests/v2-shell.spec.js",
+    "expected": "Held sign-in with guest action and no operational Google control",
+    "observed": "Rendered in the application and captured after passing the associated browser assertions",
+    "access": "Repository evidence path; SmartCampus academic use"
+  },
+  {
+    "id": "EV-FINAL-06-08",
+    "file": "EV-FINAL-06-08-held-375.jpg",
+    "sha256": "0b5ae75e1de26e89378a16ab112f2c18bc439a83359065895c413998e84f64c3",
+    "occurred_at": "2026-11-28T00:28:58.289+05:00",
+    "revision": "5c6876dd2fe8a2c9e3acd1d1f27d9d7e8f6a2568",
+    "revision_type": "frontend git tree",
+    "viewport": [
+      375,
+      812
+    ],
+    "device": "Chromium desktop engine at fixed viewport",
+    "mode": "local public-demo Vite application",
+    "classification": "synthetic/public-safe",
+    "role": "guest",
+    "dataset": "Authored Design Research example",
+    "command": "SMARTCAMPUS_V2_CAPTURE_DIR=<directory> npx playwright test tests/v2-shell.spec.js",
+    "expected": "Held sign-in with guest action and no operational Google control",
+    "observed": "Rendered in the application and captured after passing the associated browser assertions",
+    "access": "Repository evidence path; SmartCampus academic use"
+  },
+  {
+    "id": "EV-FINAL-06-09",
+    "file": "EV-FINAL-06-09-deadlines-1440.jpg",
+    "sha256": "0034c1dc3294d6e006f8bad593967a1b60d7ecab5bc3fc3f9385227cf0001f80",
+    "occurred_at": "2026-11-28T00:28:57.345+05:00",
+    "revision": "5c6876dd2fe8a2c9e3acd1d1f27d9d7e8f6a2568",
+    "revision_type": "frontend git tree",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "device": "Chromium desktop engine at fixed viewport",
+    "mode": "local public-demo Vite application",
+    "classification": "synthetic/public-safe",
+    "role": "guest",
+    "dataset": "Authored Design Research example",
+    "command": "SMARTCAMPUS_V2_CAPTURE_DIR=<directory> npx playwright test tests/v2-shell.spec.js",
+    "expected": "Synthetic deadline dashboard with authored date",
+    "observed": "Rendered in the application and captured after passing the associated browser assertions",
+    "access": "Repository evidence path; SmartCampus academic use"
+  },
+  {
+    "id": "EV-FINAL-06-10",
+    "file": "EV-FINAL-06-10-deadlines-375.jpg",
+    "sha256": "6ea39c6617fb3ca213302680b61944340d41a75e2dba1c5bf29c42922484ef29",
+    "occurred_at": "2026-11-28T00:28:58.260+05:00",
+    "revision": "5c6876dd2fe8a2c9e3acd1d1f27d9d7e8f6a2568",
+    "revision_type": "frontend git tree",
+    "viewport": [
+      375,
+      812
+    ],
+    "device": "Chromium desktop engine at fixed viewport",
+    "mode": "local public-demo Vite application",
+    "classification": "synthetic/public-safe",
+    "role": "guest",
+    "dataset": "Authored Design Research example",
+    "command": "SMARTCAMPUS_V2_CAPTURE_DIR=<directory> npx playwright test tests/v2-shell.spec.js",
+    "expected": "Synthetic deadline dashboard with authored date",
+    "observed": "Rendered in the application and captured after passing the associated browser assertions",
+    "access": "Repository evidence path; SmartCampus academic use"
+  },
+  {
+    "id": "EV-FINAL-06-11",
+    "file": "EV-FINAL-06-11-citation-1440.jpg",
+    "sha256": "c952c8b6ef1156ba97f99ad6ea4b72b10f111b70e779eaf937570c5cb463c8e0",
+    "occurred_at": "2026-11-28T00:28:57.717+05:00",
+    "revision": "5c6876dd2fe8a2c9e3acd1d1f27d9d7e8f6a2568",
+    "revision_type": "frontend git tree",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "device": "Chromium desktop engine at fixed viewport",
+    "mode": "local public-demo Vite application",
+    "classification": "synthetic/public-safe",
+    "role": "guest",
+    "dataset": "Authored Design Research example",
+    "command": "SMARTCAMPUS_V2_CAPTURE_DIR=<directory> npx playwright test tests/v2-shell.spec.js",
+    "expected": "Keyboard-opened citation with original English excerpt",
+    "observed": "Rendered in the application and captured after passing the associated browser assertions",
+    "access": "Repository evidence path; SmartCampus academic use"
+  },
+  {
+    "id": "EV-FINAL-06-12",
+    "file": "EV-FINAL-06-12-citation-375.jpg",
+    "sha256": "10256d53fc0320a10c525d25e6a16c6b7e0a233bcaa9d8f1e9ab9a4b7e6b7be3",
+    "occurred_at": "2026-11-28T00:28:58.555+05:00",
+    "revision": "5c6876dd2fe8a2c9e3acd1d1f27d9d7e8f6a2568",
+    "revision_type": "frontend git tree",
+    "viewport": [
+      375,
+      812
+    ],
+    "device": "Chromium desktop engine at fixed viewport",
+    "mode": "local public-demo Vite application",
+    "classification": "synthetic/public-safe",
+    "role": "guest",
+    "dataset": "Authored Design Research example",
+    "command": "SMARTCAMPUS_V2_CAPTURE_DIR=<directory> npx playwright test tests/v2-shell.spec.js",
+    "expected": "Keyboard-opened citation with original English excerpt",
+    "observed": "Rendered in the application and captured after passing the associated browser assertions",
+    "access": "Repository evidence path; SmartCampus academic use"
+  },
+  {
+    "id": "EV-FINAL-06-13",
+    "file": "EV-FINAL-06-13-synthetic-root-1440.jpg",
+    "sha256": "d1b9511252446726e13f03d90754997c65942ea53953cd1b47fed434fad6400c",
+    "occurred_at": "2026-11-28T00:28:59.250+05:00",
+    "revision": "5c6876dd2fe8a2c9e3acd1d1f27d9d7e8f6a2568",
+    "revision_type": "frontend git tree",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "device": "Chromium desktop engine at fixed viewport",
+    "mode": "local synthetic release with explicit legacy flag",
+    "classification": "synthetic/public-safe",
+    "role": "guest",
+    "dataset": "Authored Design Research example",
+    "command": "SMARTCAMPUS_V2_CAPTURE_DIR=<directory> npx playwright test tests/v2-shell.spec.js",
+    "expected": "V2 landing with guest access and held sign-in under conflicting mode flags",
+    "observed": "Rendered the V2 landing; no API, Auth or off-origin request observed",
+    "access": "Repository evidence path; SmartCampus academic use",
+    "route": "/"
+  },
+  {
+    "id": "EV-FINAL-06-14",
+    "file": "EV-FINAL-06-14-synthetic-legacy-375.jpg",
+    "sha256": "35473095f8c4d2e42b33dafebd946bb99deef4a905a33b1497383f91a1d69ffa",
+    "occurred_at": "2026-11-28T00:28:59.841+05:00",
+    "revision": "5c6876dd2fe8a2c9e3acd1d1f27d9d7e8f6a2568",
+    "revision_type": "frontend git tree",
+    "viewport": [
+      375,
+      812
+    ],
+    "device": "Chromium desktop engine at fixed viewport",
+    "mode": "local synthetic release with explicit legacy flag",
+    "classification": "synthetic/public-safe",
+    "role": "guest",
+    "dataset": "Authored Design Research example",
+    "command": "SMARTCAMPUS_V2_CAPTURE_DIR=<directory> npx playwright test tests/v2-shell.spec.js",
+    "expected": "V2 landing with guest access and held sign-in under conflicting mode flags",
+    "observed": "Rendered the V2 landing; no API, Auth or off-origin request observed",
+    "access": "Repository evidence path; SmartCampus academic use",
+    "route": "/legacy"
+  }
+]
